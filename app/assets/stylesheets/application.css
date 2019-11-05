@@ -14,6 +14,6 @@
  *= require_self
  */
 
- @import url(reset.css);
- @import url(nav-bar.css);
- 
+ @import url(master.css);
+
+

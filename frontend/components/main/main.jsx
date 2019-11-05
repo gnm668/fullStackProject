@@ -6,6 +6,12 @@ const main = () => (
         <header>
             <NavBar />
         </header>
+
+        {/* test div */}
+        <div className="test">
+        </div>
+        {/* test div WILL NEED CURRENT USER FROM GREETING 
+        COMPONENT LATER*/} 
     </div>
 );
 

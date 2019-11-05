@@ -19,7 +19,7 @@ export const greeting = (props) => {
                 </span>
                 <br/>
                 <span>
-                    <Link to="/login">Login</Link>
+                    <Link to="/signin">Sign In</Link>
                 </span>
             </div>
         )

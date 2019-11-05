@@ -1,0 +1,53 @@
+.nav-bar {
+    display: grid;
+    grid-template-columns: 28px 40px 84% 125px;
+    grid-template-rows: repeat(10, 10%);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 55px;
+    background-color: #282828;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.hamburger {
+    grid-row: 4;
+    grid-column: 2;
+    width: 16px;
+    height: 13px;
+    background-image: url('icon-hamburger-menu.png');
+}
+
+.signin-button:hover {
+    cursor: pointer;
+}
+
+.signin-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 4;
+    width: 105px;
+    height: 40px;
+    border: 1px solid rgb(17, 160, 255);
+    border-radius: 2%;
+}
+
+.button-text {
+    color:rgb(17, 160, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 75%;
+    display: flex; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

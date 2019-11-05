@@ -4,9 +4,9 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
-            email: "",
-            password: ""
+            username: '',
+            email: '',
+            password: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,9 +22,9 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        this.setState({ username: "" })
-        this.setState({ email: "" })
-        this.setState({ password: "" })
+        this.setState({ username: '' })
+        this.setState({ email: '' })
+        this.setState({ password: '' })
     }
 
     render() {
@@ -32,15 +32,15 @@ class SignupForm extends React.Component {
             <div>
                 <h1>{this.props.formName}</h1>
                 <label>Username:
-                    <input type="text" value={this.state.username} onChange={this.handleInput('username')} />
+                    <input type='text' value={this.state.username} onChange={this.handleInput('username')} />
                 </label>
                 <br />
                 <label>Email:
-                    <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
+                    <input type='text' value={this.state.email} onChange={this.handleInput('email')} />
                 </label>
                 <br />
                 <label>Password:
-                    <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+                    <input type='password' value={this.state.password} onChange={this.handleInput('password')} />
                 </label>
                 <br />
                 <button onClick={this.handleSubmit}>{this.props.formName}</button>
