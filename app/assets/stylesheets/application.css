@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url(reset.css);
+ @import url(nav-bar.css);
+ 

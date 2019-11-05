@@ -3,7 +3,7 @@ export const signUp = (user) => {
         url: '/api/users',
         method: 'POST',
         data: { user }
-    }).fail(error => console.log(error));
+    });
 };
 
 export const logout = () => {
