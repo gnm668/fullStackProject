@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="106" height="40" viewBox="0 0 106 40">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="105" height="39" x=".5" y=".5" fill="#282828" stroke="#3EA6FF" rx="1"/>
+        <path fill="#3EA6FF" fill-rule="nonzero" d="M24 8c-6.619 0-12 5.381-12 12s5.381 12 12 12 12-5.381 12-12S30.619 8 24 8zm0 6c2.201 0 4 1.799 4 4s-1.799 4-4 4a4.01 4.01 0 0 1-4-4c0-2.201 1.799-4 4-4zm-6 14.016C18.875 25.677 21.225 24 24 24s5.125 1.677 6 4.016A10.077 10.077 0 0 1 24 30c-2.275-.024-4.35-.756-6-1.984z"/>
+        <text fill="#3EA6FF" font-family="ArialMT, Arial" font-size="14">
+            <tspan x="43" y="26">SIGN IN</tspan>
+        </text>
+    </g>
+</svg>

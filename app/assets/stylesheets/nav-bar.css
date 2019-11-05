@@ -1,6 +1,6 @@
 .nav-bar {
     display: grid;
-    grid-template-columns: 28px 40px 84% 125px;
+    grid-template-columns: 28px 40px 85% 120px;
     grid-template-rows: repeat(10, 10%);
     position: fixed;
     top: 0;
@@ -19,14 +19,14 @@
     grid-column: 2;
     width: 16px;
     height: 13px;
-    background-image: url('icon-hamburger-menu.png');
+    background-image: url(icon-hamburger-menu.svg);
 }
 
 .signin-button:hover {
     cursor: pointer;
 }
 
-.signin-button {
+/* .signin-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,12 +34,20 @@
     grid-column: 4;
     width: 105px;
     height: 40px;
-    border: 1px solid rgb(17, 160, 255);
+    border: 1px solid #3ea6ff;
     border-radius: 2%;
+} */
+
+.signin-button {
+    background-image: url(button-sign-in.svg);
+    height: 40px;
+    width: 106px;
+    grid-row: 2;
+    grid-column: 4;
 }
 
 .button-text {
-    color:rgb(17, 160, 255);
+    color:#3ea6ff;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 75%;

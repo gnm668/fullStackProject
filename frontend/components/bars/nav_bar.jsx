@@ -21,7 +21,7 @@ class NavBar extends React.Component {
 
     renderRedirect() {
         if (this.state.redirect) {
-            return <Redirect to='/login' />
+            return <Redirect to='/signin' />
         }
     }
 
@@ -30,10 +30,11 @@ class NavBar extends React.Component {
             <div className='nav-bar'>
                 {this.renderRedirect()}
                 <div className='hamburger'></div>
-                <div onClick={this.handleClick} className='signin-button'>
+                <div onClick={this.handleClick} className='signin-button'> </div>
+                {/* <div onClick={this.handleClick} className='signin-button'>
                     <div className='button-image'></div>
                     <div className='button-text'>SIGN IN</div>
-                </div>
+                </div> */}
             </div>
         );
     }
