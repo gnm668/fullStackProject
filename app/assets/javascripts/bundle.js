@@ -589,13 +589,43 @@ function (_React$Component) {
     _this.state = {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      addUsernameEffect: false,
+      addEmailEffect: false,
+      addPasswordEffect: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.toggleUsername = _this.toggleUsername.bind(_assertThisInitialized(_this));
+    _this.toggleEmail = _this.toggleEmail.bind(_assertThisInitialized(_this));
+    _this.togglePassword = _this.togglePassword.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(SignupForm, [{
+    key: "toggleUsername",
+    value: function toggleUsername() {
+      //toggles full name input state for render
+      this.setState({
+        addUsernameEffect: !this.state.addUsernameEffect
+      });
+    }
+  }, {
+    key: "toggleEmail",
+    value: function toggleEmail() {
+      // toggles email full name state for render 
+      this.setState({
+        addEmailEffect: !this.state.addEmailEffect
+      });
+    }
+  }, {
+    key: "togglePassword",
+    value: function togglePassword() {
+      // toggles signin button state for render 
+      this.setState({
+        addPasswordEffect: !this.state.addPasswordEffect
+      });
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(type) {
       var _this2 = this;
@@ -623,6 +653,24 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var usernameClass = ['full-name'];
+
+      if (this.state.addUsernameEffect) {
+        usernameClass.push('effect');
+      }
+
+      var emailClass = ['email'];
+
+      if (this.state.addEmailEffect) {
+        emailClass.push('effect');
+      }
+
+      var passwordClass = ['password'];
+
+      if (this.state.addPasswordEffect) {
+        passwordClass.push('effect');
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signin-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -633,22 +681,39 @@ function (_React$Component) {
         className: "label"
       }, "Create your Tubie Account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sub-label"
-      }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "name-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: usernameClass.join(' ')
+      }, "Full Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
         onChange: this.handleInput('username'),
-        placeholder: 'Name'
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onFocus: this.toggleUsername,
+        onBlur: this.toggleUsername
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "email-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: emailClass.join(' ')
+      }, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.handleInput('email'),
-        placeholder: 'Email'
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onFocus: this.toggleEmail,
+        onBlur: this.toggleEmail
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pasword-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: passwordClass.join(' ')
+      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
         onChange: this.handleInput('password'),
-        placeholder: 'Password'
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onFocus: this.togglePassword,
+        onBlur: this.togglePassword
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "clickable-items-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signin-link"

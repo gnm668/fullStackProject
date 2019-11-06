@@ -42,7 +42,6 @@
 }
 
 .signin-form .content input, .login-form .content input {
-    margin: 15px;
     padding: 15px 18px;
     box-sizing: border-box;
     width: 368px;
@@ -58,6 +57,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
+    z-index: 1;
 }
 
 .signin-form .content .label, .login-form .content .label {
@@ -80,3 +80,75 @@
     cursor: pointer;
 }
 
+.input-container {
+    position: relative;
+}
+
+.name-field {
+    
+}
+
+.email-field {
+
+}
+
+.password-field {
+
+}
+
+.full-name, .email, .password {
+    background: transparent;
+    pointer-events: none;
+    color: #757575;
+    font-size: 19px;
+    position: relative;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 38px;
+    left: 61px;
+    transition: .3s ease-in-out;
+}
+
+.full-name.effect, .email.effect, .password.effect {
+    background: linear-gradient(to bottom, transparent 45%, #121212 0%);
+    pointer-events: none;
+    color: #979797;
+    font-size: 13px;
+    position: relative;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 6px;
+    left: 61px;
+    transition: .3s ease-in-out;
+    box-sizing: border-box;
+}
+
+
+
+/* .email {
+    background: transparent;
+    background-color: #121212;
+    color: #757575;
+    font-size: 18px;
+    position: relative;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 52px;
+    left: 61px;
+}
+
+.password {
+    background: transparent;
+    background-color: #121212;
+    color: #757575;
+    font-size: 18px;
+    position: relative;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 52px;
+    left: 61px;
+} */

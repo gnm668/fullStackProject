@@ -7,5 +7,5 @@
  }
 
  * input:focus {
-    outline-color: white;
+    outline: none;
  }

@@ -7,10 +7,31 @@ class SignupForm extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            addUsernameEffect: false,
+            addEmailEffect: false,
+            addPasswordEffect: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleUsername = this.toggleUsername.bind(this);
+        this.toggleEmail = this.toggleEmail.bind(this);
+        this.togglePassword = this.togglePassword.bind(this);
+    }
+
+    toggleUsername() {
+        //toggles full name input state for render
+        this.setState({ addUsernameEffect: !this.state.addUsernameEffect });
+    }
+
+    toggleEmail() {
+        // toggles email full name state for render 
+        this.setState({ addEmailEffect: !this.state.addEmailEffect });
+    }
+
+    togglePassword() {
+        // toggles signin button state for render 
+        this.setState({ addPasswordEffect: !this.state.addPasswordEffect });
     }
 
     handleInput(type) {
@@ -29,6 +50,22 @@ class SignupForm extends React.Component {
     }
 
     render() {
+
+        let usernameClass = ['full-name'];
+        if (this.state.addUsernameEffect) {
+            usernameClass.push('effect');
+        }
+
+        let emailClass = ['email'];
+        if (this.state.addEmailEffect) {
+            emailClass.push('effect');
+        }
+
+        let passwordClass = ['password'];
+        if (this.state.addPasswordEffect) {
+            passwordClass.push('effect');
+        }
+
         return (
             <div className='signin-form-container'>
                 <div className='signin-form'>
@@ -37,18 +74,35 @@ class SignupForm extends React.Component {
                         <br/>
                             <p className='sub-label'>to continue to Tubie</p>
                         <br/>
-                            <input type='text' 
-                            value={this.state.username} 
-                            onChange={this.handleInput('username')} 
-                            placeholder={'Name'} />
-                        <br />
-                            <input type='text' value={this.state.email} 
-                            onChange={this.handleInput('email')} 
-                            placeholder={'Email'} />
-                        <br />
-                            <input type='password' value={this.state.password} 
-                            onChange={this.handleInput('password')} 
-                            placeholder={'Password'} />
+                            <div className='input-container'>
+                                <div className='name-field'>
+                                    <div  className={usernameClass.join(' ')}>Full Name</div>
+                                    <input type='text' 
+                                    value={this.state.username} 
+                                    onChange={this.handleInput('username')} 
+                                    onFocus={this.toggleUsername}
+                                    onBlur={this.toggleUsername}
+                                    />
+                                </div>
+                            <br />
+                                <div className='email-field'>
+                                    <div  className={emailClass.join(' ')}>Email</div>
+                                    <input type='text' value={this.state.email} 
+                                    onChange={this.handleInput('email')}
+                                    onFocus={this.toggleEmail} 
+                                    onBlur={this.toggleEmail}
+                                    />
+                                </div>
+                            <br />
+                                <div className='pasword-field'>
+                                    <div  className={passwordClass.join(' ')}>Password</div>
+                                    <input type='password' value={this.state.password} 
+                                    onChange={this.handleInput('password')} 
+                                    onFocus={this.togglePassword}
+                                    onBlur={this.togglePassword}
+                                    />
+                                </div>
+                            </div>
                         <br />
                         <div className='clickable-items-container'>
                             <div className='signin-link'>
