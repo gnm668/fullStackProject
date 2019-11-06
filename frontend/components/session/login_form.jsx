@@ -31,18 +31,26 @@ class LoginForm extends React.Component {
             <div className='login-form-container'>
                 <div className='login-form'>
                     <div className='content'>
-                        <h1>Sign in</h1>
-                        <p>to continue to Tubie</p>
-                        <label>Email:
-                            <input type='text' value={this.state.email} onChange={this.handleInput('email')} />
-                        </label>
+                        <p className={'label'} >Sign in</p>
+                        <br/>
+                        <p className={'sub-label'} >to continue to Tubie</p>
+                        <br/>
+                            <input type='text' 
+                            value={this.state.email} 
+                            onChange={this.handleInput('email')} 
+                            placeholder={'Email'}/>
                         <br />
-                        <label>Password:
-                            <input type='password' value={this.state.password} onChange={this.handleInput('password')} />
-                        </label>
+                            <input type='password' 
+                            value={this.state.password} 
+                            onChange={this.handleInput('password')} 
+                            placeholder={'Password'} />
                         <br />
-                        <button onClick={this.handleSubmit}>Next</button>
-                        <Link to="/signup">Create Account</Link>
+                        <div className='clickable-items-container'>
+                            <div className='login-link'>
+                                <Link to="/signup">Create Account</Link>
+                            </div>
+                            <button onClick={this.handleSubmit}>Next</button>
+                        </div>
                     </div>
                 </div>
             </div>

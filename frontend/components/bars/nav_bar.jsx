@@ -1,36 +1,73 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirect: false
+            redirect: false,
+            addSigninButtonEffect: false,
+            addHamburgerButtonEffect: true
         };
         this.handleClick = this.handleClick.bind(this);
         this.renderRedirect = this.renderRedirect.bind(this);
+        this.toggleSignin = this.toggleSignin.bind(this);
+        this.toggleHamburger = this.toggleHamburger.bind(this);
+    }
 
+    componentDidMount() {
+        window.setTimeout(function () {
+            document.getElementById('ham').style.visibility = 'visible';
+        }, 1600);
     }
 
     handleClick() {
-        console.log('hi')
         this.setState({
             redirect: true
         });
+        
     }
 
     renderRedirect() {
         if (this.state.redirect) {
-            return <Redirect to='/signin' />
+            let that = this;
+            window.setTimeout(() => that.props.history.push('/signin'), 500);
         }
     }
 
+    toggleHamburger(){
+        //toggles hamburger button state for render
+        this.setState({ addHamburgerButtonEffect: !this.state.addHamburgerButtonEffect});
+    }
+
+    toggleSignin() {
+        // toggles signin button state for render 
+        this.setState({addSigninButtonEffect: !this.state.addSigninButtonEffect});
+    }
+
     render() {
+        // adds 'effect' class to signinbutton
+        let signinClass = ['signin-button'];
+        if (this.state.addSigninButtonEffect) {
+            signinClass.push('effect');
+        }
+
+        let hamburgerClass = ['hamburger-circle'];
+        if (this.state.addHamburgerButtonEffect) {
+            hamburgerClass.push('effect');
+        }
+
         return (
             <div className='nav-bar'>
                 {this.renderRedirect()}
-                <div className='hamburger'></div>
-                <div onClick={this.handleClick} className='signin-button'> </div>
+                <div id={'ham'} className={hamburgerClass.join(' ')}></div>
+                <div className='hamburger'
+                onMouseDownCapture={this.toggleHamburger}
+                onMouseUpCapture={this.toggleHamburger}></div>
+                <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg' 
+                onClick={this.handleClick} 
+                onMouseDown={this.toggleSignin}
+                className={signinClass.join(' ')}> </svg>
                 {/* <div onClick={this.handleClick} className='signin-button'>
                     <div className='button-image'></div>
                     <div className='button-text'>SIGN IN</div>
@@ -40,5 +77,5 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
 

@@ -241,17 +241,27 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NavBar).call(this, props));
     _this.state = {
-      redirect: false
+      redirect: false,
+      addSigninButtonEffect: false,
+      addHamburgerButtonEffect: true
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     _this.renderRedirect = _this.renderRedirect.bind(_assertThisInitialized(_this));
+    _this.toggleSignin = _this.toggleSignin.bind(_assertThisInitialized(_this));
+    _this.toggleHamburger = _this.toggleHamburger.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(NavBar, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.setTimeout(function () {
+        document.getElementById('ham').style.visibility = 'visible';
+      }, 1600);
+    }
+  }, {
     key: "handleClick",
     value: function handleClick() {
-      console.log('hi');
       this.setState({
         redirect: true
       });
@@ -260,21 +270,58 @@ function (_React$Component) {
     key: "renderRedirect",
     value: function renderRedirect() {
       if (this.state.redirect) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-          to: "/signin"
-        });
+        var that = this;
+        window.setTimeout(function () {
+          return that.props.history.push('/signin');
+        }, 500);
       }
+    }
+  }, {
+    key: "toggleHamburger",
+    value: function toggleHamburger() {
+      //toggles hamburger button state for render
+      this.setState({
+        addHamburgerButtonEffect: !this.state.addHamburgerButtonEffect
+      });
+    }
+  }, {
+    key: "toggleSignin",
+    value: function toggleSignin() {
+      // toggles signin button state for render 
+      this.setState({
+        addSigninButtonEffect: !this.state.addSigninButtonEffect
+      });
     }
   }, {
     key: "render",
     value: function render() {
+      // adds 'effect' class to signinbutton
+      var signinClass = ['signin-button'];
+
+      if (this.state.addSigninButtonEffect) {
+        signinClass.push('effect');
+      }
+
+      var hamburgerClass = ['hamburger-circle'];
+
+      if (this.state.addHamburgerButtonEffect) {
+        hamburgerClass.push('effect');
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar"
       }, this.renderRedirect(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "hamburger"
+        id: 'ham',
+        className: hamburgerClass.join(' ')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hamburger",
+        onMouseDownCapture: this.toggleHamburger,
+        onMouseUpCapture: this.toggleHamburger
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg",
         onClick: this.handleClick,
-        className: "signin-button"
+        onMouseDown: this.toggleSignin,
+        className: signinClass.join(' ')
       }, " "));
     }
   }]);
@@ -282,7 +329,7 @@ function (_React$Component) {
   return NavBar;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (NavBar);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(NavBar));
 
 /***/ }),
 
@@ -426,19 +473,29 @@ function (_React$Component) {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: 'label'
+      }, "Sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: 'sub-label'
+      }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
-        onChange: this.handleInput('email')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.handleInput('email'),
+        placeholder: 'Email'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
-        onChange: this.handleInput('password')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit
-      }, "Next"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onChange: this.handleInput('password'),
+        placeholder: 'Password'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "clickable-items-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup"
-      }, "Create Account"))));
+      }, "Create Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSubmit
+      }, "Next")))));
     }
   }]);
 
@@ -579,20 +636,27 @@ function (_React$Component) {
       }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
-        onChange: this.handleInput('username')
+        onChange: this.handleInput('username'),
+        placeholder: 'Name'
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
-        onChange: this.handleInput('email')
+        onChange: this.handleInput('email'),
+        placeholder: 'Email'
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
-        onChange: this.handleInput('password')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit
-      }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onChange: this.handleInput('password'),
+        placeholder: 'Password'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "clickable-items-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signin-link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signin"
-      }, "Sign in instead"))));
+      }, "Sign in instead")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSubmit
+      }, "Sign up")))));
     }
   }]);
 

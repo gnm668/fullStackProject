@@ -35,16 +35,27 @@ class SignupForm extends React.Component {
                     <div className='content'>
                         <p className='label'>Create your Tubie Account</p>
                         <br/>
-                        <p className='sub-label'>to continue to Tubie</p>
+                            <p className='sub-label'>to continue to Tubie</p>
                         <br/>
-                        <input type='text' value={this.state.username} onChange={this.handleInput('username')} />
+                            <input type='text' 
+                            value={this.state.username} 
+                            onChange={this.handleInput('username')} 
+                            placeholder={'Name'} />
                         <br />
-                        <input type='text' value={this.state.email} onChange={this.handleInput('email')} />
+                            <input type='text' value={this.state.email} 
+                            onChange={this.handleInput('email')} 
+                            placeholder={'Email'} />
                         <br />
-                        <input type='password' value={this.state.password} onChange={this.handleInput('password')} />
+                            <input type='password' value={this.state.password} 
+                            onChange={this.handleInput('password')} 
+                            placeholder={'Password'} />
                         <br />
-                        <button onClick={this.handleSubmit}>Sign up</button>
-                        <Link to="/signin">Sign in instead</Link>
+                        <div className='clickable-items-container'>
+                            <div className='signin-link'>
+                                <Link to="/signin">Sign in instead</Link>
+                            </div>
+                            <button onClick={this.handleSubmit}>Sign up</button>
+                        </div>
                     </div>
                 </div>
             </div>
