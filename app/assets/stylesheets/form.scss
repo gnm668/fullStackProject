@@ -42,6 +42,7 @@
 }
 
 .signin-form .content input, .login-form .content input {
+    margin: 8px;
     padding: 15px 18px;
     box-sizing: border-box;
     width: 368px;
@@ -73,7 +74,9 @@
 .clickable-items-container {
     display: flex;
     justify-content: space-between;
-    margin: 41px;
+    margin-top: 19px;
+    margin-left: 41px;
+    margin-right: 41px;
 }
 
 .clickable-items-container button:hover {
@@ -84,48 +87,92 @@
     position: relative;
 }
 
-.name-field {
-    
-}
-
-.email-field {
-
-}
-
-.password-field {
-
-}
-
-.full-name, .email, .password {
+.full-name {
     background: transparent;
     pointer-events: none;
     color: #757575;
     font-size: 19px;
-    position: relative;
+    position: absolute;
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 38px;
+    top: 26px;
     left: 61px;
     transition: .3s ease-in-out;
 }
 
-.full-name.effect, .email.effect, .password.effect {
+.email {
+    background: transparent;
+    pointer-events: none;
+    color: #757575;
+    font-size: 19px;
+    position: absolute;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 114px;
+    left: 61px;
+    transition: .3s ease-in-out;
+}
+
+.password {
+    background: transparent;
+    pointer-events: none;
+    color: #757575;
+    font-size: 19px;
+    position: absolute;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 201px;
+    left: 61px;
+    transition: .3s ease-in-out;
+}
+
+.full-name.effect{
     background: linear-gradient(to bottom, transparent 45%, #121212 0%);
     pointer-events: none;
     color: #979797;
     font-size: 13px;
-    position: relative;
+    position: absolute;
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 6px;
+    top: 1px;
     left: 61px;
     transition: .3s ease-in-out;
     box-sizing: border-box;
 }
 
+.email.effect {
+    background: linear-gradient(to bottom, transparent 45%, #121212 0%);
+    pointer-events: none;
+    color: #979797;
+    font-size: 13px;
+    position: absolute;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 89px;
+    left: 61px;
+    transition: .3s ease-in-out;
+    box-sizing: border-box;
+}
 
+.password.effect {
+    background: linear-gradient(to bottom, transparent 45%, #121212 0%);
+    pointer-events: none;
+    color: #979797;
+    font-size: 13px;
+    position: absolute;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 177px;
+    left: 61px;
+    transition: .3s ease-in-out;
+    box-sizing: border-box;
+}
 
 /* .email {
     background: transparent;

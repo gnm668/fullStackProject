@@ -1,0 +1,21 @@
+ html {
+    background-color: #1f1f1f; 
+ }
+
+ .test {
+     height: 1000px;
+ }
+
+ * input:focus {
+    outline: none;
+ }
+
+ .content-modal {
+    visibility: visible;
+    z-index: 1000;
+    background-color: rgba(77, 77, 77, 0.356);
+    width: 452px;
+    height: 586px;
+    grid-row-start: 20;
+    grid-column-start: 33;
+ }

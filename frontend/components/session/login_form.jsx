@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DelayLink from '../delayLink';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class LoginForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+        this.handleModal = this.handleModal.bind(this);
+    }   
 
     handleInput(type) {
         return (e) => {
@@ -24,6 +26,10 @@ class LoginForm extends React.Component {
         this.props.processForm(user);
         this.setState({ email: '' })
         this.setState({ password: '' })
+    }
+
+    handleModal() {
+        document.getElementById('content-modal').style.visibility = 'visible';
     }
 
     render() {
@@ -47,7 +53,7 @@ class LoginForm extends React.Component {
                         <br />
                         <div className='clickable-items-container'>
                             <div className='login-link'>
-                                <Link to="/signup">Create Account</Link>
+                                <DelayLink onClick={this.handleModal} to="/signup">Create Account</DelayLink>
                             </div>
                             <button onClick={this.handleSubmit}>Next</button>
                         </div>

@@ -257,7 +257,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       window.setTimeout(function () {
         document.getElementById('ham').style.visibility = 'visible';
-      }, 1600);
+      }, 1500);
     }
   }, {
     key: "handleClick",
@@ -313,7 +313,8 @@ function (_React$Component) {
       }, this.renderRedirect(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: 'ham',
         className: hamburgerClass.join(' ')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg",
         className: "hamburger",
         onMouseDownCapture: this.toggleHamburger,
         onMouseUpCapture: this.toggleHamburger
@@ -330,6 +331,17 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(NavBar));
+
+/***/ }),
+
+/***/ "./frontend/components/delayLink.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/components/delayLink.jsx ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/al/Desktop/FSP/Tube/frontend/components/delayLink.jsx: Support for the experimental syntax 'classProperties' isn't currently enabled (9:22):\n\n\u001b[0m \u001b[90m  7 | \u001b[39m\u001b[90m */\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mclass\u001b[39m \u001b[33mDelayLink\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mReact\u001b[39m\u001b[33m.\u001b[39m\u001b[33mComponent\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39m    static propTypes \u001b[33m=\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m        \u001b[90m/**\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m\u001b[90m         * Milliseconds to wait before registering the click.\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[90m         */\u001b[39m\u001b[0m\n\nAdd @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugins' section of your Babel config to enable transformation.\n    at Object.raise (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:6420:17)\n    at Object.expectPlugin (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:7778:18)\n    at Object.parseClassProperty (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:11013:12)\n    at Object.pushClassProperty (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10978:30)\n    at Object.parseClassMemberWithIsStatic (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10917:14)\n    at Object.parseClassMember (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10851:10)\n    at withTopicForbiddingContext (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10806:14)\n    at Object.withTopicForbiddingContext (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:9884:14)\n    at Object.parseClassBody (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10783:10)\n    at Object.parseClass (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10757:22)\n    at Object.parseExportDefaultExpression (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:11176:19)\n    at Object.parseExport (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:11088:31)\n    at Object.parseStatementContent (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10113:27)\n    at Object.parseStatement (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10009:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10585:25)\n    at Object.parseBlockBody (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:10572:10)\n    at Object.parseTopLevel (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:9940:10)\n    at Object.parse (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:11447:17)\n    at parse (/Users/al/Desktop/FSP/Tube/node_modules/@babel/parser/lib/index.js:11483:38)\n    at parser (/Users/al/Desktop/FSP/Tube/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/Users/al/Desktop/FSP/Tube/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/Users/al/Desktop/FSP/Tube/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/al/Desktop/FSP/Tube/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/al/Desktop/FSP/Tube/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ }),
 
@@ -400,6 +412,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _delayLink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../delayLink */ "./frontend/components/delayLink.jsx");
+/* harmony import */ var _delayLink__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_delayLink__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -423,6 +437,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var LoginForm =
 /*#__PURE__*/
 function (_React$Component) {
@@ -439,6 +454,7 @@ function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleModal = _this.handleModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -463,6 +479,11 @@ function (_React$Component) {
       this.setState({
         password: ''
       });
+    }
+  }, {
+    key: "handleModal",
+    value: function handleModal() {
+      document.getElementById('content-modal').style.visibility = 'visible';
     }
   }, {
     key: "render",
@@ -491,7 +512,8 @@ function (_React$Component) {
         className: "clickable-items-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_delayLink__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        onClick: this.handleModal,
         to: "/signup"
       }, "Create Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
@@ -655,25 +677,27 @@ function (_React$Component) {
     value: function render() {
       var usernameClass = ['full-name'];
 
-      if (this.state.addUsernameEffect) {
+      if (this.state.addUsernameEffect || this.state.username.length > 0) {
         usernameClass.push('effect');
       }
 
       var emailClass = ['email'];
 
-      if (this.state.addEmailEffect) {
+      if (this.state.addEmailEffect || this.state.email.length > 0) {
         emailClass.push('effect');
       }
 
       var passwordClass = ['password'];
 
-      if (this.state.addPasswordEffect) {
+      if (this.state.addPasswordEffect || this.state.password.length > 0) {
         passwordClass.push('effect');
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signin-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content-modal"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signin-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"
@@ -33409,7 +33433,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -18,7 +18,7 @@ class NavBar extends React.Component {
     componentDidMount() {
         window.setTimeout(function () {
             document.getElementById('ham').style.visibility = 'visible';
-        }, 1600);
+        }, 1500);
     }
 
     handleClick() {
@@ -61,9 +61,10 @@ class NavBar extends React.Component {
             <div className='nav-bar'>
                 {this.renderRedirect()}
                 <div id={'ham'} className={hamburgerClass.join(' ')}></div>
-                <div className='hamburger'
+                <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg' 
+                className='hamburger'
                 onMouseDownCapture={this.toggleHamburger}
-                onMouseUpCapture={this.toggleHamburger}></div>
+                onMouseUpCapture={this.toggleHamburger}></svg>
                 <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg' 
                 onClick={this.handleClick} 
                 onMouseDown={this.toggleSignin}
@@ -72,6 +73,7 @@ class NavBar extends React.Component {
                     <div className='button-image'></div>
                     <div className='button-text'>SIGN IN</div>
                 </div> */}
+                
             </div>
         );
     }

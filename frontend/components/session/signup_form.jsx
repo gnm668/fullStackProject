@@ -52,22 +52,23 @@ class SignupForm extends React.Component {
     render() {
 
         let usernameClass = ['full-name'];
-        if (this.state.addUsernameEffect) {
+        if (this.state.addUsernameEffect || this.state.username.length > 0) {
             usernameClass.push('effect');
         }
 
         let emailClass = ['email'];
-        if (this.state.addEmailEffect) {
+        if (this.state.addEmailEffect || this.state.email.length > 0) {
             emailClass.push('effect');
         }
 
         let passwordClass = ['password'];
-        if (this.state.addPasswordEffect) {
+        if (this.state.addPasswordEffect || this.state.password.length > 0) {
             passwordClass.push('effect');
         }
 
         return (
             <div className='signin-form-container'>
+                <div className='content-modal'></div>
                 <div className='signin-form'>
                     <div className='content'>
                         <p className='label'>Create your Tubie Account</p>
