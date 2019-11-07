@@ -31,7 +31,7 @@ class NavBar extends React.Component {
     renderRedirect() {
         if (this.state.redirect) {
             let that = this;
-            window.setTimeout(() => that.props.history.push('/signin'), 500);
+            window.setTimeout(() => that.props.history.push('/signin'), 300);
         }
     }
 

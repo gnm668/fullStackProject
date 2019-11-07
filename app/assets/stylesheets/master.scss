@@ -6,16 +6,18 @@
      height: 1000px;
  }
 
- * input:focus {
+ * input:focus, * button:focus {
     outline: none;
  }
 
  .content-modal {
-    visibility: visible;
+    opacity: 0%;
+    pointer-events: none;
     z-index: 1000;
-    background-color: rgba(77, 77, 77, 0.356);
+    background-color: rgba(94, 94, 94, 0.425);
     width: 452px;
     height: 586px;
     grid-row-start: 20;
     grid-column-start: 33;
+    border-radius: 5px;
  }

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import DelayLink from 'react-delay-link';
+//installed library for delaying native Link element
+import { LinearProgress } from '@material-ui/core';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -10,13 +12,17 @@ class SignupForm extends React.Component {
             password: '',
             addUsernameEffect: false,
             addEmailEffect: false,
-            addPasswordEffect: false
+            addPasswordEffect: false,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.toggleUsername = this.toggleUsername.bind(this);
         this.toggleEmail = this.toggleEmail.bind(this);
         this.togglePassword = this.togglePassword.bind(this);
+        this.handleModal = this.handleModal.bind(this);
+        this.handleLoading = this.handleLoading.bind(this);
+        this.handleTransition = this.handleTransition.bind(this);
+
     }
 
     toggleUsername() {
@@ -32,6 +38,20 @@ class SignupForm extends React.Component {
     togglePassword() {
         // toggles signin button state for render 
         this.setState({ addPasswordEffect: !this.state.addPasswordEffect });
+    }
+
+    handleLoading() {
+        document.getElementById('signup-load').style.opacity = '100%';
+    }
+
+    handleModal() {
+        //alters modal visibility on DelayLink action
+        document.getElementsByClassName('content-modal')[0].style.opacity = '100%';
+    }
+
+    handleTransition() {
+        this.handleModal();
+        this.handleLoading();
     }
 
     handleInput(type) {
@@ -68,6 +88,7 @@ class SignupForm extends React.Component {
 
         return (
             <div className='signin-form-container'>
+                <LinearProgress id='signup-load'/>
                 <div className='content-modal'></div>
                 <div className='signin-form'>
                     <div className='content'>
@@ -107,7 +128,7 @@ class SignupForm extends React.Component {
                         <br />
                         <div className='clickable-items-container'>
                             <div className='signin-link'>
-                                <Link to="/signin">Sign in instead</Link>
+                                <DelayLink className='a' clickAction={this.handleTransition} delay={300} to="/signin">Sign in instead</DelayLink>
                             </div>
                             <button onClick={this.handleSubmit}>Sign up</button>
                         </div>

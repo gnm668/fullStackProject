@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_token
 
+    has_many :videos
+
     def self.find_by_creds(email, password)
         user = User.find_by(email: email)
         return nil unless user

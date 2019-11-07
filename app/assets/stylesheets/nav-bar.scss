@@ -17,12 +17,12 @@
 }
 
 .hamburger {
+    background-image: url(icon-hamburger-menu.svg);
     z-index: 3;
     grid-row: 4;
     grid-column: 2;
     width: 20px;
     height: 20px;
-    background-image: url(icon-hamburger-menu.svg);
 }
 
 .hamburger-circle {
