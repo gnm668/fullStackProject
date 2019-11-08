@@ -22,7 +22,7 @@ class Api::VideosController < ApplicationController
         if @video.update(video_params)
             render :show
         else
-            render :json @video.errors.full_messages, status: 422
+            render json: @video.errors.full_messages, status: 422
         end
     end
 
@@ -31,7 +31,7 @@ class Api::VideosController < ApplicationController
         if @video.destroy
             render :show
         else
-            render :json @video.errors.full_messages, status: 422
+            render json: @video.errors.full_messages, status: 422
         end
     end
 
