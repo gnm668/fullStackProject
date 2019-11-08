@@ -8,9 +8,9 @@ import { Switch } from 'react-router-dom';
 const App = () => (
     <div>
         <Switch>
+            <Route exact={true} path='/' component={Main} />
             <Route exact={true} path='/signin' component={LoginFormContainer} />
             <Route exact={true} path='/signup' component={SignupFormContainer} />
-            <Route exact={true} path='/' component={Main} />
         </Switch>
     </div>
 );
