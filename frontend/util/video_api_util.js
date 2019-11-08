@@ -5,9 +5,9 @@ export const fetchVideos = () => {
     });
 };
 
-export const fetchVideo = video => {
+export const fetchVideo = videoId => {
     return $.ajax({
-        url: `api/videos${video.id}`
+        url: `api/videos/${videoId}`
     });
 };
 

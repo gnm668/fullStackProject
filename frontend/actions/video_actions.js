@@ -4,22 +4,59 @@ export const RECEIVE_ALL_VIDEOS = 'RECEIVE_ALL_VIDEOS';
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
 export const REMOVE_VIDEO = 'REMOVE_VIDEO';
 
-const receieve_all_videos = videos => {
+const receiveAllVideos = videos => {
     return {
         type: RECEIVE_ALL_VIDEOS,
         videos
     };
 };
 
-const receive_video = video => {
+const receiveVideo = video => {
     return {
         type: RECEIVE_VIDEO,
         video
     };
 };
 
-const remove_video = videoId => {
-    type: REMOVE_VIDEO
-    videoId
+const removeVideo = videoId => {
+    return {
+        type: REMOVE_VIDEO,
+        videoId
+    }
+};
+
+export const fetchVideos = () => dispatch => {
+    return (
+        APIUtil.fetchVideos()
+            .then(videos => dispatch(receiveAllVideos(videos)))
+    );
+};
+
+export const fetchVideo = videoId => dispatch => {
+    return (
+        APIUtil.fetchVideo(videoId)
+            .then(video => dispatch(receiveVideo(video)))
+    );
+};
+
+export const createVideo = video => dispatch => {
+    return (
+        APIUtil.createVideo(video)
+            .then(video => dispatch(receiveVideo(video)))
+    );
+};
+
+export const updateVideo = video => dispatch => {
+    return (
+        APIUtil.updateVideo(video)
+            .then(video => dispatch(receiveVideo(video)))
+    );
+};
+
+export const deleteVideo = videoId => dispatch => {
+    return (
+        APIUtil.deleteVideo(videoId)
+            .then(() => dispatch(removeVideo(videoId)))
+    );
 };
 

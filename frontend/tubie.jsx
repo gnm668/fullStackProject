@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 //test
-import { logoutUser } from './actions/session_actions'
+import { logoutUser, createUser } from './actions/session_actions'
+import { 
+    fetchVideo,
+    fetchVideos,
+    createVideo,
+    updateVideo,
+    deleteVideo, 
+} from './actions/video_actions';
 //test
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -21,10 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore();
     }
 //test
+    window.fetchVideo = fetchVideo;
+    window.fetchVideos = fetchVideos;
+    window.createVideo = createVideo;
+    window.updateVideo = updateVideo;
+    window.deleteVideo = deleteVideo;
+
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.store = store;
     window.logoutUser = logoutUser;
+    window.createUser = createUser;
     window.store.getState = store.getState;
 //test
 
