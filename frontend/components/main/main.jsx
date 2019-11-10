@@ -1,18 +1,28 @@
 import React from 'react';
 import NavBar from '../bars/nav_bar';
+import { Link } from 'react-router-dom';
 
-const main = () => (
-    <div>
-        <header>
-            <NavBar />
-        </header>
+class Main extends React.Component {
+    componentDidMount() {
+        this.props.fetchVideos();
+    }
 
-        {/* test div */}
-        <div className="test">
-        </div>
-        {/* test div WILL NEED CURRENT USER FROM GREETING 
-        COMPONENT LATER*/} 
-    </div>
-);
+    render() {
+        return (
+            <div>
+                <header>
+                    <NavBar />
+                </header>
 
-export default main;
+                {/* test div */}
+                <div className="test">
+                    <Link to='/videos/1'>test show</Link>
+                </div>
+                {/* test div WILL NEED CURRENT USER FROM GREETING 
+                COMPONENT LATER*/} 
+            </div>
+        );
+    }  
+}
+
+export default Main;
