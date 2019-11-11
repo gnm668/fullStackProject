@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
-import Main from './main';
+import MainFeed from './main_feed';
 import { fetchVideos } from '../../actions/video_actions';
 
-const mSTP = state => { return {
+const mSTP = state => ({
     videos: Object.values(state.entities.videos)
-}};
+});
 
 const mDTP = dispatch => ({
     fetchVideos: () => dispatch(fetchVideos())
 });
 
-export default connect(mSTP, mDTP)(Main);
-
+export default connect(mSTP, mDTP)(MainFeed);

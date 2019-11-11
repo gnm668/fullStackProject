@@ -10,7 +10,7 @@ class VideoShow extends React.Component {
         // const mediaUrl = this.props.video.mediaUrl;
         return (    
             <div>
-                <video height='700' width='500' src={video.mediaUrl} controls></video>
+                <video height='300' width='300' src={video.mediaUrl} controls></video>
                 <div>
                     <p>{video.description}</p>
                 </div>
