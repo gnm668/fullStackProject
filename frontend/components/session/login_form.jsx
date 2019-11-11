@@ -80,8 +80,9 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        this.setState({ email: '' })
-        this.setState({ password: '' })
+        this.setState({ email: '' });
+        this.setState({ password: '' });
+        this.props.history.push('/');
     }
 
     render() {
@@ -141,7 +142,7 @@ class LoginForm extends React.Component {
                                 onChange={this.handleInput('password')}
                                 placeholder={'Password'} />
                             <br />
-                            <div className='clickable-items-container'>
+                            <div className='clickable-items-container-2'>
                                 <button onClick={this.handleSubmit}>Next</button>
                             </div>
                         </div>

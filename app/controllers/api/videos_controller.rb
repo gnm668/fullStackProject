@@ -6,7 +6,6 @@ class Api::VideosController < ApplicationController
 
     def create
         @video = Video.new(video_params)
-        debugger
         if @video.save
             render :show
         else

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../bars/nav_bar';
+import NavBarContainer from '../bars/nav_bar_container';
 import { Link } from 'react-router-dom';
 import MainFeedContainer from '../feeds/main_feed_container';
 
@@ -9,7 +9,7 @@ class Main extends React.Component {
         return (
             <div>
                 <header>
-                    <NavBar />
+                    <NavBarContainer />
                     <MainFeedContainer />
                 </header>
 

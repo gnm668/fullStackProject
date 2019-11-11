@@ -6,12 +6,14 @@ import videoShowContainer from '../video/video_show_container';
 class MainFeed extends React.Component {
     componentDidMount() {
         this.props.fetchVideos();
+        const videos = document.getElementsByTagName('video');
+        
     }
 
     render() {
         const { videos } = this.props;
         return (
-            <div>
+            <div className='main-feed'>
                 <Route exact={true} 
                 path='/videos/:videoId' 
                 component={videoShowContainer} />

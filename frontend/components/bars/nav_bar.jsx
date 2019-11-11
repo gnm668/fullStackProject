@@ -1,17 +1,16 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirect: false,
             addSigninButtonEffect: false,
             addHamburgerButtonEffect: true
         };
-        this.handleClick = this.handleClick.bind(this);
+
         this.renderRedirect = this.renderRedirect.bind(this);
         this.toggleSignin = this.toggleSignin.bind(this);
+        this.logoutUser = this.logoutUser.bind(this);
         this.toggleHamburger = this.toggleHamburger.bind(this);
     }
 
@@ -21,18 +20,13 @@ class NavBar extends React.Component {
         }, 1500);
     }
 
-    handleClick() {
-        this.setState({
-            redirect: true
-        });
-        
+    renderRedirect() {
+        let that = this;
+        window.setTimeout(() => that.props.history.push('/signin'), 300); 
     }
 
-    renderRedirect() {
-        if (this.state.redirect) {
-            let that = this;
-            window.setTimeout(() => that.props.history.push('/signin'), 300);
-        }
+    logoutUser() {
+        this.props.logoutUser();
     }
 
     toggleHamburger(){
@@ -46,38 +40,50 @@ class NavBar extends React.Component {
     }
 
     render() {
+
         // adds 'effect' class to signinbutton
         let signinClass = ['signin-button'];
         if (this.state.addSigninButtonEffect) {
             signinClass.push('effect');
         }
-
+        //adds 'effect' cass to hamburger button 
         let hamburgerClass = ['hamburger-circle'];
         if (this.state.addHamburgerButtonEffect) {
             hamburgerClass.push('effect');
         }
 
+        let button = null;
+        if (!this.props.currentUser) {
+            button = <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg'
+                onClick={this.renderRedirect}
+                onMouseDown={this.toggleSignin}
+                className={signinClass.join(' ')}> </svg>
+        } else {
+            button = <div className='signout-button'
+                        onClick={this.logoutUser} >
+                        <p>Sign Out</p>
+                    </div>
+        }
+
         return (
             <div className='nav-bar'>
-                {this.renderRedirect()}
                 <div id={'ham'} className={hamburgerClass.join(' ')}></div>
                 <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg' 
                 className='hamburger'
                 onMouseDownCapture={this.toggleHamburger}
                 onMouseUpCapture={this.toggleHamburger}></svg>
-                <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg' 
-                onClick={this.handleClick} 
+
+                {/* <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg' 
+                onClick={this.renderRedirect} 
                 onMouseDown={this.toggleSignin}
-                className={signinClass.join(' ')}> </svg>
-                {/* <div onClick={this.handleClick} className='signin-button'>
-                    <div className='button-image'></div>
-                    <div className='button-text'>SIGN IN</div>
-                </div> */}
-                
+                className={signinClass.join(' ')}> </svg> */}
+
+                {button}
+
             </div>
         );
     }
 }
 
-export default withRouter(NavBar);
+export default NavBar;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import DelayLink from 'react-delay-link';
+// import { withRouter } from 'react-router-dom'; 
 //installed library for delaying native Link element
 import { LinearProgress } from '@material-ui/core';
 
@@ -64,9 +65,10 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        this.setState({ username: '' })
-        this.setState({ email: '' })
-        this.setState({ password: '' })
+        this.setState({ username: '' });
+        this.setState({ email: '' });
+        this.setState({ password: '' });
+        this.props.history.push('/');
     }
 
     render() {

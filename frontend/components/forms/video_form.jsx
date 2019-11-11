@@ -30,7 +30,7 @@ class VideoForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
-        formData.append('video[description]', this.state.title);
+        formData.append('video[description]', this.state.description);
         formData.append('video[user_id]', 1);
         formData.append('video[media]', this.state.videoFile);
         this.props.createVideo(formData);
@@ -39,12 +39,15 @@ class VideoForm extends React.Component {
     render() {
         if (!this.state.videoFile) {
             return (
-                <input type="file"
-                onChange={this.handleFile} />
+                <div className='video-form-file'>
+                    <input type="file"
+                    accept=".mov, .mp4"
+                    onChange={this.handleFile} />
+                </div>
             );
         } else {
             return (
-              <div>
+              <div className='video-form-text'>
                     <form onSubmit={this.handleSubmit} >
                         <input type='text'
                             value={this.state.title}

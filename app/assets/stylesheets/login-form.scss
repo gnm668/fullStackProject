@@ -46,7 +46,7 @@
     transition: .2s cubic-bezier(0, -0.02, 0.96, 1);
 }
 
-.clickable-items-container button:hover {
+.clickable-items-container button:hover, .clickable-items-container-2 button:hover {
     cursor: pointer;
     background-color: #064fad;
     border: 1px solid #064fad;
@@ -87,6 +87,10 @@
     font-size: 16px;
 }
 
+.login-form .content .sub-label {
+    padding-bottom: 11px;
+}
+
 .clickable-items-container {
     display: flex;
     justify-content: space-between;
@@ -95,6 +99,13 @@
     margin-right: 41px;
 }
 
+.clickable-items-container-2 {
+    display: flex;
+    float: right;
+    margin-top: 19px;
+    margin-left: 41px;
+    margin-right: 41px;
+}
 
 .input-container {
     position: relative;
