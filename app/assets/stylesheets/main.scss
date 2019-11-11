@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    margin-top: 55px;
+}
+
+.main .sidebar-placehodler {
+    display: block;
+    min-height: 1000px;
+    width: 240px;
+    background-color: pink;
+    color: #ffffff;
+}
+
+.main .main-feed {
+    display: flex;
+    height: 100%;
+    margin-left: 148px;
+    margin-top: 48px;
+}
+
+.main video {
+    object-fit: fill;
+}

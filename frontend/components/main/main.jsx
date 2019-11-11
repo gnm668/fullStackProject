@@ -10,16 +10,11 @@ class Main extends React.Component {
             <div>
                 <header>
                     <NavBarContainer />
-                    <MainFeedContainer />
                 </header>
-
-                {/* test div */}
-                <div className="test">
-                    <Link to='/videos/1'>test show</Link>
-                    <Link to='/videos/new'>test form</Link>
+                <div className='main'>
+                    <div className='sidebar-placehodler'>THIS WILL BE A SIDEBAR EVENTUALLY</div>
+                    <MainFeedContainer />
                 </div>
-                {/* test div WILL NEED CURRENT USER FROM GREETING 
-                COMPONENT LATER*/} 
             </div>
         );
     }  

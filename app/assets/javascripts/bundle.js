@@ -338,6 +338,7 @@ function (_React$Component) {
       addHamburgerButtonEffect: true
     };
     _this.renderRedirect = _this.renderRedirect.bind(_assertThisInitialized(_this));
+    _this.uploadRedirect = _this.uploadRedirect.bind(_assertThisInitialized(_this));
     _this.toggleSignin = _this.toggleSignin.bind(_assertThisInitialized(_this));
     _this.logoutUser = _this.logoutUser.bind(_assertThisInitialized(_this));
     _this.toggleHamburger = _this.toggleHamburger.bind(_assertThisInitialized(_this));
@@ -358,6 +359,11 @@ function (_React$Component) {
       window.setTimeout(function () {
         return that.props.history.push('/signin');
       }, 300);
+    }
+  }, {
+    key: "uploadRedirect",
+    value: function uploadRedirect() {
+      this.props.history.push('/videos/new');
     }
   }, {
     key: "logoutUser",
@@ -416,6 +422,8 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "left-side"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: 'ham',
         className: hamburgerClass.join(' ')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -423,7 +431,12 @@ function (_React$Component) {
         className: "hamburger",
         onMouseDownCapture: this.toggleHamburger,
         onMouseUpCapture: this.toggleHamburger
-      }), button);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "right-side"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "upload-button",
+        onClick: this.uploadRedirect
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Up")), button));
     }
   }]);
 
@@ -785,13 +798,11 @@ function (_React$Component) {
   _createClass(Main, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bars_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_feeds_main_feed_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "test"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/videos/1"
-      }, "test show"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/videos/new"
-      }, "test form")));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bars_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sidebar-placehodler"
+      }, "THIS WILL BE A SIDEBAR EVENTUALLY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_feeds_main_feed_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
     }
   }]);
 

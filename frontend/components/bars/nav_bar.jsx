@@ -9,6 +9,7 @@ class NavBar extends React.Component {
         };
 
         this.renderRedirect = this.renderRedirect.bind(this);
+        this.uploadRedirect = this.uploadRedirect.bind(this);
         this.toggleSignin = this.toggleSignin.bind(this);
         this.logoutUser = this.logoutUser.bind(this);
         this.toggleHamburger = this.toggleHamburger.bind(this);
@@ -23,6 +24,10 @@ class NavBar extends React.Component {
     renderRedirect() {
         let that = this;
         window.setTimeout(() => that.props.history.push('/signin'), 300); 
+    }
+
+    uploadRedirect() {
+        this.props.history.push('/videos/new');
     }
 
     logoutUser() {
@@ -67,19 +72,24 @@ class NavBar extends React.Component {
 
         return (
             <div className='nav-bar'>
-                <div id={'ham'} className={hamburgerClass.join(' ')}></div>
-                <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg' 
-                className='hamburger'
-                onMouseDownCapture={this.toggleHamburger}
-                onMouseUpCapture={this.toggleHamburger}></svg>
+                <div className='left-side'>
+                    <div id={'ham'} className={hamburgerClass.join(' ')}>
+                    </div>
 
-                {/* <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg' 
-                onClick={this.renderRedirect} 
-                onMouseDown={this.toggleSignin}
-                className={signinClass.join(' ')}> </svg> */}
+                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg' 
+                    className='hamburger'
+                    onMouseDownCapture={this.toggleHamburger}
+                    onMouseUpCapture={this.toggleHamburger}>
+                    </svg>
+                </div>
 
-                {button}
-
+                <div className='right-side'>
+                    <div className='upload-button'
+                    onClick={this.uploadRedirect} >
+                        <p>Up</p>
+                    </div>
+                    {button}
+                </div>
             </div>
         );
     }
