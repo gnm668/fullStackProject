@@ -26,6 +26,10 @@ class SignupForm extends React.Component {
 
     }
 
+    componentDidMount() {
+        this.props.clearErrors()
+    }
+
     toggleUsername() {
         //toggles full name input state for render
         this.setState({ addUsernameEffect: !this.state.addUsernameEffect });
@@ -65,10 +69,18 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        this.setState({ username: '' });
-        this.setState({ email: '' });
-        this.setState({ password: '' });
-        this.props.history.push('/');
+    }
+
+    renderErrors() {
+        return (
+            <div>
+                {this.props.errors.map((error, i) => (
+                    <div key={`error-${i}`} className='signup-errors'>
+                        {error}
+                    </div>
+                ))}
+            </div>
+        );
     }
 
     render() {
@@ -128,6 +140,7 @@ class SignupForm extends React.Component {
                                 </div>
                             </div>
                         <br />
+                        {this.renderErrors()}
                         <div className='clickable-items-container'>
                             <div className='signin-link'>
                                 <DelayLink className='a' clickAction={this.handleTransition} delay={300} to="/signin">Sign in instead</DelayLink>

@@ -12,7 +12,7 @@ class VideoFeedItem extends React.Component {
     previewPlay(e) {
         e.currentTarget.play();
         e.currentTarget.addEventListener('timeupdate', function () {
-            if (this.currentTime >= 10) {
+            if (this.currentTime >= 5) {
                 this.pause();
             }
         })
@@ -33,7 +33,7 @@ class VideoFeedItem extends React.Component {
                 onMouseOver={this.previewPlay}
                 onMouseLeave={this.previewPause}
                 muted='muted'
-                height='118' width='210' src={video.mediaUrl} ></video>
+                height='200' width='350' src={video.mediaUrl} ></video>
                 <p>{video.title}</p>
                 </Link>
             </div>

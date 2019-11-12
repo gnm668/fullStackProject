@@ -9,6 +9,7 @@ class NavBar extends React.Component {
         };
 
         this.renderRedirect = this.renderRedirect.bind(this);
+        this.homeRedirect = this.homeRedirect.bind(this);
         this.uploadRedirect = this.uploadRedirect.bind(this);
         this.toggleSignin = this.toggleSignin.bind(this);
         this.logoutUser = this.logoutUser.bind(this);
@@ -28,6 +29,10 @@ class NavBar extends React.Component {
 
     uploadRedirect() {
         this.props.history.push('/videos/new');
+    }
+
+    homeRedirect() {
+        this.props.history.push('/');
     }
 
     logoutUser() {
@@ -81,13 +86,21 @@ class NavBar extends React.Component {
                     onMouseDownCapture={this.toggleHamburger}
                     onMouseUpCapture={this.toggleHamburger}>
                     </svg>
+
+                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg'
+                        className='logo'
+                        onClick={this.homeRedirect}
+                    />
                 </div>
 
                 <div className='right-side'>
-                    <div className='upload-button'
+                    {/* <div className='upload-button'
                     onClick={this.uploadRedirect} >
                         <p>Up</p>
-                    </div>
+                    </div> */}
+                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
+                    className='upload-button'
+                    onClick={this.uploadRedirect} />
                     {button}
                 </div>
             </div>

@@ -23,11 +23,15 @@ export const receiveErrors = (errors) => ({
 });
 
 export const createUser = user => dispatch => signUp(user)
-    .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors)));
+    .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const loginUser = user => dispatch => login(user)
-    .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors)));
+    .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const logoutUser = () => dispatch => logout()
     .then(() => dispatch(logoutCurrentUser()));
+
+export const clearErrors = () => dispatch => (
+    dispatch(receiveErrors([]))
+);
 

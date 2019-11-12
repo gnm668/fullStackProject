@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, createUser, loginUser, logoutUser */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, createUser, loginUser, logoutUser, clearErrors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -104,6 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createUser", function() { return createUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginUser", function() { return loginUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutUser", function() { return logoutUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearErrors", function() { return clearErrors; });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
 
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -131,7 +132,7 @@ var createUser = function createUser(user) {
     return Object(_util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signUp"])(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (errors) {
-      return dispatch(receiveErrors(errors));
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -140,7 +141,7 @@ var loginUser = function loginUser(user) {
     return Object(_util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"])(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (errors) {
-      return dispatch(receiveErrors(errors));
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -149,6 +150,11 @@ var logoutUser = function logoutUser() {
     return Object(_util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"])().then(function () {
       return dispatch(logoutCurrentUser());
     });
+  };
+};
+var clearErrors = function clearErrors() {
+  return function (dispatch) {
+    return dispatch(receiveErrors([]));
   };
 };
 
@@ -284,6 +290,9 @@ var App = function App() {
     exact: true,
     path: "/videos/:videoId",
     component: _video_video_show_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/",
+    component: _main_main__WEBPACK_IMPORTED_MODULE_2__["default"]
   })));
 };
 
@@ -338,6 +347,7 @@ function (_React$Component) {
       addHamburgerButtonEffect: true
     };
     _this.renderRedirect = _this.renderRedirect.bind(_assertThisInitialized(_this));
+    _this.homeRedirect = _this.homeRedirect.bind(_assertThisInitialized(_this));
     _this.uploadRedirect = _this.uploadRedirect.bind(_assertThisInitialized(_this));
     _this.toggleSignin = _this.toggleSignin.bind(_assertThisInitialized(_this));
     _this.logoutUser = _this.logoutUser.bind(_assertThisInitialized(_this));
@@ -364,6 +374,11 @@ function (_React$Component) {
     key: "uploadRedirect",
     value: function uploadRedirect() {
       this.props.history.push('/videos/new');
+    }
+  }, {
+    key: "homeRedirect",
+    value: function homeRedirect() {
+      this.props.history.push('/');
     }
   }, {
     key: "logoutUser",
@@ -431,12 +446,17 @@ function (_React$Component) {
         className: "hamburger",
         onMouseDownCapture: this.toggleHamburger,
         onMouseUpCapture: this.toggleHamburger
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg",
+        className: "logo",
+        onClick: this.homeRedirect
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-side"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg",
         className: "upload-button",
         onClick: this.uploadRedirect
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Up")), button));
+      }), button));
     }
   }]);
 
@@ -911,13 +931,16 @@ function (_React$Component) {
   }
 
   _createClass(LoginForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.clearErrors();
+    }
+  }, {
     key: "toggleEmailInput",
     value: function toggleEmailInput() {
-      if (this.state.email.length > 0) {
-        this.setState({
-          emailInput: !this.state.emailInput
-        });
-      }
+      this.setState({
+        emailInput: !this.state.emailInput
+      });
     }
   }, {
     key: "handleLoading",
@@ -965,8 +988,7 @@ function (_React$Component) {
     key: "handleEmailInput",
     value: function handleEmailInput() {
       if (this.state.email.length > 0) {
-        this.handleTransition(); // $(".content").animate({ width: 'toggle' }, 600);
-
+        this.handleTransition();
         window.setTimeout(this.clearTransition, 280);
         window.setTimeout(this.toggleEmailInput, 300);
       }
@@ -977,13 +999,16 @@ function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
-      this.setState({
-        email: ''
-      });
-      this.setState({
-        password: ''
-      });
-      this.props.history.push('/');
+    }
+  }, {
+    key: "renderErrors",
+    value: function renderErrors() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.errors.map(function (error, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: "error-".concat(i),
+          className: "login-error"
+        }, error);
+      }));
     }
   }, {
     key: "render",
@@ -1008,7 +1033,7 @@ function (_React$Component) {
           value: this.state.email,
           onChange: this.handleInput('email'),
           placeholder: 'Email'
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "clickable-items-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-link"
@@ -1048,7 +1073,7 @@ function (_React$Component) {
           value: this.state.password,
           onChange: this.handleInput('password'),
           placeholder: 'Password'
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "clickable-items-container-2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.handleSubmit
@@ -1084,6 +1109,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
+    errors: state.errors.session,
     formName: 'Login!'
   };
 };
@@ -1092,6 +1118,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["loginUser"])(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearErrors"])());
     }
   };
 };
@@ -1170,6 +1199,11 @@ function (_React$Component) {
   }
 
   _createClass(SignupForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.clearErrors();
+    }
+  }, {
     key: "toggleUsername",
     value: function toggleUsername() {
       //toggles full name input state for render
@@ -1225,16 +1259,16 @@ function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
-      this.setState({
-        username: ''
-      });
-      this.setState({
-        email: ''
-      });
-      this.setState({
-        password: ''
-      });
-      this.props.history.push('/');
+    }
+  }, {
+    key: "renderErrors",
+    value: function renderErrors() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.errors.map(function (error, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: "error-".concat(i),
+          className: "signup-errors"
+        }, error);
+      }));
     }
   }, {
     key: "render",
@@ -1303,7 +1337,7 @@ function (_React$Component) {
         onChange: this.handleInput('password'),
         onFocus: this.togglePassword,
         onBlur: this.togglePassword
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "clickable-items-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signin-link"
@@ -1345,6 +1379,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
+    errors: state.errors.session,
     formName: 'Sign Up!'
   };
 };
@@ -1353,6 +1388,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["createUser"])(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearErrors"])());
     }
   };
 };
@@ -1415,7 +1453,7 @@ function (_React$Component) {
     value: function previewPlay(e) {
       e.currentTarget.play();
       e.currentTarget.addEventListener('timeupdate', function () {
-        if (this.currentTime >= 10) {
+        if (this.currentTime >= 5) {
           this.pause();
         }
       });
@@ -1438,8 +1476,8 @@ function (_React$Component) {
         onMouseOver: this.previewPlay,
         onMouseLeave: this.previewPause,
         muted: "muted",
-        height: "118",
-        width: "210",
+        height: "200",
+        width: "350",
         src: video.mediaUrl
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, video.title)));
     }
@@ -1664,6 +1702,9 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return state;
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
+      return [];
 
     default:
       return state;

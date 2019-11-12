@@ -11,9 +11,10 @@
 }
 
 .left-side {
+    height: 100%;
     display: grid;
-    grid-template-rows: repeat(4, 25%);
-    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(20, 5%);
+    grid-template-columns: repeat(20, 5%);
 }
 
 .hamburger:hover {
@@ -25,7 +26,8 @@
 .hamburger {
     background-image: url(icon-hamburger-menu.svg);
     z-index: 3;
-    grid-column: 4;
+    grid-column: 7;
+    grid-row: 2;
     width: 20px;
     height: 20px;
     margin-top: 12px;
@@ -35,8 +37,8 @@
 
 .hamburger-circle {
     z-index: 3;
-    grid-column: 4;
-    grid-row: 2;
+    grid-column: 7;
+    grid-row: 6;
     background-color: #3e3e3e;
     width: 20px;
     height: 20px;
@@ -99,20 +101,33 @@
 }
 
 .upload-button {
-    height: 45px;
-    width: 45px;
+    background-image: url(video_call_24px.svg);
+    height: 36px;
+    width: 36px;
     margin-right: 24px;
     border-radius: 50%;
-    background-color: rgb(175, 175, 175);
     display: flex;
 }
 
-.upload-button p {
-    margin: 12px;
-    margin-top: 14px;
-    font-family: arial;
-    color: #ffffff;
+.logo:hover {
+    cursor: pointer;
 }
+
+.logo {
+    grid-column-start: 18;
+    grid-row: 4;
+    background-image: url(you-tube-2017-icon-seeklogo.com-4.svg);
+    z-index: 3;
+    width: 36px;
+    height: 36px;
+}
+
+// .upload-button p {
+//     margin: 12px;
+//     margin-top: 14px;
+//     font-family: arial;
+//     color: #ffffff;
+// }
 
 /* .signin-button {
     display: flex;

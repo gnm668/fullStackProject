@@ -10,7 +10,7 @@ class LoginForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            emailInput: false
+            emailInput: false,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,10 +28,12 @@ class LoginForm extends React.Component {
         this.clearTransition = this.clearTransition.bind(this);
     }   
 
+    componentDidMount() {
+        this.props.clearErrors()
+    }
+
     toggleEmailInput() {
-        if (this.state.email.length > 0) {
-            this.setState({ emailInput: !this.state.emailInput });
-        }
+        this.setState({ emailInput: !this.state.emailInput });
     }
 
     handleLoading() {
@@ -70,7 +72,6 @@ class LoginForm extends React.Component {
     handleEmailInput() {
         if (this.state.email.length > 0) {
             this.handleTransition();
-            // $(".content").animate({ width: 'toggle' }, 600);
             window.setTimeout(this.clearTransition, 280)
             window.setTimeout(this.toggleEmailInput, 300);
         }
@@ -80,9 +81,18 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        this.setState({ email: '' });
-        this.setState({ password: '' });
-        this.props.history.push('/');
+    }
+
+    renderErrors() {
+        return (
+            <div>
+                {this.props.errors.map((error, i) => (
+                    <div key={`error-${i}`} className='login-error'>
+                        {error}
+                    </div>
+                ))}
+            </div>
+        );
     }
 
     render() {
@@ -102,6 +112,7 @@ class LoginForm extends React.Component {
                             onChange={this.handleInput('email')} 
                             placeholder={'Email'}/>
                         <br/>
+                        {this.renderErrors()}
                         <div className='clickable-items-container'>
                             <div className='login-link'>
                                 <DelayLink className='a' 
@@ -142,6 +153,7 @@ class LoginForm extends React.Component {
                                 onChange={this.handleInput('password')}
                                 placeholder={'Password'} />
                             <br />
+                            {this.renderErrors()}
                             <div className='clickable-items-container-2'>
                                 <button onClick={this.handleSubmit}>Next</button>
                             </div>

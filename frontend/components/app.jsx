@@ -18,6 +18,7 @@ const App = () => (
             <AuthRoute exact={true} path='/signup' component={SignupFormContainer} />
             <ProtectedRoute exact={true} path='/videos/new' component={videoFormContainer} />
             <Route exact={true} path='/videos/:videoId' component={videoShowContainer} />
+            <Route path='/' component={Main} />
         </Switch>
     </div>
 );
