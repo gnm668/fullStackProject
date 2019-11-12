@@ -1189,6 +1189,7 @@ function (_React$Component) {
       addPasswordEffect: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.guestLogin = _this.guestLogin.bind(_assertThisInitialized(_this));
     _this.toggleUsername = _this.toggleUsername.bind(_assertThisInitialized(_this));
     _this.toggleEmail = _this.toggleEmail.bind(_assertThisInitialized(_this));
     _this.togglePassword = _this.togglePassword.bind(_assertThisInitialized(_this));
@@ -1259,6 +1260,15 @@ function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
+    }
+  }, {
+    key: "guestLogin",
+    value: function guestLogin() {
+      var user = {
+        email: 'test1',
+        password: '123456'
+      };
+      this.props.loginUser(user);
     }
   }, {
     key: "renderErrors",
@@ -1348,7 +1358,10 @@ function (_React$Component) {
         to: "/signin"
       }, "Sign in instead")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
-      }, "Sign up")))));
+      }, "Sign up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "guest-login",
+        onClick: this.guestLogin
+      }, "Guest Login"))));
     }
   }]);
 
@@ -1388,6 +1401,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["createUser"])(user));
+    },
+    loginUser: function loginUser(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["loginUser"])(user));
     },
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearErrors"])());

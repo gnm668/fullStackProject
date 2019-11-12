@@ -17,6 +17,7 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.guestLogin = this.guestLogin.bind(this);
         this.toggleUsername = this.toggleUsername.bind(this);
         this.toggleEmail = this.toggleEmail.bind(this);
         this.togglePassword = this.togglePassword.bind(this);
@@ -69,6 +70,11 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    guestLogin() {
+        const user = {email: 'test1', password: '123456'}
+        this.props.loginUser(user);
     }
 
     renderErrors() {
@@ -147,6 +153,9 @@ class SignupForm extends React.Component {
                             </div>
                             <button onClick={this.handleSubmit}>Sign up</button>
                         </div>
+                            <button id='guest-login'
+                            onClick={this.guestLogin}
+                            >Guest Login</button>
                     </div>
                 </div>
             </div>
