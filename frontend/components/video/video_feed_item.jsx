@@ -34,10 +34,7 @@ class VideoFeedItem extends React.Component {
                 onMouseLeave={this.previewPause}
                 muted='muted'
                 height='118' width='210' src={video.mediaUrl} ></video>
-                <h1>{video.title}</h1>
-                <div>
-                    <p>{video.description}</p>
-                </div>
+                <p>{video.title}</p>
                 </Link>
             </div>
         );

@@ -1,0 +1,41 @@
+.show {
+    position: relative;
+    min-height: 800px;
+    min-width: 1200px;
+}
+.video-show {
+    height: 100%;
+    width: 100%;
+    margin-top: 85px;
+    margin-left: 4vh;
+    display: flex;
+}
+
+.video-show video {
+    object-fit: fill;
+    width: 125vh;
+    max-height: 75vh;
+}
+
+.video-information {
+    margin-top: 26px;
+}
+
+.video-header {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.video-description {
+    margin: 6vh;
+}
+
+.horizontal-feed {
+    display: flex;
+    float: right;
+    min-height: 100vh;
+    width: 25%;
+    margin-left: 3vh;
+    background-color: #b8838c;
+    color: #ffffff;
+}

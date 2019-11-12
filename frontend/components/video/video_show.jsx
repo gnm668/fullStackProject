@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBarContainer from '../bars/nav_bar_container';
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -14,11 +15,24 @@ class VideoShow extends React.Component {
         // const mediaUrl = this.props.video.mediaUrl;
         if (video) {
             return (    
-                <div className='video-show'>
-                    <video height='400' width='700' src={video.mediaUrl} controls></video>
-                    <div>
-                        <h1>{video.title}</h1>
-                        <p>{video.description}</p>
+                <div className='show'>
+                    <NavBarContainer />
+                    <div className='video-show'>
+                        <div className='media'>
+                            <video src={video.mediaUrl} controls></video>
+                            <div className='video-information'>
+                                <div className='video-header'>
+                                    {video.title}
+                                </div>
+                                <div className='video-description'>
+                                    {video.description}
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div className='horizontal-feed'>
+                            WILL BE HORIZONTAL FEED EVENTUALLY
+                        </div>
                     </div>
                 </div>
             );

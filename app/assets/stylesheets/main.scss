@@ -5,14 +5,15 @@
 
 .main .sidebar-placehodler {
     display: block;
-    min-height: 1000px;
+    min-height: 100vh;
     width: 240px;
-    background-color: pink;
+    background-color: rgb(184, 131, 140);
     color: #ffffff;
 }
 
 .main .main-feed {
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
     margin-left: 148px;
     margin-top: 48px;
@@ -20,4 +21,14 @@
 
 .main video {
     object-fit: fill;
+}
+
+.main video p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.main .video-feed-item {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
