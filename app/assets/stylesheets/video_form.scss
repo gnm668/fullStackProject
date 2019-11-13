@@ -1,0 +1,11 @@
+input[type="file"] {
+    display: none;
+}
+
+.video-form-file {
+    cursor: pointer;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-image: url(upload.svg);
+}

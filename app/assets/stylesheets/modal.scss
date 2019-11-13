@@ -1,12 +1,16 @@
 .modal-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #494949ee;
-    height: 300px;
-    width: 300px;
-    border-radius: 1%;
+  align-items: center;
+  display: flex;
+  opacity: 89%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #494949;
+  height: 300px;
+  width: 300px;
+  border-radius: 1%;
+  justify-content: center;
 }
 
 .modal-background {
