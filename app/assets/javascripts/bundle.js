@@ -880,6 +880,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_delay_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-delay-link */ "./node_modules/react-delay-link/lib/DelayLink.js");
 /* harmony import */ var react_delay_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_delay_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/ui_util */ "./frontend/util/ui_util.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -902,6 +903,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
  //installed library for delaying native Link element
+
 
 
 
@@ -937,6 +939,12 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.clearErrors();
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
     }
   }, {
     key: "toggleEmailInput",
@@ -1146,6 +1154,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_delay_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-delay-link */ "./node_modules/react-delay-link/lib/DelayLink.js");
 /* harmony import */ var react_delay_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_delay_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/ui_util */ "./frontend/util/ui_util.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1169,6 +1178,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
  // import { withRouter } from 'react-router-dom'; 
 //installed library for delaying native Link element
+
 
 
 
@@ -1206,6 +1216,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.clearErrors();
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
     }
   }, {
     key: "toggleUsername",
@@ -1286,6 +1297,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
       var usernameClass = ['full-name'];
 
       if (this.state.addUsernameEffect || this.state.username.length > 0) {
@@ -1472,7 +1484,7 @@ function (_React$Component) {
     value: function previewPlay(e) {
       e.currentTarget.play();
       e.currentTarget.addEventListener('timeupdate', function () {
-        if (this.currentTime >= 5) {
+        if (this.currentTime >= 8) {
           this.pause();
         }
       });
@@ -1498,7 +1510,9 @@ function (_React$Component) {
         height: "200",
         width: "350",
         src: video.mediaUrl
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, video.title)));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "user"
+      }, video.user)));
     }
   }]);
 
@@ -1521,6 +1535,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _bars_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../bars/nav_bar_container */ "./frontend/components/bars/nav_bar_container.jsx");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/ui_util */ "./frontend/util/ui_util.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1542,6 +1557,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var VideoShow =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1557,6 +1573,10 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchVideo(this.props.match.params.videoId);
+
+      if (document.querySelector('video')) {
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_2__["focusOn"])('video');
+      }
     }
   }, {
     key: "render",
@@ -1571,6 +1591,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "media"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+          autoPlay: true,
           src: video.mediaUrl,
           controls: true
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1578,8 +1599,14 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "video-header"
         }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "v-border"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "v-show-user"
+        }, video.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "video-description"
-        }, video.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, video.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "v-border"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "horizontal-feed"
         }, "WILL BE HORIZONTAL FEED EVENTUALLY")));
       } else {
@@ -2035,6 +2062,22 @@ var logout = function logout() {
     url: '/api/session',
     method: 'DELETE'
   });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/ui_util.js":
+/*!**********************************!*\
+  !*** ./frontend/util/ui_util.js ***!
+  \**********************************/
+/*! exports provided: focusOn */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "focusOn", function() { return focusOn; });
+var focusOn = function focusOn(className) {
+  document.querySelector(className).focus();
 };
 
 /***/ }),

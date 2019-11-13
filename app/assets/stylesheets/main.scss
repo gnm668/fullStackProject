@@ -21,6 +21,7 @@
 
 .main video {
     object-fit: fill;
+    border-radius: 1%;
 }
 
 .main video p {
@@ -28,7 +29,15 @@
     font-weight: 700;
 }
 
+.main .user {
+    font-size: 15px;
+    color: #959595;
+    margin-top: 5px;
+}
+
 .main .video-feed-item {
     margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 20px;
 }

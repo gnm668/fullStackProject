@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../bars/nav_bar_container';
+import { focusOn } from '../../util/ui_util';
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -8,6 +9,9 @@ class VideoShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideo(this.props.match.params.videoId);
+        if (document.querySelector('video')) {
+            focusOn('video');
+        }
     }
 
     render() {
@@ -19,14 +23,19 @@ class VideoShow extends React.Component {
                     <NavBarContainer />
                     <div className='video-show'>
                         <div className='media'>
-                            <video src={video.mediaUrl} controls></video>
+                            <video autoPlay src={video.mediaUrl} controls></video>
                             <div className='video-information'>
                                 <div className='video-header'>
                                     {video.title}
                                 </div>
+                                <div className='v-border'></div>
+                                <div className='v-show-user'>
+                                    {video.user}
+                                </div>
                                 <div className='video-description'>
                                     {video.description}
                                 </div>
+                                <div className='v-border'></div>
                             </div>
                         </div>  
 

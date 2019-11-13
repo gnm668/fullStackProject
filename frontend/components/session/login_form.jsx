@@ -2,6 +2,7 @@ import React from 'react';
 import DelayLink from 'react-delay-link';
 //installed library for delaying native Link element
 import { LinearProgress } from '@material-ui/core';
+import { focusOn } from '../../util/ui_util';
 
 
 class LoginForm extends React.Component {
@@ -30,6 +31,11 @@ class LoginForm extends React.Component {
 
     componentDidMount() {
         this.props.clearErrors()
+        focusOn('input');
+    }
+
+    componentDidUpdate() {
+        focusOn('input');
     }
 
     toggleEmailInput() {

@@ -27,7 +27,8 @@
 }
 
 .video-description {
-    margin: 6vh;
+    margin: 3vh;
+    margin-left: 7vh;
 }
 
 .horizontal-feed {
@@ -39,3 +40,20 @@
     background-color: #b8838c;
     color: #ffffff;
 }
+
+video {
+    cursor: pointer;
+}
+
+.v-show-user {
+    margin-top: 7vh;
+    margin-left: 7vh;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.v-border {
+    border-top: 1px solid #3a3a3a;
+    margin-top: 44px;
+}
+

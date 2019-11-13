@@ -3,6 +3,7 @@ import DelayLink from 'react-delay-link';
 // import { withRouter } from 'react-router-dom'; 
 //installed library for delaying native Link element
 import { LinearProgress } from '@material-ui/core';
+import { focusOn } from '../../util/ui_util'; 
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -28,7 +29,8 @@ class SignupForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.clearErrors()
+        this.props.clearErrors();
+        focusOn('input');
     }
 
     toggleUsername() {
@@ -90,6 +92,7 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        focusOn('input');
 
         let usernameClass = ['full-name'];
         if (this.state.addUsernameEffect || this.state.username.length > 0) {
