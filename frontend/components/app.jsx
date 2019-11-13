@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
 import Main from './main/main';
+import Modal from './modal/modal';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import videoShowContainer from './video/video_show_container';
@@ -12,6 +13,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
+        <Modal />
         <Switch>
             <Route exact={true} path='/' component={Main} />
             <AuthRoute exact={true} path='/signin' component={LoginFormContainer} />

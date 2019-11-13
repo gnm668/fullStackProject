@@ -39,6 +39,10 @@ class LoginForm extends React.Component {
         focusOn('input');
     }
 
+    componentDidUpdate() {
+        document.getElementsByClassName('content')[0].classList.remove('slide');
+    }
+
     toggleEmail() {
         // toggles email full name state for render 
         this.setState({ addEmailEffect: !this.state.addEmailEffect });
@@ -65,6 +69,7 @@ class LoginForm extends React.Component {
     handleTransition() {
         this.handleModal();
         this.handleLoading();
+        document.getElementsByClassName('content')[0].classList.add('slide');
     }
 
     clearModal() {
@@ -89,7 +94,7 @@ class LoginForm extends React.Component {
     handleEmailInput() {
         if (this.state.email.length > 0) {
             this.handleTransition();
-            window.setTimeout(this.clearTransition, 280)
+            window.setTimeout(this.clearTransition, 300)
             window.setTimeout(this.toggleEmailInput, 300);
         }
     }
@@ -166,7 +171,7 @@ class LoginForm extends React.Component {
                     <LinearProgress id='signup-load' />
                     <div className='content-modal'></div>
                     <div className='login-form'>
-                        <div className='content-2'>
+                        <div className='content'>
                             <p className={'label'} >Welcome</p>
                             <br />
                                 <div className='sub-label-parent'>
