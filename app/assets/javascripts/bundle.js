@@ -938,13 +938,11 @@ function (_React$Component) {
   _createClass(LoginForm, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.clearErrors();
-      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
+      this.props.clearErrors(); // focusOn('input');
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
+    value: function componentDidUpdate() {// focusOn('input');
     }
   }, {
     key: "toggleEmailInput",
@@ -1215,8 +1213,7 @@ function (_React$Component) {
   _createClass(SignupForm, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.clearErrors();
-      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
+      this.props.clearErrors(); // focusOn('input');
     }
   }, {
     key: "toggleUsername",
