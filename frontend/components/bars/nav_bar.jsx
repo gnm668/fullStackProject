@@ -1,4 +1,6 @@
 import React from 'react';
+//add loading later
+import { LinearProgress } from '@material-ui/core';
 
 class NavBar extends React.Component {
     constructor(props) {

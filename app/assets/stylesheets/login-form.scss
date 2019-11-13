@@ -112,7 +112,7 @@
     position: relative;
 }
 
-.full-name {
+.login-email {
     background: transparent;
     pointer-events: none;
     color: #757575;
@@ -121,12 +121,12 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 26px;
-    left: 61px;
+    top: 317px;
+    left: 508px;
     transition: .3s ease-in-out;
 }
 
-.email {
+.login-password {
     background: transparent;
     pointer-events: none;
     color: #757575;
@@ -135,26 +135,12 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 114px;
-    left: 61px;
+    top: 317px;
+    left: 508px;
     transition: .3s ease-in-out;
 }
 
-.password {
-    background: transparent;
-    pointer-events: none;
-    color: #757575;
-    font-size: 19px;
-    position: absolute;
-    z-index: 3;
-    width: max-content;
-    height: max-content;
-    top: 201px;
-    left: 61px;
-    transition: .3s ease-in-out;
-}
-
-.full-name.effect{
+.login-email.effect {
     background: linear-gradient(to bottom, transparent 45%, #121212 0%);
     pointer-events: none;
     color: #979797;
@@ -163,13 +149,13 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 1px;
-    left: 61px;
+    top: 291px;
+    left: 508px;
     transition: .3s ease-in-out;
     box-sizing: border-box;
 }
 
-.email.effect {
+.login-password.effect {
     background: linear-gradient(to bottom, transparent 45%, #121212 0%);
     pointer-events: none;
     color: #979797;
@@ -178,23 +164,8 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 89px;
-    left: 61px;
-    transition: .3s ease-in-out;
-    box-sizing: border-box;
-}
-
-.password.effect {
-    background: linear-gradient(to bottom, transparent 45%, #121212 0%);
-    pointer-events: none;
-    color: #979797;
-    font-size: 13px;
-    position: absolute;
-    z-index: 3;
-    width: max-content;
-    height: max-content;
-    top: 177px;
-    left: 61px;
+    top: 291px;
+    left: 508px;;
     transition: .3s ease-in-out;
     box-sizing: border-box;
 }

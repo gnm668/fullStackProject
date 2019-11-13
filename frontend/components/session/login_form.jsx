@@ -12,6 +12,8 @@ class LoginForm extends React.Component {
             email: '',
             password: '',
             emailInput: false,
+            addEmailEffect: false,
+            addPasswordEffect: false,
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,6 +27,9 @@ class LoginForm extends React.Component {
         this.toggleEmailInput = this.toggleEmailInput.bind(this);
         this.handleEmailInput = this.handleEmailInput.bind(this);
 
+        this.toggleEmail = this.toggleEmail.bind(this);
+        this.togglePassword = this.togglePassword.bind(this);
+
         this.handleTransition = this.handleTransition.bind(this);
         this.clearTransition = this.clearTransition.bind(this);
     }   
@@ -34,8 +39,14 @@ class LoginForm extends React.Component {
         focusOn('input');
     }
 
-    componentDidUpdate() {
-        focusOn('input');
+    toggleEmail() {
+        // toggles email full name state for render 
+        this.setState({ addEmailEffect: !this.state.addEmailEffect });
+    }
+
+    togglePassword() {
+        // toggles signin button state for render 
+        this.setState({ addPasswordEffect: !this.state.addPasswordEffect });
     }
 
     toggleEmailInput() {
@@ -102,6 +113,16 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        let emailClass = ['login-email'];
+        if (this.state.addEmailEffect || this.state.email.length > 0) {
+            emailClass.push('effect');
+        }
+
+        let passwordClass = ['login-password'];
+        if (this.state.addPasswordEffect || this.state.password.length > 0) {
+            passwordClass.push('effect');
+        }
+
         if (!this.state.emailInput) {
             return (
             <div className='login-form-container'>
@@ -113,10 +134,15 @@ class LoginForm extends React.Component {
                         <br/>
                         <p className={'sub-label'} >to continue to Tubie</p>
                         <br/>
-                            <input type='text' 
-                            value={this.state.email} 
-                            onChange={this.handleInput('email')} 
-                            placeholder={'Email'}/>
+                            <div className='email-field'>
+                                <div className={emailClass.join(' ')}>Email</div>
+                                <input type='text' 
+                                value={this.state.email} 
+                                onChange={this.handleInput('email')} 
+                                onFocus={this.toggleEmail}
+                                onBlur={this.toggleEmail}
+                                />
+                            </div>
                         <br/>
                         {this.renderErrors()}
                         <div className='clickable-items-container'>
@@ -154,10 +180,15 @@ class LoginForm extends React.Component {
                                     </div>
                                 </div>
                             <br />
-                            <input type='password'
-                                value={this.state.password}
-                                onChange={this.handleInput('password')}
-                                placeholder={'Password'} />
+                                <div className='password-field'>
+                                    <div className={passwordClass.join(' ')}>Password</div>
+                                    <input type='password'
+                                    value={this.state.password}
+                                    onChange={this.handleInput('password')}
+                                    onFocus={this.togglePassword}
+                                    onBlur={this.togglePassword}
+                                    />
+                                </div>
                             <br />
                             {this.renderErrors()}
                             <div className='clickable-items-container-2'>

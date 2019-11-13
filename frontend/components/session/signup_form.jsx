@@ -19,9 +19,11 @@ class SignupForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.guestLogin = this.guestLogin.bind(this);
+
         this.toggleUsername = this.toggleUsername.bind(this);
         this.toggleEmail = this.toggleEmail.bind(this);
         this.togglePassword = this.togglePassword.bind(this);
+        
         this.handleModal = this.handleModal.bind(this);
         this.handleLoading = this.handleLoading.bind(this);
         this.handleTransition = this.handleTransition.bind(this);
@@ -92,7 +94,6 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        focusOn('input');
 
         let usernameClass = ['full-name'];
         if (this.state.addUsernameEffect || this.state.username.length > 0) {
@@ -139,7 +140,7 @@ class SignupForm extends React.Component {
                                     />
                                 </div>
                             <br />
-                                <div className='pasword-field'>
+                                <div className='password-field'>
                                     <div  className={passwordClass.join(' ')}>Password</div>
                                     <input type='password' value={this.state.password} 
                                     onChange={this.handleInput('password')} 

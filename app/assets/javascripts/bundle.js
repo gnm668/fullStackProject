@@ -311,6 +311,7 @@ var App = function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -328,6 +329,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+ //add loading later
 
 
 
@@ -921,7 +924,9 @@ function (_React$Component) {
     _this.state = {
       email: '',
       password: '',
-      emailInput: false
+      emailInput: false,
+      addEmailEffect: false,
+      addPasswordEffect: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleModal = _this.handleModal.bind(_assertThisInitialized(_this));
@@ -930,6 +935,8 @@ function (_React$Component) {
     _this.clearLoading = _this.clearLoading.bind(_assertThisInitialized(_this));
     _this.toggleEmailInput = _this.toggleEmailInput.bind(_assertThisInitialized(_this));
     _this.handleEmailInput = _this.handleEmailInput.bind(_assertThisInitialized(_this));
+    _this.toggleEmail = _this.toggleEmail.bind(_assertThisInitialized(_this));
+    _this.togglePassword = _this.togglePassword.bind(_assertThisInitialized(_this));
     _this.handleTransition = _this.handleTransition.bind(_assertThisInitialized(_this));
     _this.clearTransition = _this.clearTransition.bind(_assertThisInitialized(_this));
     return _this;
@@ -942,9 +949,20 @@ function (_React$Component) {
       Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
     }
   }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
+    key: "toggleEmail",
+    value: function toggleEmail() {
+      // toggles email full name state for render 
+      this.setState({
+        addEmailEffect: !this.state.addEmailEffect
+      });
+    }
+  }, {
+    key: "togglePassword",
+    value: function togglePassword() {
+      // toggles signin button state for render 
+      this.setState({
+        addPasswordEffect: !this.state.addPasswordEffect
+      });
     }
   }, {
     key: "toggleEmailInput",
@@ -1024,6 +1042,18 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var emailClass = ['login-email'];
+
+      if (this.state.addEmailEffect || this.state.email.length > 0) {
+        emailClass.push('effect');
+      }
+
+      var passwordClass = ['login-password'];
+
+      if (this.state.addPasswordEffect || this.state.password.length > 0) {
+        passwordClass.push('effect');
+      }
+
       if (!this.state.emailInput) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form-container"
@@ -1039,12 +1069,17 @@ function (_React$Component) {
           className: 'label'
         }, "Sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: 'sub-label'
-        }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "email-field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: emailClass.join(' ')
+        }, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           value: this.state.email,
           onChange: this.handleInput('email'),
-          placeholder: 'Email'
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onFocus: this.toggleEmail,
+          onBlur: this.toggleEmail
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "clickable-items-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-link"
@@ -1079,12 +1114,17 @@ function (_React$Component) {
           className: 'login-avatar'
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: 'login-sub-label-text'
-        }, this.state.email))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        }, this.state.email))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "password-field"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: passwordClass.join(' ')
+        }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "password",
           value: this.state.password,
           onChange: this.handleInput('password'),
-          placeholder: 'Password'
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onFocus: this.togglePassword,
+          onBlur: this.togglePassword
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "clickable-items-container-2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.handleSubmit
@@ -1297,7 +1337,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["focusOn"])('input');
       var usernameClass = ['full-name'];
 
       if (this.state.addUsernameEffect || this.state.username.length > 0) {
@@ -1353,7 +1392,7 @@ function (_React$Component) {
         onFocus: this.toggleEmail,
         onBlur: this.toggleEmail
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pasword-field"
+        className: "password-field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: passwordClass.join(' ')
       }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
