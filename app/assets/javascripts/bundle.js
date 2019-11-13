@@ -589,7 +589,11 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-placehodler"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "hello"));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "github"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "linkedin"
+      }));
     }
   }]);
 
@@ -787,6 +791,11 @@ function (_React$Component) {
       };
     }
   }, {
+    key: "activateInput",
+    value: function activateInput() {
+      document.querySelector('input').click();
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
@@ -803,12 +812,13 @@ function (_React$Component) {
     value: function render() {
       if (!this.state.videoFile) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "video-form-file"
+          className: "video-form-file",
+          onClick: this.activateInput
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "file",
           accept: ".mov, .mp4",
           onChange: this.handleFile
-        }));
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Upload"));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "video-form-text"
@@ -819,12 +829,11 @@ function (_React$Component) {
           value: this.state.title,
           onChange: this.handleInput('title'),
           placeholder: 'Title'
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
           value: this.state.description,
           onChange: this.handleInput('description'),
           placeholder: 'Description'
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Upload Video")));
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Upload")));
       }
     }
   }]);

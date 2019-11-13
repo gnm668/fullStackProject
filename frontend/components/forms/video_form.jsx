@@ -26,6 +26,10 @@ class VideoForm extends React.Component {
         };
     }
 
+    activateInput() {
+        document.querySelector('input').click();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -40,10 +44,13 @@ class VideoForm extends React.Component {
     render() {
         if (!this.state.videoFile) {
             return (
-                <div className='video-form-file'>
+                <div 
+                className='video-form-file'
+                onClick={this.activateInput} >
                     <input type="file"
                     accept=".mov, .mp4"
                     onChange={this.handleFile} />
+                    <p>Upload</p>
                 </div>
             );
         } else {
@@ -55,11 +62,11 @@ class VideoForm extends React.Component {
                             onChange={this.handleInput('title')}
                             placeholder={'Title'} />
                         <br/>
-                        <input type='text'
+                        <textarea 
                             value={this.state.description}
                             onChange={this.handleInput('description')}
                             placeholder={'Description'} />
-                        <button>Upload Video</button>
+                        <button>Upload</button>
                     </form>
               </div>
             );

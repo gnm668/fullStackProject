@@ -9,3 +9,69 @@ input[type="file"] {
     width: 100px;
     background-image: url(upload.svg);
 }
+
+.video-form-file p {
+    align-self: center;
+    margin-top: 114px;
+    margin-left: 13px;
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 24px;
+}
+
+.video-form-text textarea {
+    resize: vertical;
+}
+
+.video-form-file:hover {
+    opacity: 60%;
+}
+
+.video-form-text form {
+    width: 45vh;
+    height: 45vh;
+    position: relative;
+}
+
+.video-form-text button:hover {
+    cursor: pointer;
+    background-color: #2b2a2a;
+}
+
+.video-form-text button {
+    border: solid 1px #303030;
+    background-color: #393939;
+    position: absolute;
+    right: 14px;
+    bottom: 5px;
+    width: 60px;
+    height: 24px;
+}
+
+.video-form-text input {
+    border-radius: 1%;
+    border: solid 1px #303030;
+    background-color: #121212;
+    font-size: 16px;
+    width: 25vh;
+    height: 2vh;
+    padding: 8px;
+    position: absolute;
+    left: 14px;
+    top: 5px;
+    font-weight: 600;
+}
+
+.video-form-text textarea {
+    border-radius: 1%;
+    border: solid 1px #303030;
+    background-color: #121212;
+    position: absolute;
+    top: 58px;
+    left: 14px;
+    resize: vertical;
+    font-size: 14px;
+    width: 40vh;
+    height:30vh;
+    padding: 8px;
+}

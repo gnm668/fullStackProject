@@ -4,8 +4,8 @@ class SideBar extends React.Component {
     render() {
         return (
             <div className='sidebar-placehodler'>
-                <p>hello</p>
-
+                <svg className='github' />
+                <svg className='linkedin' />
             </div>
         )
     }
