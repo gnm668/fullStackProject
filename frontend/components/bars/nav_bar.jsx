@@ -102,7 +102,7 @@ class NavBar extends React.Component {
                     </div> */}
                     <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
                     className='upload-button'
-                    onClick={this.uploadRedirect} />
+                    onClick={this.props.openModal} />
                     {button}
                 </div>
             </div>

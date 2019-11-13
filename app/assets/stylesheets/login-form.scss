@@ -128,8 +128,8 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 317px;
-    left: 508px;
+    top: 26px;
+    left: 61px;
     transition: .3s ease-in-out;
 }
 
@@ -142,8 +142,8 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 317px;
-    left: 508px;
+    top: 26px;
+    left: 61px;
     transition: .3s ease-in-out;
 }
 
@@ -156,8 +156,8 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 291px;
-    left: 508px;
+    top: 2px;
+    left: 61px;
     transition: .3s ease-in-out;
     box-sizing: border-box;
 }
@@ -171,8 +171,8 @@
     z-index: 3;
     width: max-content;
     height: max-content;
-    top: 291px;
-    left: 508px;;
+    top: 2px;
+    left: 61px;
     transition: .3s ease-in-out;
     box-sizing: border-box;
 }
@@ -216,3 +216,12 @@
     margin: 5px;
 }
 
+.login-errors {
+    position: absolute;
+    left: 165px;
+    top: 73px;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+}

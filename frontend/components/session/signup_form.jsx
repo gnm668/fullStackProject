@@ -83,9 +83,9 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <div>
+            <div className='signup-errors-container'>
                 {this.props.errors.map((error, i) => (
-                    <div key={`error-${i}`} className='signup-errors'>
+                    <div key={`error-${i}`} className={`signup-errors-${i}`}>
                         {error}
                     </div>
                 ))}
@@ -121,6 +121,7 @@ class SignupForm extends React.Component {
                             <p className='sub-label'>to continue to Tubie</p>
                         <br/>
                             <div className='input-container'>
+                                {this.renderErrors()}
                                 <div className='name-field'>
                                     <div  className={usernameClass.join(' ')}>Full Name</div>
                                     <input type='text' 
@@ -150,7 +151,6 @@ class SignupForm extends React.Component {
                                 </div>
                             </div>
                         <br />
-                        {this.renderErrors()}
                         <div className='clickable-items-container'>
                             <div className='signin-link'>
                                 <DelayLink className='a' clickAction={this.handleTransition} delay={300} to="/signin">Sign in instead</DelayLink>

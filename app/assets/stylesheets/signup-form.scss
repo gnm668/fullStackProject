@@ -91,7 +91,7 @@
 .clickable-items-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 19px;
+    margin-top: 40px;
     margin-left: 41px;
     margin-right: 41px;
 }
@@ -200,38 +200,25 @@
 
 #guest-login:hover {
     cursor: pointer;
-    background-color: #064fad;
-    border: 1px solid #064fad;
 }
 
 #guest-login {
+    text-decoration: none;
+    color: #1a73e8;
+    background: transparent;
+    border: none;
+    width: auto;
     float: left;
-    font-size: 13px;
-    margin-left: 41px;
+    margin-left: 34px;
+    margin-top: -5px;
 }
 
-/* .email {
-    background: transparent;
-    background-color: #121212;
-    color: #757575;
-    font-size: 18px;
-    position: relative;
-    z-index: 3;
-    width: max-content;
-    height: max-content;
-    top: 52px;
-    left: 61px;
-}
+.signup-errors-container {
+    position: absolute;
+    left: 94px;
+    top: 250px;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
 
-.password {
-    background: transparent;
-    background-color: #121212;
-    color: #757575;
-    font-size: 18px;
-    position: relative;
-    z-index: 3;
-    width: max-content;
-    height: max-content;
-    top: 52px;
-    left: 61px;
-} */
+}

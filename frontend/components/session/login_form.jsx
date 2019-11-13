@@ -107,7 +107,7 @@ class LoginForm extends React.Component {
 
     renderErrors() {
         return (
-            <div>
+            <div className='login-errors'>
                 {this.props.errors.map((error, i) => (
                     <div key={`error-${i}`} className='login-error'>
                         {error}
@@ -139,17 +139,19 @@ class LoginForm extends React.Component {
                         <br/>
                         <p className={'sub-label'} >to continue to Tubie</p>
                         <br/>
-                            <div className='email-field'>
-                                <div className={emailClass.join(' ')}>Email</div>
-                                <input type='text' 
-                                value={this.state.email} 
-                                onChange={this.handleInput('email')} 
-                                onFocus={this.toggleEmail}
-                                onBlur={this.toggleEmail}
-                                />
+                            <div className='input-container'>
+                                {this.renderErrors()}
+                                <div className='email-field'>
+                                    <div className={emailClass.join(' ')}>Email</div>
+                                    <input type='text' 
+                                    value={this.state.email} 
+                                    onChange={this.handleInput('email')} 
+                                    onFocus={this.toggleEmail}
+                                    onBlur={this.toggleEmail}
+                                    />
+                                </div>
                             </div>
                         <br/>
-                        {this.renderErrors()}
                         <div className='clickable-items-container'>
                             <div className='login-link'>
                                 <DelayLink className='a' 
@@ -185,17 +187,19 @@ class LoginForm extends React.Component {
                                     </div>
                                 </div>
                             <br />
-                                <div className='password-field'>
-                                    <div className={passwordClass.join(' ')}>Password</div>
-                                    <input type='password'
-                                    value={this.state.password}
-                                    onChange={this.handleInput('password')}
-                                    onFocus={this.togglePassword}
-                                    onBlur={this.togglePassword}
-                                    />
+                                <div className='input-container'>
+                                    {this.renderErrors()}
+                                    <div className='password-field'>
+                                        <div className={passwordClass.join(' ')}>Password</div>
+                                        <input type='password'
+                                        value={this.state.password}
+                                        onChange={this.handleInput('password')}
+                                        onFocus={this.togglePassword}
+                                        onBlur={this.togglePassword}
+                                        />
+                                    </div>
                                 </div>
                             <br />
-                            {this.renderErrors()}
                             <div className='clickable-items-container-2'>
                                 <button onClick={this.handleSubmit}>Next</button>
                             </div>

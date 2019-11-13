@@ -489,7 +489,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         src: "/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg",
         className: "upload-button",
-        onClick: this.uploadRedirect
+        onClick: this.props.openModal
       }), button));
     }
   }]);
@@ -514,6 +514,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nav_bar */ "./frontend/components/bars/nav_bar.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -529,6 +531,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     logoutUser: function logoutUser() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logoutUser"])());
+    },
+    openModal: function openModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('uploadVideo'));
     }
   };
 };
@@ -1194,7 +1199,9 @@ function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.errors.map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-errors"
+      }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: "error-".concat(i),
           className: "login-error"
@@ -1232,6 +1239,8 @@ function (_React$Component) {
         }, "Sign in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: 'sub-label'
         }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "input-container"
+        }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "email-field"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: emailClass.join(' ')
@@ -1241,7 +1250,7 @@ function (_React$Component) {
           onChange: this.handleInput('email'),
           onFocus: this.toggleEmail,
           onBlur: this.toggleEmail
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "clickable-items-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-link"
@@ -1277,6 +1286,8 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: 'login-sub-label-text'
         }, this.state.email))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "input-container"
+        }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "password-field"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: passwordClass.join(' ')
@@ -1286,7 +1297,7 @@ function (_React$Component) {
           onChange: this.handleInput('password'),
           onFocus: this.togglePassword,
           onBlur: this.togglePassword
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "clickable-items-container-2"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.handleSubmit
@@ -1489,10 +1500,12 @@ function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.errors.map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-errors-container"
+      }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: "error-".concat(i),
-          className: "signup-errors"
+          className: "signup-errors-".concat(i)
         }, error);
       }));
     }
@@ -1533,7 +1546,7 @@ function (_React$Component) {
         className: "sub-label"
       }, "to continue to Tubie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name-field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: usernameClass.join(' ')
@@ -1563,7 +1576,7 @@ function (_React$Component) {
         onChange: this.handleInput('password'),
         onFocus: this.togglePassword,
         onBlur: this.togglePassword
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "clickable-items-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signin-link"
