@@ -31,11 +31,11 @@ class LoginForm extends React.Component {
 
     componentDidMount() {
         this.props.clearErrors()
-        // focusOn('input');
+        focusOn('input');
     }
 
     componentDidUpdate() {
-        // focusOn('input');
+        focusOn('input');
     }
 
     toggleEmailInput() {

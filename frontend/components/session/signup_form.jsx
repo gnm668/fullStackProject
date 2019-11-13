@@ -30,7 +30,7 @@ class SignupForm extends React.Component {
 
     componentDidMount() {
         this.props.clearErrors();
-        // focusOn('input');
+        focusOn('input');
     }
 
     toggleUsername() {
