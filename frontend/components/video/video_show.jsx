@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBarContainer from '../bars/nav_bar_container';
 import { focusOn } from '../../util/ui_util';
-import VerticalFeed from '../feeds/v_feed';
+import VerticalFeed from '../feeds/vertical_feed';
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -9,7 +9,8 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchVideo(this.props.match.params.videoId);
+        // this.props.fetchVideo(this.props.match.params.videoId);
+        this.props.fetchVideos();
         if (document.querySelector('video')) {
             focusOn('video');
         }
@@ -17,6 +18,7 @@ class VideoShow extends React.Component {
 
     render() {
         const video = this.props.video;
+        const videos = this.props.videos;
         // const mediaUrl = this.props.video.mediaUrl;
         if (video) {
             return (    
@@ -45,7 +47,7 @@ class VideoShow extends React.Component {
 
                             </div>
                         </div>  
-                        <VerticalFeed />
+                        <VerticalFeed videos={videos} />
                     </div>
                 </div>
             );

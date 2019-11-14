@@ -1,7 +1,7 @@
 .show {
     position: relative;
     min-height: 800px;
-    min-width: 1200px;
+    max-width: 1280px;
 }
 .video-show {
     height: 100%;
@@ -13,7 +13,7 @@
 
 .video-show video {
     object-fit: fill;
-    width: 125vh;
+    width: 123vh;
     max-height: 75vh;
 }
 
@@ -31,13 +31,13 @@
     margin-left: 7vh;
 }
 
-.v-feed {
+#v-feed {
     display: flex;
+    flex-direction: column;
     float: right;
     min-height: 100vh;
-    width: 25%;
+    width: 24%;
     margin-left: 3vh;
-    background-color: #b8838c;
     color: #ffffff;
 }
 
@@ -57,3 +57,28 @@ video {
     margin-top: 44px;
 }
 
+.video-show #v-feed .video-feed-item video {
+    width: 27vh;
+    height: 15vh;
+    margin-top: 5px;
+}
+
+#v-feed .video-feed-item a {
+    display: flex;
+    width: max-content;
+}
+
+#v-feed .video-feed-item a .title {
+    margin-top: 10px;
+    margin-left: 14px;
+    width: max-content;
+}
+
+#v-feed .video-feed-item a .user {
+    margin-top: 2px;
+    margin-left: 14px;
+    width: max-content;
+    font-size: 14px;
+    color: grey;
+    margin-top: 6px;
+}
