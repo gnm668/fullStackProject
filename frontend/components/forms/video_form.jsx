@@ -38,7 +38,7 @@ class VideoForm extends React.Component {
         formData.append('video[user_id]', 1);
         formData.append('video[media]', this.state.videoFile);
         this.props.createVideo(formData);
-        this.props.history.push('/');
+       this.props.closeModal();
     }
 
     render() {
