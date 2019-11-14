@@ -73,7 +73,7 @@ class NavBar extends React.Component {
         } else {
             button = <div className='signout-button'
                         onClick={this.logoutUser} >
-                        <p>Sign Out</p>
+                        <p>Logout</p>
                     </div>
         }
 

@@ -6,8 +6,6 @@ import videoShowContainer from '../video/video_show_container';
 class MainFeed extends React.Component {
     componentDidMount() {
         this.props.fetchVideos();
-        const videos = document.getElementsByTagName('video');
-        
     }
 
     render() {

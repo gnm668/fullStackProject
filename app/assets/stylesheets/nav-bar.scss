@@ -31,7 +31,7 @@
     width: 20px;
     height: 20px;
     margin-top: 12px;
-    margin-left: 0;
+    margin-left: 3px;
     margin-bottom: 0;
 }
 
@@ -46,6 +46,8 @@
     visibility: hidden;
     border-radius: 100%;
     transition: ease-in;
+    margin-left: 3px;
+    margin-top: 2px;
 }
 /* cubic-bezier(0.39, 0.1, 0.85, 1.01) */
 
@@ -76,22 +78,26 @@
 }
 
 .signout-button {
-    height: 45px;
-    width: 45px;
+    height: 35px;
+    width: max-content;
     margin-right: 24px;
-    border-radius: 50%;
-    background-color: teal;
+    border-radius: 10%;
+    background-color: #393939;
     display: flex;
     text-align: center;
+    border: 2px solid #303029;
 }
 
 .signout-button:hover {
     cursor: pointer;
+    background-color:#414141;
 }
 
 .signout-button p {
     margin: 4px;
-    margin-top: 7px;
+    margin-top: 9px;
+    padding-right: 4px;
+    padding-left: 4px;
     font-family: arial;
     color: #ffffff;
 }
