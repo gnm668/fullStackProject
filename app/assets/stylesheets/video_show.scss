@@ -1,15 +1,21 @@
 .show {
     position: relative;
-    min-height: 800px;
-    max-width: 1280px;
+    min-height: 100%;
+    max-width: 100%;
 }
 .video-show {
     height: 100%;
     width: 100%;
     margin-top: 85px;
-    margin-left: 4vh;
+    left: 6vh;
     display: flex;
     max-width: 100%;
+    justify-content: center;
+}
+
+.video-show-container {
+    display: flex;
+    width: 100%;
 }
 
 .video-show video {
@@ -27,9 +33,28 @@
     font-weight: 700;
 }
 
+.video-header .subheader {
+    display: flex;
+    justify-content: space-evenly;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: initial;
+    margin-top: 14px;
+}
+
+.subheader .views {
+    color: grey;
+}
+
+.subheader .date {
+    color: grey;
+    margin-left: 4px;
+}
+
 .video-description {
-    margin: 3vh;
-    margin-left: 7vh;
+    margin-top: 31px;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 #v-feed {
@@ -38,7 +63,7 @@
     float: right;
     min-height: 100vh;
     width: 24%;
-    margin-left: 3vh;
+    margin-left: 1vh;
     color: #ffffff;
 }
 
@@ -47,21 +72,37 @@ video {
 }
 
 .v-show-user {
-    margin-top: 7vh;
-    margin-left: 7vh;
+display: block;
     font-size: 16px;
     font-weight: 600;
+    margin-left: 13px;
+    margin-top: 27px;
+}
+
+#v-info-con {
+    display: flex;
+}
+
+#v-info-con #icon { 
+    background: url(user.svg);
+    width: 40px;
+    height: 40px;
+    margin-top: 14px;
+}
+
+.v-show-user #user {
+
 }
 
 .v-border {
     border-top: 1px solid #3a3a3a;
-    margin-top: 44px;
+    margin-top: 17px;
 }
 
 .video-show #v-feed .video-feed-item video {
     width: 27vh;
     height: 15vh;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 #v-feed .video-feed-item a {
@@ -70,7 +111,7 @@ video {
 }
 
 #v-feed .video-feed-item a .title {
-    margin-top: 10px;
+    margin-top: 29px;
     margin-left: 14px;
     max-width: 125px;
 }
@@ -83,3 +124,5 @@ video {
     color: grey;
     margin-top: 6px;
 }
+
+

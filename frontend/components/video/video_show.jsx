@@ -20,34 +20,52 @@ class VideoShow extends React.Component {
         const video = this.props.video;
         const videos = this.props.videos;
         // const mediaUrl = this.props.video.mediaUrl;
+        let date = '';
+        if (this.props.video) {
+            const rubyDate = this.props.video.created_at.slice(0, 10);
+            const dateObj = new Date(rubyDate);
+            const month = dateObj.toLocaleString('default', { month: 'short' });
+            const day = dateObj.getDate();
+            const year = dateObj.getFullYear();
+            date = month + ' ' + day.toString() + ', ' + year.toString();
+        } 
+
         if (video) {
             return (    
                 <div className='show'>
                     <NavBarContainer />
-                    <div className='video-show'>
-                        <div className='media'>
-                            <video autoPlay src={video.mediaUrl} controls></video>
-                            <div className='video-information'>
+                    <div className='video-show-container'>
+                        <div className='video-show'>
+                            <div className='media'>
+                                <video autoPlay src={video.mediaUrl} controls></video>
+                                <div className='video-information'>
 
-                                <div className='video-header'>
-                                    {video.title}
+                                    <div className='video-header'>
+                                        <div className='title'>{video.title}</div>
+                                        <div className='subheader'>
+                                            <div className='views'>Views Placeholder • </div>
+                                            <div className='date'>{date}</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className='v-border'></div>
+                                    
+                                    <div id='v-info-con'>
+                                        <svg id='icon'></svg>
+                                        <div className='v-show-user'>
+                                            <div id='user'>{video.user}</div>
+                                            <div className='video-description'>
+                                                {video.description}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className='v-border'></div>
+
                                 </div>
-                                
-                                <div className='v-border'></div>
-
-                                <div className='v-show-user'>
-                                    {video.user}
-                                </div>
-
-                                <div className='video-description'>
-                                    {video.description}
-                                </div>
-
-                                <div className='v-border'></div>
-
-                            </div>
-                        </div>  
-                        <VerticalFeed videos={videos} />
+                            </div>  
+                            <VerticalFeed videos={videos} />
+                        </div>
                     </div>
                 </div>
             );

@@ -2007,10 +2007,25 @@ function (_React$Component) {
       var video = this.props.video;
       var videos = this.props.videos; // const mediaUrl = this.props.video.mediaUrl;
 
+      var date = '';
+
+      if (this.props.video) {
+        var rubyDate = this.props.video.created_at.slice(0, 10);
+        var dateObj = new Date(rubyDate);
+        var month = dateObj.toLocaleString('default', {
+          month: 'short'
+        });
+        var day = dateObj.getDate();
+        var year = dateObj.getFullYear();
+        date = month + ' ' + day.toString() + ', ' + year.toString();
+      }
+
       if (video) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "show"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bars_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "video-show-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "video-show"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "media"
@@ -2022,17 +2037,31 @@ function (_React$Component) {
           className: "video-information"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "video-header"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "title"
         }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "subheader"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "views"
+        }, "Views Placeholder \u2022 "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "date"
+        }, date))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "v-border"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "v-info-con"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+          id: "icon"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "v-show-user"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "user"
         }, video.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "video-description"
-        }, video.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, video.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "v-border"
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_feeds_vertical_feed__WEBPACK_IMPORTED_MODULE_3__["default"], {
           videos: videos
-        })));
+        }))));
       } else {
         return null;
       }
