@@ -17,9 +17,8 @@ class LoginForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-
-        this.handleModal = this.handleModal.bind(this);
-        this.clearModal = this.clearModal.bind(this);
+        this.handleSignup = this.handleSignup.bind(this);
+        this.guestLogin = this.guestLogin.bind(this);
 
         this.handleLoading = this.handleLoading.bind(this);
         this.clearLoading = this.clearLoading.bind(this);
@@ -31,12 +30,12 @@ class LoginForm extends React.Component {
         this.togglePassword = this.togglePassword.bind(this);
 
         this.handleTransition = this.handleTransition.bind(this);
-        this.clearTransition = this.clearTransition.bind(this);
     }   
 
     componentDidMount() {
         this.props.clearErrors()
         focusOn('input');
+        document.querySelector('.modal-child').classList.add('sign');
     }
 
     componentDidUpdate() {
@@ -61,30 +60,22 @@ class LoginForm extends React.Component {
         document.getElementById('signup-load').style.opacity = '100%';
     }
 
-    handleModal() {
-        //alters modal visibility on DelayLink action
-        document.getElementsByClassName('content-modal')[0].style.opacity = '100%';
-    }
-
     handleTransition() {
-        this.handleModal();
         this.handleLoading();
         document.getElementsByClassName('content')[0].classList.add('slide');
     }
 
-    clearModal() {
-        document.getElementsByClassName('content-modal')[0].style.opacity = '0%';
-    }
-
+    
     clearLoading() {
         document.getElementById('signup-load').style.opacity = '0%';
     }
-
-    clearTransition() {
-        this.clearModal();
-        this.clearLoading();
+    
+    handleSignup() {
+        this.handleLoading();
+        document.getElementsByClassName('content')[0].classList.add('slide');
+        this.props.signup();
     }
-
+    
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
@@ -94,9 +85,14 @@ class LoginForm extends React.Component {
     handleEmailInput() {
         if (this.state.email.length > 0) {
             this.handleTransition();
-            window.setTimeout(this.clearTransition, 300)
+            window.setTimeout(this.clearLoading, 300);
             window.setTimeout(this.toggleEmailInput, 300);
         }
+    }
+
+    guestLogin() {
+        const user = { email: 'test1', password: '123456' }
+        this.props.processForm(user);
     }
 
     handleSubmit(e) {
@@ -132,7 +128,6 @@ class LoginForm extends React.Component {
             return (
             <div className='login-form-container'>
                 <LinearProgress id='signup-load' />
-                <div className='content-modal'></div>
                 <div className='login-form'>
                     <div className='content'>
                         <p className={'label'} >Sign in</p>
@@ -154,12 +149,14 @@ class LoginForm extends React.Component {
                         <br/>
                         <div className='clickable-items-container'>
                             <div className='login-link'>
-                                <DelayLink className='a' 
-                                clickAction={this.handleTransition} 
-                                delay={300} 
-                                to="/signup">
+                                <div className='a'
+                                onClick={this.handleSignup}
+                                >
                                 Create Account
-                                </DelayLink >
+                                </div>
+                                <button id='guest-login'
+                                onClick={this.guestLogin}
+                                >Guest Login</button>
                             </div>
                             <button onClick={this.handleEmailInput}>Next</button>
                         </div>
@@ -171,7 +168,6 @@ class LoginForm extends React.Component {
             return (
                 <div className='login-form-container'>
                     <LinearProgress id='signup-load' />
-                    <div className='content-modal'></div>
                     <div className='login-form'>
                         <div className='content'>
                             <p className={'label'} >Welcome</p>

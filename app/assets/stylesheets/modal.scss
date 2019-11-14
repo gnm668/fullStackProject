@@ -7,10 +7,31 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #494949;
-  height: 50vh;
-  width: 50vh;
+  height: 75vh;
+  width: 75vh;
   border-radius: 1%;
   justify-content: center;
+}
+
+.modal-child.sign {
+  width: 0;
+  height: 0;
+  opacity: 95%;
+}
+
+.modal-child.file {
+  width: 962px;
+  height: 635px;
+}
+
+.modal-child.upload {
+  width: 961px;
+  height: 634px;
+  border-radius: 5px;
+  border: solid 1px #979797;
+  background-color: #282828;
+  opacity: 95%;
+  position: relative;
 }
 
 .modal-background {

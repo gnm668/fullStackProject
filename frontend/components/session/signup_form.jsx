@@ -17,14 +17,13 @@ class SignupForm extends React.Component {
             addPasswordEffect: false,
         };
 
+        this.handleSignin = this.handleSignin.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.guestLogin = this.guestLogin.bind(this);
 
         this.toggleUsername = this.toggleUsername.bind(this);
         this.toggleEmail = this.toggleEmail.bind(this);
         this.togglePassword = this.togglePassword.bind(this);
         
-        this.handleModal = this.handleModal.bind(this);
         this.handleLoading = this.handleLoading.bind(this);
         this.handleTransition = this.handleTransition.bind(this);
 
@@ -33,6 +32,7 @@ class SignupForm extends React.Component {
     componentDidMount() {
         this.props.clearErrors();
         focusOn('input');
+        document.querySelector('.modal-child').classList.add('sign');
     }
 
     toggleUsername() {
@@ -54,14 +54,14 @@ class SignupForm extends React.Component {
         document.getElementById('signup-load').style.opacity = '100%';
     }
 
-    handleModal() {
-        //alters modal visibility on DelayLink action
-        document.getElementsByClassName('content-modal')[0].style.opacity = '100%';
+    handleTransition() {
+        this.handleLoading();
     }
 
-    handleTransition() {
-        this.handleModal();
+    handleSignin() {
         this.handleLoading();
+        document.getElementsByClassName('content')[0].classList.add('slide');
+        this.props.signin();
     }
 
     handleInput(type) {
@@ -74,11 +74,6 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-    }
-
-    guestLogin() {
-        const user = {email: 'test1', password: '123456'}
-        this.props.loginUser(user);
     }
 
     renderErrors() {
@@ -113,7 +108,6 @@ class SignupForm extends React.Component {
         return (
             <div className='signin-form-container'>
                 <LinearProgress id='signup-load'/>
-                <div className='content-modal'></div>
                 <div className='signin-form'>
                     <div className='content'>
                         <p className='label'>Create your Tubie Account</p>
@@ -153,13 +147,14 @@ class SignupForm extends React.Component {
                         <br />
                         <div className='clickable-items-container'>
                             <div className='signin-link'>
-                                <DelayLink className='a' clickAction={this.handleTransition} delay={300} to="/signin">Sign in instead</DelayLink>
+                                <div className='a'
+                                onClick={this.handleSignin}>
+                                    Sign in Instead
+                                </div>
+                                {/* <DelayLink className='a' clickAction={this.handleTransition} delay={300} to="/signin">Sign in instead</DelayLink> */}
                             </div>
                             <button onClick={this.handleSubmit}>Sign up</button>
                         </div>
-                            <button id='guest-login'
-                            onClick={this.guestLogin}
-                            >Guest Login</button>
                     </div>
                 </div>
             </div>

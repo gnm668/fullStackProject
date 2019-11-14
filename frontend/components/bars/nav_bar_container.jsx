@@ -10,7 +10,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     logoutUser: () => dispatch(logoutUser()),
-    openModal: () => dispatch(openModal('uploadVideo'))
+    uploadVideo: () => dispatch(openModal('uploadVideo')),
+    signin: () => dispatch(openModal('signin'))
 });
 
 export default withRouter(connect(mSTP, mDTP)(NavBar));

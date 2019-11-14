@@ -9,6 +9,7 @@
     margin-top: 85px;
     margin-left: 4vh;
     display: flex;
+    max-width: 100%;
 }
 
 .video-show video {
@@ -71,7 +72,7 @@ video {
 #v-feed .video-feed-item a .title {
     margin-top: 10px;
     margin-left: 14px;
-    width: max-content;
+    max-width: 125px;
 }
 
 #v-feed .video-feed-item a .user {

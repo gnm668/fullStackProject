@@ -2,6 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import VideoFormContainer from '../forms/video_form_container';
+import SignupFormContainer from '../session/signup_form_container';
+import LoginFormContainer from '../session/login_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -11,6 +13,12 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'uploadVideo':
             component = <VideoFormContainer />
+            break;
+        case 'signup':
+            component = <SignupFormContainer />
+            break;
+        case 'signin':
+            component = <LoginFormContainer />
             break;
         default:
             return null;

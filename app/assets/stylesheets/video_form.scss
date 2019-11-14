@@ -27,51 +27,142 @@ input[type="file"] {
     opacity: 60%;
 }
 
+.video-form-text {
+    position: relative;
+}
+
 .video-form-text form {
-    width: 45vh;
-    height: 45vh;
     position: relative;
 }
 
 .video-form-text button:hover {
     cursor: pointer;
-    background-color: #2b2a2a;
+    background-color: #064fad;
+    border: 1px solid #064fad;
 }
 
 .video-form-text button {
-    border: solid 1px #303030;
-    background-color: #393939;
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: 1px solid #1a73e8;
+    border-radius: 5%;
+    font-size: 16px;
+    width: 90px;
+    height: 35px;
+    transition: 0.2s cubic-bezier(0, -0.02, 0.96, 1);
     position: absolute;
-    right: 1vh;
-    bottom: -0.5vh;
-    width: 60px;
-    height: 24px;
+    left: 533px;
+    top: 175px;
+}
+
+.video-form-text input:focus, .video-form-text textarea:focus {
+    border: solid 2px #979797;
+    border-radius: 3px;
 }
 
 .video-form-text input {
-    border-radius: 1%;
-    border: solid 1px #303030;
-    background-color: #121212;
-    font-size: 16px;
-    width: 25vh;
-    height: 2vh;
-    padding: 8px;
+    width: 569px;
+    height: 110px;
+    border-radius: 3px;
     position: absolute;
-    left: 14px;
-    top: 5px;
-    font-weight: 600;
+    border: solid 1px #979797;
+    background-color: #121212;
+    top: -250px;
+    left: -289px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 34px;
+    box-sizing: border-box;
 }
 
 .video-form-text textarea {
-    border-radius: 1%;
-    border: solid 1px #303030;
+    width: 571px;
+    height: 164px;
+    border-radius: 3px;
+    border: solid 1px #979797;
     background-color: #121212;
     position: absolute;
-    top: 58px;
-    left: 14px;
-    resize: vertical;
-    font-size: 14px;
-    width: 40vh;
-    height:30vh;
-    padding: 8px;
+    top: -82px;
+    left: -291px;
+    font-size: 12px;
+    font-weight: 700;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.video-form-text p {
+    height: 27px;
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    position: absolute;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    left: -283px;
+    bottom: 364px;
+    width: max-content;
+}
+
+.video-form-text label {
+    position: absolute;
+}
+
+.video-form-text .cancel {
+    width: 53px;
+    height: 17px;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    background: transparent;
+    left: -291px;
+    top: 194px;
+}
+
+.video-form-text .cancel:hover {
+    cursor: pointer;
+}
+
+.video-form-text #preview {
+    position: relative;
+    left: 297px;
+    width: 328px;
+    height: 185px;
+    border-radius: 1%;
+    top: -63px;
+    background-color: black;
+}
+
+.video-form-text #description {
+    pointer-events: none;
+    position: absolute;
+    top: -60px;
+    left: -267px;
+}
+
+.video-form-text #title {
+    pointer-events: none;
+    position: absolute;
+    left: -267px;
+    top: -230px;
+}
+
+.video-form-text input:focus ~ #title {
+    visibility: hidden;
+}
+
+.video-form-text textarea:focus ~ #description {
+    visibility: hidden;
+}
+
+.video-form-text .title.effect {
+    visibility: hidden;
+}
+
+.video-form-text .descript.effect {
+    visibility: hidden;
 }

@@ -10,9 +10,8 @@ class NavBar extends React.Component {
             addHamburgerButtonEffect: true
         };
 
-        this.renderRedirect = this.renderRedirect.bind(this);
         this.homeRedirect = this.homeRedirect.bind(this);
-        this.uploadRedirect = this.uploadRedirect.bind(this);
+        this.uploadVideo = this.uploadVideo.bind(this);
         this.toggleSignin = this.toggleSignin.bind(this);
         this.logoutUser = this.logoutUser.bind(this);
         this.toggleHamburger = this.toggleHamburger.bind(this);
@@ -24,13 +23,12 @@ class NavBar extends React.Component {
         }, 1500);
     }
 
-    renderRedirect() {
-        let that = this;
-        window.setTimeout(() => that.props.history.push('/signin'), 300); 
-    }
-
-    uploadRedirect() {
-        this.props.history.push('/videos/new');
+    uploadVideo() {
+        if (this.props.currentUser) {
+            this.props.uploadVideo();
+        } else {
+            this.props.signin();
+        }
     }
 
     homeRedirect() {
@@ -67,8 +65,9 @@ class NavBar extends React.Component {
         let button = null;
         if (!this.props.currentUser) {
             button = <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/button-sign-in.svg'
-                onClick={this.renderRedirect}
-                onMouseDown={this.toggleSignin}
+                // onClick={this.renderRedirect}
+                // onMouseDown={this.toggleSignin}
+                onClick={this.props.signin}
                 className={signinClass.join(' ')}> </svg>
         } else {
             button = <div className='signout-button'
@@ -102,7 +101,7 @@ class NavBar extends React.Component {
                     </div> */}
                     <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
                     className='upload-button'
-                    onClick={this.props.openModal} />
+                    onClick={this.uploadVideo} />
                     {button}
                 </div>
             </div>
