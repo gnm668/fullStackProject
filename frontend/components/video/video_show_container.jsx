@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
     video: state.entities.videos[ownProps.match.params.videoId],
     videos: Object.values(state.entities.videos).filter(video => {
         return video.id !== parseInt(ownProps.match.params.videoId);
-    })
+    }),
+    ownProps: ownProps
 }};
 
 const mDTP = dispatch => ({

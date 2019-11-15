@@ -43,7 +43,7 @@ body {
 }
 
 .lost {
-background: url(primitivebob.png);
+   background: url(primitivebob.png);
     opacity: 35%;
     display: flex;
     position: relative;
@@ -71,8 +71,12 @@ background: url(primitivebob.png);
    top: 100px;
    left: 0px;
    font-size: x-large;
-   width: min-content;
-   color: #3ea6ff;
+   background: #3ea6ff;
+   width: 150px;
+   height: 76px;
+   color: #FFFFFF;
+   border-radius: 2%;
+   text-align: center;
 }
 
 .present:hover {

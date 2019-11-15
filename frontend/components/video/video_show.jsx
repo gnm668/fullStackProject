@@ -2,17 +2,25 @@ import React from 'react';
 import NavBarContainer from '../bars/nav_bar_container';
 import { focusOn } from '../../util/ui_util';
 import VerticalFeed from '../feeds/vertical_feed';
+import LikesContainer from './likes_container';
 
 class VideoShow extends React.Component {
     constructor(props) {
         super(props);
+        this.myRef = React.createRef()
     }
 
     componentDidMount() {
         // this.props.fetchVideo(this.props.match.params.videoId);
         this.props.fetchVideos();
-        if (document.querySelector('video')) {
-            focusOn('video');
+        if (document.querySelector('.media video')) {
+            focusOn('.media video');
+        }
+    }
+
+    componentDidUpdate() {
+        if (document.querySelector('.media video')) {
+            focusOn('.media video');
         }
     }
 
@@ -47,8 +55,11 @@ class VideoShow extends React.Component {
                                     <div className='video-header'>
                                         <div className='title'>{video.title}</div>
                                         <div className='subheader'>
-                                            <div className='views'>Views Placeholder • </div>
-                                            <div className='date'>{date}</div>
+                                            <div className='left'>
+                                                <div className='views'>Views Placeholder • </div>
+                                                <div className='date'>{date}</div>
+                                            </div>
+                                            <LikesContainer ownProps={this.props.ownProps} />
                                         </div>
                                     </div>
                                     

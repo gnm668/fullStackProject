@@ -15,7 +15,7 @@ class Api::DislikesController < ApplicationController
 
     def destroy 
         @dislike = Dislike.find_by(id: params[:id])
-        if @video.destroy
+        if @dislike.destroy
             render :show
         else
             render json: @dislike.errors.full_messages, status: 422

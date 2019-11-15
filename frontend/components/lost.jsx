@@ -20,7 +20,7 @@ class Lost extends React.Component {
                     <p className='no-internet' >There's no internet here...</p>
                     <p className='present' 
                     onClick={this.homeRedirect} >
-                        Return to the present (Homepage)</p>
+                        Return to the present (Home)</p>
                 </div>
             </div>
         )

@@ -20,8 +20,13 @@
 }
 
 .modal-child.file {
-  width: 962px;
-  height: 635px;
+  width: 961px;
+  height: 634px;
+  border-radius: 5px;
+  border: solid 1px #979797;
+  background-color: #282828;
+  opacity: 95%;
+  position: relative;
 }
 
 .modal-child.upload {

@@ -35,11 +35,15 @@
 
 .video-header .subheader {
     display: flex;
-    justify-content: space-evenly;
-    width: fit-content;
+    justify-content: space-between;
+    width: 100%;
     font-size: 14px;
     font-weight: initial;
     margin-top: 14px;
+}
+
+.video-header .subheader .left {
+    display: flex;
 }
 
 .subheader .views {

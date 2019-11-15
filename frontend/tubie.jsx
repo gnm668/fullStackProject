@@ -11,6 +11,9 @@ import {
     updateVideo,
     deleteVideo, 
 } from './actions/video_actions';
+
+import { fetchLikes, createLike, deleteLike } from './actions/like_actions';
+import { fetchDislikes, createDislike, deleteDislike } from './actions/dislike_actions';  
 //test
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -33,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.createVideo = createVideo;
     window.updateVideo = updateVideo;
     window.deleteVideo = deleteVideo;
+
+    window.fetchDislikes = fetchDislikes;
+    window.fetchLikes = fetchLikes;
+    window.createDislike = createDislike;
+    window.createLike = createLike;
+    window.deleteDislike = deleteDislike;
+    window.deleteLike = deleteLike;
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
