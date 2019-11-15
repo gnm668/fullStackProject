@@ -1471,7 +1471,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "a",
           onClick: this.handleSignup
-        }, "Create Account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "Create Account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "guest-login",
           onClick: this.guestLogin
         }, "Guest Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1928,11 +1928,19 @@ function (_React$Component) {
         height: "200",
         width: "350",
         src: video.mediaUrl
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "m-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "icon"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "m-feed-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "title"
       }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "user"
-      }, video.user))));
+      }, video.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "views"
+      }, "views")))));
     }
   }]);
 

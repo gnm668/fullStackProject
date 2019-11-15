@@ -33,10 +33,9 @@
     font-weight: 700;
 }
 
-.main .user {
-    font-size: 15px;
-    color: #959595;
-    margin-top: 5px;
+.main .title {
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .main .video-feed-item {
@@ -44,4 +43,26 @@
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 20px;
+}
+
+.main .views, .main .user{
+    font-size: 14px;
+    color: #959595;
+    margin-top: 5px;
+}
+
+.main .icon {
+    background: url(user.svg);
+    width: 40px;
+    height: 40px;
+    margin-top: 8px;
+}
+
+.main .m-container {
+    display: flex;
+}
+
+.main .m-feed-info {
+    margin-top: 8px;
+    margin-left: 13px;
 }

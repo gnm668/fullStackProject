@@ -154,9 +154,9 @@ class LoginForm extends React.Component {
                                 >
                                 Create Account
                                 </div>
-                                <button id='guest-login'
+                                <div id='guest-login'
                                 onClick={this.guestLogin}
-                                >Guest Login</button>
+                                >Guest Login</div>
                             </div>
                             <button onClick={this.handleEmailInput}>Next</button>
                         </div>

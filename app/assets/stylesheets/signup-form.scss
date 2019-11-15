@@ -195,13 +195,14 @@
 
 #guest-login {
 text-decoration: none;
+    text-decoration: none;
     color: #1a73e8;
     background: transparent;
     border: none;
     width: max-content;
     position: absolute;
-    top: 43px;
-    left: -190px;
+    top: 41px;
+    left: 0;
 }
 
 .signup-errors-container {

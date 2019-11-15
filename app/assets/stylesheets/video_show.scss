@@ -72,7 +72,7 @@ video {
 }
 
 .v-show-user {
-display: block;
+    display: block;
     font-size: 16px;
     font-weight: 600;
     margin-left: 13px;
@@ -90,8 +90,8 @@ display: block;
     margin-top: 14px;
 }
 
-.v-show-user #user {
-
+#v-feed .m-feed-info {
+    margin-left: 10px;
 }
 
 .v-border {
@@ -112,17 +112,29 @@ display: block;
 
 #v-feed .video-feed-item a .title {
     margin-top: 29px;
-    margin-left: 14px;
+    // margin-left: 14px;
     max-width: 125px;
 }
 
 #v-feed .video-feed-item a .user {
     margin-top: 2px;
-    margin-left: 14px;
+    // margin-left: 14px;
     width: max-content;
     font-size: 14px;
     color: grey;
     margin-top: 6px;
 }
 
+#v-feed .m-container .icon {
+    display: none;
+}
 
+#v-feed .m-container {
+    height: 0;
+}
+
+#v-feed .views {
+    font-size: 14px;
+    color: #959595;
+    margin-top: 5px;
+}

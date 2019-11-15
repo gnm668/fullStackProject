@@ -20,7 +20,7 @@
 
 .login-form .content.slide {    
     transform: translateX(-100px);
-    opacity: 0;
+    opacity: 0%;
     // transition: all 2s ease;
 }
 
@@ -95,6 +95,7 @@
     margin-top: 19px;
     margin-left: 41px;
     margin-right: 41px;
+    position: relative;
 }
 
 .clickable-items-container-2 {
