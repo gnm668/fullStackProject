@@ -9,6 +9,8 @@ class User < ApplicationRecord
     after_initialize :ensure_token
 
     has_many :videos
+    has_many :likes
+    has_many :dislikes
 
     def self.find_by_creds(email, password)
         user = User.find_by(email: email)

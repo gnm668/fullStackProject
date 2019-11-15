@@ -14,12 +14,14 @@ class Lost extends React.Component {
 
     render() {
         return(
-            <div className='lost' >
-                <p className='lost-in-time' >You've been sent back in time</p>
-                <p className='no-internet' >There's no internet here...</p>
-                <p className='present' 
-                onClick={this.homeRedirect} >
-                    Return to the present (Homepage)</p>
+            <div className='fourOfour'>
+                <div className='lost' >
+                    <p className='lost-in-time' >You've been sent back in time</p>
+                    <p className='no-internet' >There's no internet here...</p>
+                    <p className='present' 
+                    onClick={this.homeRedirect} >
+                        Return to the present (Homepage)</p>
+                </div>
             </div>
         )
     }

@@ -37,14 +37,19 @@ body {
    border: 0;
 }
 
+.fourOfour {
+   display: flex;
+   justify-content: center;
+}
+
 .lost {
-   background: url(primitivebob.png);
-   height: 611px;
-   width: 1052px;
-   opacity: 35%;
-   position: absolute;
-   top: 15vh;
-   right: 0;
+background: url(primitivebob.png);
+    opacity: 35%;
+    display: flex;
+    position: relative;
+    width: 1052px;
+    height: 611px;
+    top: 18vh;
 }
 
 .lost-in-time {

@@ -1054,6 +1054,8 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fourOfour"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lost"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "lost-in-time"
@@ -1062,7 +1064,7 @@ function (_React$Component) {
       }, "There's no internet here..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "present",
         onClick: this.homeRedirect
-      }, "Return to the present (Homepage)"));
+      }, "Return to the present (Homepage)")));
     }
   }]);
 

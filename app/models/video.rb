@@ -3,6 +3,8 @@ class Video < ApplicationRecord
     validates :title, :description, presence: true
     
     belongs_to :user
+    has_many :likes
+    has_many :dislikes
 
     has_one_attached :media
 end
