@@ -2094,7 +2094,9 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     video: state.entities.videos[ownProps.match.params.videoId],
-    videos: Object.values(state.entities.videos)
+    videos: Object.values(state.entities.videos).filter(function (video) {
+      return video.id !== parseInt(ownProps.match.params.videoId);
+    })
   };
 };
 

@@ -17,10 +17,13 @@ class VideoShow extends React.Component {
     }
 
     render() {
+
         const video = this.props.video;
         const videos = this.props.videos;
+
         // const mediaUrl = this.props.video.mediaUrl;
         let date = '';
+
         if (this.props.video) {
             const rubyDate = this.props.video.created_at.slice(0, 10);
             const dateObj = new Date(rubyDate);
@@ -31,6 +34,7 @@ class VideoShow extends React.Component {
         } 
 
         if (video) {
+
             return (    
                 <div className='show'>
                     <NavBarContainer />
