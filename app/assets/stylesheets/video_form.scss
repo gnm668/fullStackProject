@@ -71,8 +71,9 @@ input[type="file"] {
     left: -289px;
     font-size: 16px;
     font-weight: 700;
-    padding: 34px;
+    padding: 25px;
     box-sizing: border-box;
+    padding-top: 46px;
 }
 
 .video-form-text textarea {
@@ -87,7 +88,9 @@ input[type="file"] {
     font-size: 12px;
     font-weight: 700;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 23px;
+    padding-top: 43px;
+
 }
 
 .video-form-text p {
@@ -140,7 +143,7 @@ input[type="file"] {
 .video-form-text #description {
     pointer-events: none;
     position: absolute;
-    top: -60px;
+    top: -63px;
     left: -267px;
 }
 
@@ -148,21 +151,21 @@ input[type="file"] {
     pointer-events: none;
     position: absolute;
     left: -267px;
-    top: -205px;
+    top: -231px;
 }
 
-.video-form-text input:focus ~ #title {
-    visibility: hidden;
-}
+// .video-form-text input:focus ~ #title {
+//     visibility: hidden;
+// }
 
-.video-form-text textarea:focus ~ #description {
-    visibility: hidden;
-}
+// .video-form-text textarea:focus ~ #description {
+//     visibility: hidden;
+// }
 
-.video-form-text .title.effect {
-    visibility: hidden;
-}
+// .video-form-text .title.effect {
+//     visibility: hidden;
+// }
 
-.video-form-text .descript.effect {
-    visibility: hidden;
-}
+// .video-form-text .descript.effect {
+//     visibility: hidden;
+// }
