@@ -8,11 +8,12 @@ class Likes extends React.Component {
         this.dislikeClick = this.dislikeClick.bind(this);
     }
 
-    componentWillMount() {
-        //write selector for these in container
+    componentDidMount() {
         this.props.fetchLikes();
         this.props.fetchDislikes();
+
     }
+
 
     totalDislikes(videoDislikes) {
         let allDislikes = this.props.dislikes;
@@ -157,6 +158,7 @@ class Likes extends React.Component {
         let dislikes = [];
         likes = this.totalLikes(likes);
         dislikes = this.totalDislikes(dislikes);
+
         return(
             <div className='likes'>
                 <div className='like-cont'

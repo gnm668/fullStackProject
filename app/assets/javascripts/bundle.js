@@ -917,7 +917,8 @@ function (_React$Component) {
   _createClass(VerticalFeed, [{
     key: "render",
     value: function render() {
-      var videos = Object(_util_misc_util__WEBPACK_IMPORTED_MODULE_1__["shuffle"])(this.props.videos);
+      //shuffle?
+      var videos = this.props.videos;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "v-feed"
       }, videos.map(function (video) {
@@ -2046,9 +2047,8 @@ function (_React$Component) {
   }
 
   _createClass(Likes, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      //write selector for these in container
+    key: "componentDidMount",
+    value: function componentDidMount() {
       this.props.fetchLikes();
       this.props.fetchDislikes();
     }
