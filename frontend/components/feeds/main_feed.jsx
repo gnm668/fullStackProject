@@ -5,7 +5,8 @@ import videoShowContainer from '../video/video_show_container';
 
 class MainFeed extends React.Component {
     componentDidMount() {
-        this.props.fetchVideos();
+        // Commented out request because of S3
+        // this.props.fetchVideos();
     }
 
     render() {
