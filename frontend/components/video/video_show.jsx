@@ -14,7 +14,7 @@ class VideoShow extends React.Component {
         // this.props.fetchVideo(this.props.match.params.videoId);
     
         // Commented out requests because of S3
-        // this.props.fetchVideos();
+        this.props.fetchVideos();
 
         if (document.querySelector('.media video')) {
             focusOn('.media video');

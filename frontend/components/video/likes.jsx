@@ -10,8 +10,8 @@ class Likes extends React.Component {
 
     componentDidMount() {
         //Commeneted out requests for S3
-        // this.props.fetchLikes();
-        // this.props.fetchDislikes();
+        this.props.fetchLikes();
+        this.props.fetchDislikes();
 
     }
 
