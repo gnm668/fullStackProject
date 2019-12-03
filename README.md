@@ -1,24 +1,7 @@
-# README REMOVE OR EDIT LATER***
- 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Tub-Tub
 
-Things you may want to cover:
+Tub-Tub is a web application that allows users to share and watch videos from all over the world. Tub-Tub gives users the opportunity to interact with videos and other users through comments, likes, and dislikes. 
 
-* Ruby version
+![Screen Shot 2019-12-03 at 3 08 12 PM](https://user-images.githubusercontent.com/43099538/70097701-d3e2ca80-15de-11ea-8930-1045192ace40.png)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+---
