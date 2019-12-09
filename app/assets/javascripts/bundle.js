@@ -804,6 +804,7 @@ function (_React$Component) {
   _createClass(MainFeed, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      // Commented out request because of S3
       this.props.fetchVideos();
     }
   }, {
@@ -2049,6 +2050,7 @@ function (_React$Component) {
   _createClass(Likes, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      //Commeneted out requests for S3
       this.props.fetchLikes();
       this.props.fetchDislikes();
     }
@@ -2475,6 +2477,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       // this.props.fetchVideo(this.props.match.params.videoId);
+      // Commented out requests because of S3
       this.props.fetchVideos();
 
       if (document.querySelector('.media video')) {

@@ -4,6 +4,8 @@ class Api::VideosController < ApplicationController
         render :index
     end
 
+    #grab likes with videos
+
     def create
         @video = Video.new(video_params)
         if @video.save
