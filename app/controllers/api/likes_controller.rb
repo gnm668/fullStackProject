@@ -4,6 +4,10 @@ class Api::LikesController < ApplicationController
         render :index
     end
 
+    def show
+        
+    end
+
     def create
         @like = Like.new(like_params)
         if @like.save
