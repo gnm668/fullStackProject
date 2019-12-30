@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  get 'comments/index'
+  get 'comments/show'
+  get 'comments/create'
+  get 'comments/destroy'
+  get 'comments/update'
   get 'root/root'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: { format: :json } do
