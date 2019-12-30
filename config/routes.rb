@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  
-  get 'comments/index'
-  get 'comments/show'
-  get 'comments/create'
-  get 'comments/destroy'
-  get 'comments/update'
+
   get 'root/root'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: { format: :json } do
@@ -12,6 +7,7 @@ Rails.application.routes.draw do
     resources :videos, except: [:new, :edit]
     resources :likes, only: [:index, :create, :destroy]
     resources :dislikes, only: [:index, :create, :destroy]
+    resources :comments, only: [:index, :create, :destroy]
 
     resource :session, only: [:create, :destroy]
 
