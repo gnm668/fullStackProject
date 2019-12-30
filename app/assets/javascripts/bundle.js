@@ -2050,7 +2050,6 @@ function (_React$Component) {
   _createClass(Likes, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      //Commeneted out requests for S3
       this.props.fetchLikes();
       this.props.fetchDislikes();
     }
