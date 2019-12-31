@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentItem from './comment_item';
+import CommentFormContainer from '../forms/comment_form_container';
 
 class Comments extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Comments extends React.Component {
         const comments = this.props.comments;
         return (
             <div className='comments'>
+                <CommentFormContainer />
                 <div>
                     {comments.map(comment => <CommentItem key={comment.id} comment={comment} />)}
                 </div>
