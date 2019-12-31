@@ -86,6 +86,72 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/comment_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/comment_actions.js ***!
+  \*********************************************/
+/*! exports provided: RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT, fetchComments, createComment, deleteComment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_COMMENTS", function() { return RECEIVE_ALL_COMMENTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COMMENT", function() { return RECEIVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_COMMENT", function() { return REMOVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComments", function() { return fetchComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+/* harmony import */ var _util_comment_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/comment_util */ "./frontend/util/comment_util.js");
+
+var RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
+var RECEIVE_COMMENT = 'RECEIVE_COMMENT';
+var REMOVE_COMMENT = 'REMOVE_COMMENT';
+
+var receiveAllComments = function receiveAllComments(comments) {
+  return {
+    type: RECEIVE_ALL_COMMENTS,
+    comments: comments
+  };
+};
+
+var receiveComment = function receiveComment(comment) {
+  return {
+    type: RECEIVE_COMMENT,
+    comment: comment
+  };
+};
+
+var removeComment = function removeComment(commentId) {
+  return {
+    type: REMOVE_COMMENT,
+    commentId: commentId
+  };
+};
+
+var fetchComments = function fetchComments() {
+  return function (dispatch) {
+    return _util_comment_util__WEBPACK_IMPORTED_MODULE_0__["fetchComments"]().then(function (comments) {
+      return dispatch(receiveAllComments(comments));
+    });
+  };
+};
+var createComment = function createComment(comment) {
+  return function (dispatch) {
+    return _util_comment_util__WEBPACK_IMPORTED_MODULE_0__["createComment"](comment).then(function (comment) {
+      return dispatch(receiveComment(comment));
+    });
+  };
+};
+var deleteComment = function deleteComment(commentId) {
+  return function (dispatch) {
+    return _util_comment_util__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](commentId).then(function () {
+      return dispatch(removeComment(commentId));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/dislike_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/dislike_actions.js ***!
@@ -2477,7 +2543,9 @@ function (_React$Component) {
     value: function componentDidMount() {
       // this.props.fetchVideo(this.props.match.params.videoId);
       // Commented out requests because of S3
-      this.props.fetchVideos();
+      this.props.fetchVideos(); //test
+
+      this.props.fetchComments();
 
       if (document.querySelector('.media video')) {
         Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_2__["focusOn"])('.media video');
@@ -2580,7 +2648,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _video_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./video_show */ "./frontend/components/video/video_show.jsx");
 /* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
+/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
 
+
+ // testing
 
 
 
@@ -2601,11 +2672,57 @@ var mDTP = function mDTP(dispatch) {
     },
     fetchVideos: function fetchVideos() {
       return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideos"])());
+    },
+    // testing
+    fetchComments: function fetchComments() {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["fetchComments"])());
     }
   };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_video_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/reducers/comments_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/comments_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var commentsReducer = function commentsReducer() {
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(oldState);
+
+  switch (action.type) {
+    case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_COMMENTS"]:
+      return Object.assign({}, oldState, action.comments);
+
+    case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
+      return Object.assign({}, oldState, _defineProperty({}, action.comment.id, action.comment));
+
+    case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
+      var nextState = Object.assign({}, oldState);
+      delete nexState[action.commentId];
+      return nextState;
+
+    default:
+      return oldState;
+  }
+
+  ;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (commentsReducer);
 
 /***/ }),
 
@@ -2663,6 +2780,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _videos_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./videos_reducer */ "./frontend/reducers/videos_reducer.js");
 /* harmony import */ var _likes_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./likes_reducer */ "./frontend/reducers/likes_reducer.js");
 /* harmony import */ var _dislikes_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dislikes_reducer */ "./frontend/reducers/dislikes_reducer.js");
+/* harmony import */ var _comments_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./comments_reducer */ "./frontend/reducers/comments_reducer.js");
+
 
 
 
@@ -2672,7 +2791,8 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   videos: _videos_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   likes: _likes_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  dislikes: _dislikes_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  dislikes: _dislikes_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  comments: _comments_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -3070,6 +3190,41 @@ document.addEventListener('DOMContentLoaded', function () {
     store: store
   }), root);
 });
+
+/***/ }),
+
+/***/ "./frontend/util/comment_util.js":
+/*!***************************************!*\
+  !*** ./frontend/util/comment_util.js ***!
+  \***************************************/
+/*! exports provided: fetchComments, createComment, deleteComment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComments", function() { return fetchComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+var fetchComments = function fetchComments() {
+  return $.ajax({
+    url: "api/comments"
+  });
+};
+var createComment = function createComment(comment) {
+  return $.ajax({
+    url: "api/comments",
+    method: "POST",
+    data: {
+      comment: comment
+    }
+  });
+};
+var deleteComment = function deleteComment(commentId) {
+  return $.ajax({
+    url: "api/comments/".concat(commentId),
+    method: "DELETE"
+  });
+};
 
 /***/ }),
 
