@@ -55,7 +55,7 @@ class CommentForm extends React.Component {
 
         this.props.createComment(comment);
         this.setState({ body: '' });
-        this.cancelSwitch();
+        // this.cancelSwitch();
     };
 
     commentButton() {
