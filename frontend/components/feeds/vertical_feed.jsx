@@ -8,8 +8,6 @@ class VerticalFeed extends React.Component {
         super(props);
     }
 
-
-
     render() {
         //shuffle?
         const videos = (this.props.videos)

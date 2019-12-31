@@ -2116,9 +2116,11 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var comments = this.props.comments;
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments"
-      });
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comments.body));
     }
   }]);
 
@@ -2149,7 +2151,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    likes: Object.values(state.entities.comments)
+    comments: Object.values(state.entities.comments)
   };
 };
 

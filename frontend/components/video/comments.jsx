@@ -10,9 +10,13 @@ class Comments extends React.Component {
     }
 
     render() {
+        const comments = this.props.comments;
+        debugger;
         return (
             <div className='comments'>
-                
+                <div>
+                    {comments.body}
+                </div>
             </div>
         )
     }

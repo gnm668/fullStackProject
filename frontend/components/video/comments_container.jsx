@@ -9,7 +9,7 @@ import {
 
 const mSTP = state => {
     return { 
-        likes: Object.values(state.entities.comments)
+        comments: Object.values(state.entities.comments)
     };
 };
 
