@@ -32,3 +32,9 @@ export const fetchComments = () => dispatch => {
     );
 };
 
+export const createComment = comment => dispatch => {
+    return (
+        APIUtil.createComment(comment)
+            .then(comment => dispatch(receiveComment(comment)))
+    );
+};
