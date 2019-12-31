@@ -8,6 +8,14 @@ class Comments extends React.Component {
     componentDidMount() {
         this.props.fetchComments();
     }
+
+    render() {
+        return (
+            <div className='comments'>
+                
+            </div>
+        )
+    }
 }
 
 
