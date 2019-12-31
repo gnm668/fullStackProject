@@ -5,6 +5,11 @@ export const fetchComments = () => {
     });
 };
 
-export const createComment = () => {
-    return $.ajax({})
+export const createComment = comment => {
+    return $.ajax({
+        url: `api/comments`,
+        method: `POST`,
+        data: { comment }
+    });
 };
+
