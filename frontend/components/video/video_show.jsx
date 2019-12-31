@@ -81,7 +81,7 @@ class VideoShow extends React.Component {
 
                                     <div className='v-border'></div>
                                     
-                                    <CommentsContainer />
+                                    <CommentsContainer ownProps={this.props.ownProps} />
 
                                 </div>
                             </div>  

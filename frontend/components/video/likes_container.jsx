@@ -16,8 +16,8 @@ const mSTP = state => {
     return {
         likes: Object.values(state.entities.likes),
         dislikes: Object.values(state.entities.dislikes),
-        currentUser: state.entities.users[state.session.id],
-    }
+        currentUser: state.entities.users[state.session.id]
+    };
 };
 
 const mDTP = dispatch => ({

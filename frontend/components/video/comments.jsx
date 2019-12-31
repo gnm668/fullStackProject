@@ -15,7 +15,7 @@ class Comments extends React.Component {
         const comments = this.props.comments;
         return (
             <div className='comments'>
-                <CommentFormContainer />
+                <CommentFormContainer ownProps={this.props.ownProps} />
                 <div>
                     {comments.map(comment => <CommentItem key={comment.id} comment={comment} />)}
                 </div>
