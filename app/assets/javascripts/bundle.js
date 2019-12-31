@@ -2732,9 +2732,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       // this.props.fetchVideo(this.props.match.params.videoId);
       // Commented out requests because of S3
-      this.props.fetchVideos(); //test
-
-      this.props.fetchComments();
+      this.props.fetchVideos();
 
       if (document.querySelector('.media video')) {
         Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_2__["focusOn"])('.media video');
@@ -2837,10 +2835,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _video_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./video_show */ "./frontend/components/video/video_show.jsx");
 /* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
-/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
 
-
- // testing
 
 
 
@@ -2861,10 +2856,6 @@ var mDTP = function mDTP(dispatch) {
     },
     fetchVideos: function fetchVideos() {
       return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_2__["fetchVideos"])());
-    },
-    // testing
-    fetchComments: function fetchComments() {
-      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["fetchComments"])());
     }
   };
 };
