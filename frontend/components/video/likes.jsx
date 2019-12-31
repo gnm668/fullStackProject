@@ -11,7 +11,6 @@ class Likes extends React.Component {
     componentDidMount() {
         this.props.fetchLikes();
         this.props.fetchDislikes();
-
     }
 
 
