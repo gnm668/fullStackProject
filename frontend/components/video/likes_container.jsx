@@ -12,7 +12,7 @@ import {
     deleteDislike,
 } from '../../actions/dislike_actions';
 
-const mSTP = (state) => {
+const mSTP = state => {
     return {
         likes: Object.values(state.entities.likes),
         dislikes: Object.values(state.entities.dislikes),
