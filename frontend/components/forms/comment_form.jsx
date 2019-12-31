@@ -5,17 +5,27 @@ class CommentForm extends React.Component {
         super(props);
         this.state = {
             body: '',
+            commentSwitch: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.signinCheck = this.signinCheck.bind(this);
+        this.commentSwitch = this.commentSwitch.bind(this);
+    };
+
+    commentSwitch() {
+        if (this.props.currentUser) {
+            this.setState({ commentSwitch: !this.state.commentSwitch });
+        };
     };
 
     signinCheck() {
         if (!this.props.currentUser) {
             this.props.signin();
-        }
-    }
+        } else {
+            this.commentSwitch();
+        };
+    };
 
     handleInput(type) {
         return (e) => {
@@ -37,9 +47,19 @@ class CommentForm extends React.Component {
         const comment = Object.assign({}, this.state, videoId, userId);
 
         this.props.createComment(comment);
+        this.setState({ body: '' });
 
     };
 
+    commentButton() {
+        if (this.props.currentUser && this.state.commentSwitch) {
+            return (
+                <button>COMMENT</button>
+            );
+        } else {
+            return
+        };
+    };
 
     render() {
         return (
@@ -55,10 +75,10 @@ class CommentForm extends React.Component {
                         placeholder='Add a public comment...'
                         value={this.state.body}
                         onChange={this.handleInput('body')}
-                        onClick={this.signinCheck}
+                        onFocus={this.signinCheck}
                         />
 
-                        <button>COMMENT</button>
+                        {this.commentButton()}
 
                     </div>
 

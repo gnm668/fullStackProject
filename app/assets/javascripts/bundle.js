@@ -1049,19 +1049,36 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentForm).call(this, props));
     _this.state = {
-      body: ''
+      body: '',
+      commentSwitch: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.signinCheck = _this.signinCheck.bind(_assertThisInitialized(_this));
+    _this.commentSwitch = _this.commentSwitch.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(CommentForm, [{
+    key: "commentSwitch",
+    value: function commentSwitch() {
+      if (this.props.currentUser) {
+        this.setState({
+          commentSwitch: !this.state.commentSwitch
+        });
+      }
+
+      ;
+    }
+  }, {
     key: "signinCheck",
     value: function signinCheck() {
       if (!this.props.currentUser) {
         this.props.signin();
+      } else {
+        this.commentSwitch();
       }
+
+      ;
     }
   }, {
     key: "handleInput",
@@ -1084,6 +1101,20 @@ function (_React$Component) {
       };
       var comment = Object.assign({}, this.state, videoId, userId);
       this.props.createComment(comment);
+      this.setState({
+        body: ''
+      });
+    }
+  }, {
+    key: "commentButton",
+    value: function commentButton() {
+      if (this.props.currentUser && this.state.commentSwitch) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT");
+      } else {
+        return;
+      }
+
+      ;
     }
   }, {
     key: "render",
@@ -1101,8 +1132,8 @@ function (_React$Component) {
         placeholder: "Add a public comment...",
         value: this.state.body,
         onChange: this.handleInput('body'),
-        onClick: this.signinCheck
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT"))));
+        onFocus: this.signinCheck
+      }), this.commentButton())));
     }
   }]);
 
