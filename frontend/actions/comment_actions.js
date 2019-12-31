@@ -20,6 +20,15 @@ const receiveComment = comment => {
 
 const removeComment = commentId => {
     return {
-        
-    }
-}
+        type: REMOVE_COMMENT,
+        commentId
+    };
+};
+
+export const fetchComments = () => dispatch => {
+    return (
+        APIUtil.fetchComments()
+            .then(comments => dispatch(receiveAllComments(comments)))
+    );
+};
+
