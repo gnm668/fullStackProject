@@ -11,10 +11,17 @@ class CommentForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.signinCheck = this.signinCheck.bind(this);
         this.commentSwitch = this.commentSwitch.bind(this);
+        this.cancelSwitch = this.cancelSwitch.bind(this);
     };
 
     commentSwitch() {
-        if (this.props.currentUser) {
+        if (!this.state.commentSwitch && this.props.currentUser) {
+            this.setState({ commentSwitch: !this.state.commentSwitch });
+        };
+    };
+
+    cancelSwitch() {
+        if (this.state.commentSwitch) {
             this.setState({ commentSwitch: !this.state.commentSwitch });
         };
     };
@@ -48,13 +55,19 @@ class CommentForm extends React.Component {
 
         this.props.createComment(comment);
         this.setState({ body: '' });
-
+        this.cancelSwitch();
     };
 
     commentButton() {
         if (this.props.currentUser && this.state.commentSwitch) {
             return (
-                <button>COMMENT</button>
+                <div className='comment-buttons'>
+                    <p onClick={this.cancelSwitch}>
+                        CANCEL
+                    </p>
+
+                    <button>COMMENT</button>
+                </div>
             );
         } else {
             return

@@ -1055,13 +1055,25 @@ function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.signinCheck = _this.signinCheck.bind(_assertThisInitialized(_this));
     _this.commentSwitch = _this.commentSwitch.bind(_assertThisInitialized(_this));
+    _this.cancelSwitch = _this.cancelSwitch.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(CommentForm, [{
     key: "commentSwitch",
     value: function commentSwitch() {
-      if (this.props.currentUser) {
+      if (!this.state.commentSwitch && this.props.currentUser) {
+        this.setState({
+          commentSwitch: !this.state.commentSwitch
+        });
+      }
+
+      ;
+    }
+  }, {
+    key: "cancelSwitch",
+    value: function cancelSwitch() {
+      if (this.state.commentSwitch) {
         this.setState({
           commentSwitch: !this.state.commentSwitch
         });
@@ -1104,12 +1116,17 @@ function (_React$Component) {
       this.setState({
         body: ''
       });
+      this.cancelSwitch();
     }
   }, {
     key: "commentButton",
     value: function commentButton() {
       if (this.props.currentUser && this.state.commentSwitch) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT");
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "comment-buttons"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          onClick: this.cancelSwitch
+        }, "CANCEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT"));
       } else {
         return;
       }

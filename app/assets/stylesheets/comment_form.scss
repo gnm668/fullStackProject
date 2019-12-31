@@ -29,13 +29,34 @@
 }
 
 .comment-field button {
-    background-color: #1a73e8;
-    color: #ffffff;
+background-color: #1a73e8;
+    color: black;
     border: 1px solid #1a73e8;
     border-radius: 5%;
     font-size: 14px;
     width: 90px;
     height: 35px;
-    align-self: flex-end;
-    margin-top: 16px;
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+.comment-field button:hover {
+    cursor: pointer;
+}
+
+.comment-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-buttons p {
+    margin-top: 19px;
+    margin-right: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ababab;
+}
+
+.comment-buttons p:hover {
+    cursor: pointer;
 }
