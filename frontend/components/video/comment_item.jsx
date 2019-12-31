@@ -9,8 +9,16 @@ class CommentItem extends React.Component {
         const comment = this.props.comment;
         return(
             <div className='comment-item'>
-                <p>{comment.user}</p>
-                <p>{comment.body}</p>
+
+                <svg id='icon'></svg>
+
+                <div className='comment-info'>
+                    <div className='comment-header'>
+                        <p className='comment-user'>{comment.user}</p>
+                        <p className='comment-time'>Placeholder</p>
+                    </div>
+                    <p className='comment-body'>{comment.body}</p>
+                </div>
             </div>
         )
     }

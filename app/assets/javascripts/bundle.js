@@ -2114,7 +2114,19 @@ function (_React$Component) {
       var comment = this.props.comment;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, comment.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, comment.body));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        id: "icon"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "comment-user"
+      }, comment.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "comment-time"
+      }, "Placeholder")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "comment-body"
+      }, comment.body)));
     }
   }]);
 
