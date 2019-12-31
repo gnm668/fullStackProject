@@ -37,20 +37,21 @@ class CommentForm extends React.Component {
         return (
             <div className='comment-form'>
 
-                <form onSubmit={this.handleSubmit}>
+                <svg id='icon'></svg>
 
-                    <svg id='icon'></svg>
+                <form onSubmit={this.handleSubmit}>
 
                     <div className='comment-field'>
                         <input 
-                        type='text'
+                        type='text-area'
                         placeholder='Add a public comment...'
                         value={this.state.body}
                         onChange={this.handleInput('body')}
                         />
-                    </div>
 
-                    <button>COMMENT</button>
+                        <button>COMMENT</button>
+
+                    </div>
 
                 </form>
 

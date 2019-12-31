@@ -1082,18 +1082,18 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         id: "icon"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-field"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+        type: "text-area",
         placeholder: "Add a public comment...",
         value: this.state.body,
         onChange: this.handleInput('body')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT")));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT"))));
     }
   }]);
 
