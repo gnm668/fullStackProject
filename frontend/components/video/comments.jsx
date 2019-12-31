@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentItem from '../'
 
 class Comments extends React.Component {
     constructor(props) {
@@ -11,14 +12,13 @@ class Comments extends React.Component {
 
     render() {
         const comments = this.props.comments;
-        debugger;
         return (
             <div className='comments'>
                 <div>
-                    {comments.body}
+                    {comments.map(comment => <CommentItem key={comment.id} comment={comment} />)}
                 </div>
             </div>
-        )
+        );
     }
 }
 
