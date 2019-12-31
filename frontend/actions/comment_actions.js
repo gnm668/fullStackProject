@@ -38,3 +38,10 @@ export const createComment = comment => dispatch => {
             .then(comment => dispatch(receiveComment(comment)))
     );
 };
+
+export const deleteComment = commentId => dispatch => {
+    return (
+        APIUtil.deleteComment(commentId)
+            .then(() => dispatch(removeComment(commentId)))
+    );
+};
