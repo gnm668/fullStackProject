@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :videos, except: [:new, :edit]
     resources :likes, only: [:index, :create, :destroy]
     resources :dislikes, only: [:index, :create, :destroy]
-    resources :comments, only: [:index, :show, :create, :destroy]
+    resources :comments, except: [:new, :edit]
 
     resource :session, only: [:create, :destroy]
 
