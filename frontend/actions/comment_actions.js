@@ -10,3 +10,16 @@ const receiveAllComments = comments => {
         comments
     };
 };
+
+const receiveComment = comment => {
+    return {
+        type: RECEIVE_COMMENT,
+        comment
+    };
+};
+
+const removeComment = commentId => {
+    return {
+        
+    }
+}
