@@ -1052,10 +1052,18 @@ function (_React$Component) {
       body: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.signinCheck = _this.signinCheck.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(CommentForm, [{
+    key: "signinCheck",
+    value: function signinCheck() {
+      if (!this.props.currentUser) {
+        this.props.signin();
+      }
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(type) {
       var _this2 = this;
@@ -1092,7 +1100,8 @@ function (_React$Component) {
         type: "text-area",
         placeholder: "Add a public comment...",
         value: this.state.body,
-        onChange: this.handleInput('body')
+        onChange: this.handleInput('body'),
+        onClick: this.signinCheck
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT"))));
     }
   }]);
@@ -1134,7 +1143,7 @@ var mDTP = function mDTP(dispatch) {
     createComment: function createComment(comment) {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_2__["createComment"])(comment));
     },
-    singin: function singin() {
+    signin: function signin() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('signin'));
     }
   };

@@ -13,7 +13,7 @@ const mDTP = dispatch => {
     return {
         createComment: comment => dispatch(createComment(comment)),
 
-        singin: () => dispatch(openModal('signin'))
+        signin: () => dispatch(openModal('signin'))
     };
 };
 

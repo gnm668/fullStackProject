@@ -8,7 +8,14 @@ class CommentForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.signinCheck = this.signinCheck.bind(this);
     };
+
+    signinCheck() {
+        if (!this.props.currentUser) {
+            this.props.signin();
+        }
+    }
 
     handleInput(type) {
         return (e) => {
@@ -33,6 +40,7 @@ class CommentForm extends React.Component {
 
     };
 
+
     render() {
         return (
             <div className='comment-form'>
@@ -47,6 +55,7 @@ class CommentForm extends React.Component {
                         placeholder='Add a public comment...'
                         value={this.state.body}
                         onChange={this.handleInput('body')}
+                        onClick={this.signinCheck}
                         />
 
                         <button>COMMENT</button>
