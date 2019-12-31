@@ -1,11 +1,7 @@
 import { connect } from 'react-redux';
 import Comments from './comments';
 import { openModal } from '../../actions/modal_actions';
-import {
-    fetchComments,
-    createComment,
-    deleteComment
-} from '../../actions/comment_actions';
+import { fetchComments } from '../../actions/comment_actions';
 
 const mSTP = state => {
     return { 
@@ -16,8 +12,6 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         fetchComments: () => dispatch(fetchComments()),
-        createComment: comment => dispatch(createComment(comment)),
-        deleteComment: commentId => dispatch(deleteComment(commentId)),
 
         signin: () => dispatch(openModal('signin'))
     };

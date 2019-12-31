@@ -30,6 +30,7 @@ class CommentForm extends React.Component {
         const comment = Object.assign({}, this.state, videoId, userId);
 
         this.props.createComment(comment);
+
     };
 
     render() {

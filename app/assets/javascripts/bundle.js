@@ -2381,12 +2381,6 @@ var mDTP = function mDTP(dispatch) {
     fetchComments: function fetchComments() {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["fetchComments"])());
     },
-    createComment: function createComment(comment) {
-      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["createComment"])(comment));
-    },
-    deleteComment: function deleteComment(commentId) {
-      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["deleteComment"])(commentId));
-    },
     signin: function signin() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])('signin'));
     }

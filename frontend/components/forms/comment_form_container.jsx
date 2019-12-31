@@ -12,6 +12,7 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return {
         createComment: comment => dispatch(createComment(comment)),
+
         singin: () => dispatch(openModal('signin'))
     };
 };
