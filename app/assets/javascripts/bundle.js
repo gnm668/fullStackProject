@@ -1050,7 +1050,8 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentForm).call(this, props));
     _this.state = {
       body: '',
-      commentSwitch: false
+      commentSwitch: false,
+      buttonDisable: true
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.signinCheck = _this.signinCheck.bind(_assertThisInitialized(_this));
@@ -1126,7 +1127,9 @@ function (_React$Component) {
           className: "comment-buttons"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           onClick: this.cancelSwitch
-        }, "CANCEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "COMMENT"));
+        }, "CANCEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          disabled: this.state.buttonDisable
+        }, "COMMENT"));
       } else {
         return;
       }
