@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :comments, except: [:new]
 
     resource :session, only: [:create, :destroy]
-
   end
 
   

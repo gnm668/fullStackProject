@@ -12,7 +12,7 @@ class Comments extends React.Component {
     }
 
     render() {
-        const comments = this.props.comments;
+        const comments = this.props.comments.reverse();
         return (
             <div className='comments'>
                 <CommentFormContainer ownProps={this.props.ownProps} />

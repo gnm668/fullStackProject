@@ -30,9 +30,6 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-  def update
-  end
-
   private
 
   def comment_params
