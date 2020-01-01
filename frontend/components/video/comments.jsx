@@ -12,7 +12,14 @@ class Comments extends React.Component {
     }
 
     render() {
-        const comments = this.props.comments.reverse();
+
+        let comments = this.props.comments.reverse();
+        const videoId = parseInt(this.props.ownProps.match.params.videoId);
+
+        comments = comments.filter(comment => {
+            return comment.video_id === videoId;
+        });
+
         return (
             <div className='comments'>
                 <CommentFormContainer ownProps={this.props.ownProps} />

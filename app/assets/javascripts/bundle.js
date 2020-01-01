@@ -2391,6 +2391,10 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var comments = this.props.comments.reverse();
+      var videoId = parseInt(this.props.ownProps.match.params.videoId);
+      comments = comments.filter(function (comment) {
+        return comment.video_id === videoId;
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forms_comment_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
