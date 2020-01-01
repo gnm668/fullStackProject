@@ -5,8 +5,7 @@ class CommentForm extends React.Component {
         super(props);
         this.state = {
             body: '',
-            commentSwitch: false,
-            buttonDisable: true
+            commentSwitch: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -67,7 +66,7 @@ class CommentForm extends React.Component {
                         CANCEL
                     </p>
 
-                    <button disabled={this.state.buttonDisable}>COMMENT</button>
+                    <button disabled={!this.state.body}>COMMENT</button>
                 </div>
             );
         } else {
