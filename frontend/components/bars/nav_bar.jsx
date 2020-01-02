@@ -182,7 +182,10 @@ class NavBar extends React.Component {
                     onClick={this.uploadRedirect} >
                         <p>Up</p>
                     </div> */}
-                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
+                    <svg 
+                    onMouseEnter={this.videoBubble}
+                    onMouseLeave={this.videoBubble}
+                    src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
                     className='upload-button'
                     onClick={this.uploadVideo} />
                     {button}
