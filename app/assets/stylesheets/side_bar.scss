@@ -1,5 +1,6 @@
 .github {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 75px;
@@ -8,6 +9,7 @@
 
 .linkedin {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 75px;
@@ -20,4 +22,14 @@
 
 .linkedin:hover {
     background-color: #3e3e3e;
+}
+
+.github p {
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.linkedin p {
+    font-size: 11px;
+    margin-top: 8px;
 }
