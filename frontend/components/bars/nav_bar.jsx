@@ -146,6 +146,13 @@ class NavBar extends React.Component {
                     onClick={this.uploadVideo} />
                     {button}
                 </div>
+
+
+                <div className='home-bubble'>
+                    Home
+                </div>
+
+
             </div>
         );
     }

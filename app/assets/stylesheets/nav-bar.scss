@@ -204,6 +204,23 @@
     border: 1px solid #064fad;
 }
 
+.home-bubble {
+    height: 30px;
+    width: 56px;
+    background-color: grey;
+    position: fixed;
+    left: 10px;
+    top: 59px;
+    border-radius: 3%;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: lighter;
+    color: #dedede;
+    opacity: 97%;
+}
+
 /* .signin-button {
     display: flex;
     align-items: center;
