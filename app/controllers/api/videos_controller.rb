@@ -40,7 +40,7 @@ class Api::VideosController < ApplicationController
     private
 
     def video_params
-        params.require(:video).permit(:user_id, :title, :description, :media)
+        params.require(:video).permit(:user_id, :title, :description, :media, :search)
     end
 
 end

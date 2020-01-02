@@ -14,14 +14,22 @@ class NavBar extends React.Component {
             videoBubble: false
         };
 
+
+        this.handleSearch = this.handleSearch.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+
         this.homeBubble = this.homeBubble.bind(this);
         this.searchBubble = this.searchBubble.bind(this);
         this.videoBubble = this.videoBubble.bind(this);
+
         this.homeRedirect = this.homeRedirect.bind(this);
+
         this.uploadVideo = this.uploadVideo.bind(this);
+
         this.toggleSignin = this.toggleSignin.bind(this);
         this.logoutUser = this.logoutUser.bind(this);
-        this.toggleHamburger = this.toggleHamburger.bind(this);
+
+        // this.toggleHamburger = this.toggleHamburger.bind(this);
     }
 
     handleInput(type) {
@@ -35,6 +43,14 @@ class NavBar extends React.Component {
     //         document.getElementById('ham').style.visibility = 'visible';
     //     }, 1500);
     // }
+
+    handleSearch(e) {
+        debugger;
+        e.preventDefault();
+        const searchData = new FormData();
+        FormData.append('video[search]', this.state.search);
+        this.props.fetchVideos(searchData);
+    };
 
     uploadVideo() {
         if (this.props.currentUser) {
@@ -152,6 +168,7 @@ class NavBar extends React.Component {
                     onChange={this.handleInput('search')}
                     />
                     <button
+                    onClick={this.handleSearch}
                     onMouseEnter={this.searchBubble}
                     onMouseLeave={this.searchBubble}
                     >

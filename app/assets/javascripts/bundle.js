@@ -602,14 +602,16 @@ function (_React$Component) {
       searchBubble: false,
       videoBubble: false
     };
+    _this.handleSearch = _this.handleSearch.bind(_assertThisInitialized(_this));
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.homeBubble = _this.homeBubble.bind(_assertThisInitialized(_this));
     _this.searchBubble = _this.searchBubble.bind(_assertThisInitialized(_this));
     _this.videoBubble = _this.videoBubble.bind(_assertThisInitialized(_this));
     _this.homeRedirect = _this.homeRedirect.bind(_assertThisInitialized(_this));
     _this.uploadVideo = _this.uploadVideo.bind(_assertThisInitialized(_this));
     _this.toggleSignin = _this.toggleSignin.bind(_assertThisInitialized(_this));
-    _this.logoutUser = _this.logoutUser.bind(_assertThisInitialized(_this));
-    _this.toggleHamburger = _this.toggleHamburger.bind(_assertThisInitialized(_this));
+    _this.logoutUser = _this.logoutUser.bind(_assertThisInitialized(_this)); // this.toggleHamburger = this.toggleHamburger.bind(this);
+
     return _this;
   }
 
@@ -623,12 +625,21 @@ function (_React$Component) {
       };
     }
   }, {
-    key: "uploadVideo",
+    key: "handleSearch",
     // componentDidMount() {
     //     window.setTimeout(function () {
     //         document.getElementById('ham').style.visibility = 'visible';
     //     }, 1500);
     // }
+    value: function handleSearch(e) {
+      debugger;
+      e.preventDefault();
+      var searchData = new FormData();
+      FormData.append('video[search]', this.state.search);
+      this.props.fetchVideos(searchData);
+    }
+  }, {
+    key: "uploadVideo",
     value: function uploadVideo() {
       if (this.props.currentUser) {
         this.props.uploadVideo();
@@ -770,6 +781,7 @@ function (_React$Component) {
         className: "search",
         onChange: this.handleInput('search')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleSearch,
         onMouseEnter: this.searchBubble,
         onMouseLeave: this.searchBubble
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -846,6 +858,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
+
 
 
 
@@ -860,6 +874,9 @@ var mSTP = function mSTP(state) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    fetchVideos: function fetchVideos() {
+      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_5__["fetchVideos"])());
+    },
     logoutUser: function logoutUser() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logoutUser"])());
     },
