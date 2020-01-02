@@ -97,11 +97,13 @@ class NavBar extends React.Component {
 
                     <svg className='home' onClick={this.homeRedirect} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill='#FFFFFF' d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z" /></svg>
 
-                    <div className='logo-continer' onClick={this.homeRedirect}>
+                    <div className='logo-container' onClick={this.homeRedirect}>
                         <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg'
                             className='logo'
                         />
-                        Tub-Tub
+                        <div className='title'>
+                            Tub-Tub
+                        </div>
                     </div>
                 </div>
 

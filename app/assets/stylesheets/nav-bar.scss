@@ -152,9 +152,25 @@
     // grid-row: 4;
     background-image: url(you-tube-2017-icon-seeklogo.com-4.svg);
     // z-index: 3;
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     margin-left: 31px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container .title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-left: 2px;
+}
+
+.logo-container .title:hover {
+    cursor: pointer;
 }
 
 // .upload-button p {

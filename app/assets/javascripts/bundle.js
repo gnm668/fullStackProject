@@ -707,12 +707,14 @@ function (_React$Component) {
         fill: "#FFFFFF",
         d: "M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "logo-continer",
+        className: "logo-container",
         onClick: this.homeRedirect
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         src: "/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg",
         className: "logo"
-      }), "Tub-Tub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "title"
+      }, "Tub-Tub"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
