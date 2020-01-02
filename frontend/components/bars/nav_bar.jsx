@@ -9,7 +9,9 @@ class NavBar extends React.Component {
             search: '',
             addSigninButtonEffect: false,
             addHamburgerButtonEffect: true,
-            homeBubble: false
+            homeBubble: false,
+            searchBubble: false,
+            videoBubble: false,
         };
 
         this.homeBubble = this.homeBubble.bind(this);
@@ -49,7 +51,6 @@ class NavBar extends React.Component {
     }
 
     homeBubble() {
-        debugger;
         this.setState( { homeBubble: !this.state.homeBubble });
     }
 
@@ -74,6 +75,21 @@ class NavBar extends React.Component {
         let hamburgerClass = ['hamburger-circle'];
         if (this.state.addHamburgerButtonEffect) {
             hamburgerClass.push('effect');
+        }
+        //home bubble
+        let homeBubbleClass = ['home-bubble'];
+        if (this.state.homeBubble) {
+            homeBubbleClass.push('effect');
+        }
+        //search bubble
+        let searchBubbleClass = ['search-bubble'];
+        if (this.state.searchBubble) {
+            searchBubbleClass.push('effect');
+        }
+        //video bubble
+        let videoBubbleClass = ['video-bubble'];
+        if (this.state.videoBubble) {
+            videoBubbleClass.push('effect');
         }
 
         let button = null;
@@ -104,7 +120,7 @@ class NavBar extends React.Component {
 
                     <svg 
                     className='home' 
-                    onMouseOver={this.homeBubble} 
+                    onMouseEnter={this.homeBubble} 
                     onMouseLeave={this.homeBubble}
                     onClick={this.homeRedirect} 
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill='#FFFFFF' d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z" /></svg>
@@ -160,9 +176,18 @@ class NavBar extends React.Component {
                 </div>
 
 
-                <div className='home-bubble'>
+                <div className={homeBubbleClass.join(' ')}>
                     Home
                 </div>
+
+                <div className={searchBubbleClass.join(' ')}> 
+
+                </div>
+
+                <div className={videoBubbleClass.join(' ')}> 
+
+                </div>
+
 
             </div>
         );

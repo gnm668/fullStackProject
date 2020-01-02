@@ -645,7 +645,6 @@ function (_React$Component) {
   }, {
     key: "homeBubble",
     value: function homeBubble() {
-      debugger;
       this.setState({
         homeBubble: !this.state.homeBubble
       });
@@ -681,6 +680,27 @@ function (_React$Component) {
 
       if (this.state.addHamburgerButtonEffect) {
         hamburgerClass.push('effect');
+      } //home bubble
+
+
+      var homeBubbleClass = ['home-bubble'];
+
+      if (this.state.homeBubble) {
+        homeBubbleClass.push('effect');
+      } //search bubble
+
+
+      var searchBubbleClass = ['search-bubble'];
+
+      if (this.state.searchBubble) {
+        searchBubbleClass.push('effect');
+      } //video bubble
+
+
+      var videoBubbleClass = ['video-bubble'];
+
+      if (this.state.videoBubble) {
+        videoBubbleClass.push('effect');
       }
 
       var button = null;
@@ -706,7 +726,7 @@ function (_React$Component) {
         className: "left-side"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "home",
-        onMouseOver: this.homeBubble,
+        onMouseEnter: this.homeBubble,
         onMouseLeave: this.homeBubble,
         onClick: this.homeRedirect,
         xmlns: "http://www.w3.org/2000/svg",
@@ -772,8 +792,12 @@ function (_React$Component) {
         className: "upload-button",
         onClick: this.uploadVideo
       }), button), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-bubble"
-      }, "Home"));
+        className: homeBubbleClass.join(' ')
+      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: searchBubbleClass.join(' ')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: videoBubbleClass.join(' ')
+      }));
     }
   }]);
 
