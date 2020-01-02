@@ -1,13 +1,23 @@
 .github {
-    background: url(iconmonstr-github-3.svg);
-    width: 36px;
-    height: 36px;
-    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 80px;
 }
 
 .linkedin {
-    background: url(iconmonstr-linkedin-3.svg);
-    width: 36px;
-    height: 36px;
-    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 80px;
+}
+
+.github:hover {
+    background-color: #3e3e3e;
+}
+
+.linkedin:hover {
+    background-color: #3e3e3e;
 }
