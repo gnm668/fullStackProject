@@ -24,11 +24,11 @@ class NavBar extends React.Component {
         };
     };
 
-    componentDidMount() {
-        window.setTimeout(function () {
-            document.getElementById('ham').style.visibility = 'visible';
-        }, 1500);
-    }
+    // componentDidMount() {
+    //     window.setTimeout(function () {
+    //         document.getElementById('ham').style.visibility = 'visible';
+    //     }, 1500);
+    // }
 
     uploadVideo() {
         if (this.props.currentUser) {
@@ -109,11 +109,30 @@ class NavBar extends React.Component {
 
                 <div className='center'>
                     <input type="text"
+                    placeholder='Search'
                     className='search'
                     onChange={this.handleInput('search')}
                     />
                     <button>
-                        
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+                        <title>720CA7FD-48B0-4AF8-9536-BFCA168CE34C</title>
+                                            <desc>Created with sketchtool.</desc>
+                                            <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                                <g id="Youtube-Above-The-Fold-/-Logged-Out" transform="translate(-900.000000, -20.000000)" fill="#757575" fillRule="nonzero">
+                                                    <g id="Top-Bar">
+                                                        <g id="Search-Bar" transform="translate(300.000000, 12.000000)">
+                                                            <g id="Button_Search" transform="translate(575.000000, 0.000000)">
+                                                                <g id="Icon_Search" transform="translate(25.000000, 8.000000)">
+                                                                    <g id="Group">
+                                                                        <path d="M11.3375464,10.1466297 L15.7533531,14.5624364 L14.5624364,15.7533531 L10.1466297,11.3375464 C9.08406223,12.1493593 7.75624004,12.6315789 6.31578947,12.6315789 C2.82767528,12.6315789 0,9.80390366 0,6.31578947 C0,2.82767528 2.82767528,0 6.31578947,0 C9.80390366,0 12.6315789,2.82767528 12.6315789,6.31578947 C12.6315789,7.75624004 12.1493593,9.08406223 11.3375464,10.1466297 L11.3375464,10.1466297 Z M6.31578947,10.9473684 C8.87373987,10.9473684 10.9473684,8.87373987 10.9473684,6.31578947 C10.9473684,3.75783907 8.87373987,1.68421053 6.31578947,1.68421053 C3.75783907,1.68421053 1.68421053,3.75783907 1.68421053,6.31578947 C1.68421053,8.87373987 3.75783907,10.9473684 6.31578947,10.9473684 Z" id="Shape"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                    </svg>
                     </button>
                 </div>
 
