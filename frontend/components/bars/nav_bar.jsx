@@ -15,6 +15,8 @@ class NavBar extends React.Component {
         };
 
         this.homeBubble = this.homeBubble.bind(this);
+        this.searchBubble = this.searchBubble.bind(this);
+        this.videoBubble = this.videoBubble.bind(this);
         this.homeRedirect = this.homeRedirect.bind(this);
         this.uploadVideo = this.uploadVideo.bind(this);
         this.toggleSignin = this.toggleSignin.bind(this);
@@ -149,7 +151,10 @@ class NavBar extends React.Component {
                     className='search'
                     onChange={this.handleInput('search')}
                     />
-                    <button>
+                    <button
+                    onMouseEnter={this.searchBubble}
+                    onMouseLeave={this.searchBubble}
+                    >
                         <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
                         <title>720CA7FD-48B0-4AF8-9536-BFCA168CE34C</title>
                                             <desc>Created with sketchtool.</desc>

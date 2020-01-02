@@ -603,6 +603,8 @@ function (_React$Component) {
       videoBubble: false
     };
     _this.homeBubble = _this.homeBubble.bind(_assertThisInitialized(_this));
+    _this.searchBubble = _this.searchBubble.bind(_assertThisInitialized(_this));
+    _this.videoBubble = _this.videoBubble.bind(_assertThisInitialized(_this));
     _this.homeRedirect = _this.homeRedirect.bind(_assertThisInitialized(_this));
     _this.uploadVideo = _this.uploadVideo.bind(_assertThisInitialized(_this));
     _this.toggleSignin = _this.toggleSignin.bind(_assertThisInitialized(_this));
@@ -767,7 +769,10 @@ function (_React$Component) {
         placeholder: "Search",
         className: "search",
         onChange: this.handleInput('search')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onMouseEnter: this.searchBubble,
+        onMouseLeave: this.searchBubble
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         width: "16px",
         height: "16px",
         viewBox: "0 0 16 16",
