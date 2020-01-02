@@ -717,6 +717,7 @@ function (_React$Component) {
         className: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        className: "search",
         onChange: this.handleInput('search')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-side"

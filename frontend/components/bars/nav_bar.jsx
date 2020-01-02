@@ -105,6 +105,7 @@ class NavBar extends React.Component {
 
                 <div className='center'>
                     <input type="text"
+                    className='search'
                     onChange={this.handleInput('search')}
                     />
                 </div>
