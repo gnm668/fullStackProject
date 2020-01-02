@@ -810,10 +810,10 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-placehodler"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "github",
+        className: "linkedin",
         href: "https://linkedin.com/in/alex-nguyen-47a5b413a"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "linkedin",
+        className: "github",
         href: "https://github.com/gnm668"
       }));
     }
