@@ -189,11 +189,11 @@ class NavBar extends React.Component {
                 </div>
 
                 <div className={searchBubbleClass.join(' ')}> 
-
+                    Search
                 </div>
 
                 <div className={videoBubbleClass.join(' ')}> 
-
+                    Create Video or Post
                 </div>
 
 
