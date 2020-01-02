@@ -96,6 +96,10 @@ class NavBar extends React.Component {
                     />
                 </div>
 
+                <div className='center'>
+                    
+                </div>
+
                 <div className='right-side'>
                     {/* <div className='upload-button'
                     onClick={this.uploadRedirect} >
