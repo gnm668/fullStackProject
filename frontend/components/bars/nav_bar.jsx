@@ -112,6 +112,9 @@ class NavBar extends React.Component {
                     className='search'
                     onChange={this.handleInput('search')}
                     />
+                    <button>
+                        
+                    </button>
                 </div>
 
                 <div className='right-side'>

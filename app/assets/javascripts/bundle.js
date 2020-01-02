@@ -720,7 +720,7 @@ function (_React$Component) {
         type: "text",
         className: "search",
         onChange: this.handleInput('search')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-side"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         src: "/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg",
