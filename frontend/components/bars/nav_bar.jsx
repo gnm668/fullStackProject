@@ -88,7 +88,7 @@ class NavBar extends React.Component {
                     onMouseUpCapture={this.toggleHamburger}> */}
                     {/* </svg> */}
 
-                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg'
+                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/home-button.svg'
                         className='home'
                         onClick={this.homeRedirect}
                     />

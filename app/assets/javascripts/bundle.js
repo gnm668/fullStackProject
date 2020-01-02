@@ -688,7 +688,7 @@ function (_React$Component) {
         id: 'ham',
         className: hamburgerClass.join(' ')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg",
+        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/home-button.svg",
         className: "home",
         onClick: this.homeRedirect
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
