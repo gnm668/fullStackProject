@@ -8,9 +8,11 @@ class NavBar extends React.Component {
         this.state = {
             search: '',
             addSigninButtonEffect: false,
-            addHamburgerButtonEffect: true
+            addHamburgerButtonEffect: true,
+            homeBubble: false
         };
 
+        this.homeBubble = this.homeBubble.bind(this);
         this.homeRedirect = this.homeRedirect.bind(this);
         this.uploadVideo = this.uploadVideo.bind(this);
         this.toggleSignin = this.toggleSignin.bind(this);
@@ -44,6 +46,11 @@ class NavBar extends React.Component {
 
     logoutUser() {
         this.props.logoutUser();
+    }
+
+    homeBubble() {
+        debugger;
+        this.setState( { homeBubble: !this.state.homeBubble });
     }
 
     toggleHamburger(){
@@ -95,7 +102,12 @@ class NavBar extends React.Component {
                     onMouseUpCapture={this.toggleHamburger}> */}
                     {/* </svg> */}
 
-                    <svg className='home' onClick={this.homeRedirect} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill='#FFFFFF' d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z" /></svg>
+                    <svg 
+                    className='home' 
+                    onMouseOver={this.homeBubble} 
+                    onMouseLeave={this.homeBubble}
+                    onClick={this.homeRedirect} 
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill='#FFFFFF' d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z" /></svg>
 
                     <div className='logo-container' onClick={this.homeRedirect}>
                         <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg'
@@ -151,7 +163,6 @@ class NavBar extends React.Component {
                 <div className='home-bubble'>
                     Home
                 </div>
-
 
             </div>
         );

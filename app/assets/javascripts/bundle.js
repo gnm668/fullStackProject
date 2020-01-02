@@ -597,8 +597,10 @@ function (_React$Component) {
     _this.state = {
       search: '',
       addSigninButtonEffect: false,
-      addHamburgerButtonEffect: true
+      addHamburgerButtonEffect: true,
+      homeBubble: false
     };
+    _this.homeBubble = _this.homeBubble.bind(_assertThisInitialized(_this));
     _this.homeRedirect = _this.homeRedirect.bind(_assertThisInitialized(_this));
     _this.uploadVideo = _this.uploadVideo.bind(_assertThisInitialized(_this));
     _this.toggleSignin = _this.toggleSignin.bind(_assertThisInitialized(_this));
@@ -639,6 +641,14 @@ function (_React$Component) {
     key: "logoutUser",
     value: function logoutUser() {
       this.props.logoutUser();
+    }
+  }, {
+    key: "homeBubble",
+    value: function homeBubble() {
+      debugger;
+      this.setState({
+        homeBubble: !this.state.homeBubble
+      });
     }
   }, {
     key: "toggleHamburger",
@@ -696,6 +706,8 @@ function (_React$Component) {
         className: "left-side"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "home",
+        onMouseOver: this.homeBubble,
+        onMouseLeave: this.homeBubble,
         onClick: this.homeRedirect,
         xmlns: "http://www.w3.org/2000/svg",
         width: "24",
