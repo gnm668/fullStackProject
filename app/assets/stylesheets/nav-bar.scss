@@ -11,10 +11,11 @@
 }
 
 .left-side {
-    height: 100%;
-    display: grid;
-    grid-template-rows: repeat(20, 5%);
-    grid-template-columns: repeat(20, 5%);
+    // height: 100%;
+    // display: grid;
+    // grid-template-rows: repeat(20, 5%);
+    // grid-template-columns: repeat(20, 5%);
+    display: flex;
 }
 
 .hamburger:hover {

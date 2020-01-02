@@ -97,7 +97,8 @@ class NavBar extends React.Component {
                 </div>
 
                 <div className='center'>
-                    
+                    <input type="text"
+                    />
                 </div>
 
                 <div className='right-side'>
