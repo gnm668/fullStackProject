@@ -186,6 +186,10 @@
     justify-content: center;
 }
 
+.center button:hover {
+    cursor: pointer;
+}
+
 .search {
     width: 576px;
     height: 28px;
@@ -194,6 +198,10 @@
     background-color: #121212;
     padding-left: 10px;
     font-size: 15px;
+}
+
+.search:focus {
+    border: 1px solid #064fad;
 }
 
 /* .signin-button {
