@@ -193,7 +193,7 @@ class NavBar extends React.Component {
                 </div>
 
                 <div className={videoBubbleClass.join(' ')}> 
-                    Create Video or Post
+                    Create a Video or Post
                 </div>
 
 

@@ -210,7 +210,7 @@
     background-color: rgb(104, 104, 104);
     position: fixed;
     left: 10px;
-    top: 59px;
+    top: 64px;
     border-radius: 3%;
     font-size: 12px;
     justify-content: center;
@@ -227,16 +227,40 @@
 .search-bubble {
     height: 30px;
     width: 56px;
-    background-color: rgb(104, 104, 104);
+    background-color: #686868;
     position: fixed;
-    left: 10px;
-    top: 59px;
+    right: 326px;
+    top: 64px;
     border-radius: 3%;
     font-size: 12px;
     justify-content: center;
     align-items: center;
     font-weight: lighter;
     color: #dedede;
+    display: none;
+}
+
+.search-bubble.effect {
+    display: flex;
+}
+
+.video-bubble {
+    height: 30px;
+    width: 140px;
+    background-color: #686868;
+    position: fixed;
+    right: 96px;
+    top: 64px;
+    border-radius: 3%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    color: #dedede;
+    display: none;
+}
+
+.video-bubble.effect {
     display: flex;
 }
 
