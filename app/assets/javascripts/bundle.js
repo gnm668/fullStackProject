@@ -561,6 +561,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -593,6 +595,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NavBar).call(this, props));
     _this.state = {
+      search: '',
       addSigninButtonEffect: false,
       addHamburgerButtonEffect: true
     };
@@ -605,6 +608,15 @@ function (_React$Component) {
   }
 
   _createClass(NavBar, [{
+    key: "handleInput",
+    value: function handleInput(type) {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState(_defineProperty({}, type, e.target.value));
+      };
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       window.setTimeout(function () {
@@ -704,7 +716,8 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text"
+        type: "text",
+        onChange: this.handleInput('search')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-side"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {

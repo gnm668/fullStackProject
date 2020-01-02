@@ -6,6 +6,7 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            search: '',
             addSigninButtonEffect: false,
             addHamburgerButtonEffect: true
         };
@@ -16,6 +17,12 @@ class NavBar extends React.Component {
         this.logoutUser = this.logoutUser.bind(this);
         this.toggleHamburger = this.toggleHamburger.bind(this);
     }
+
+    handleInput(type) {
+        return (e) => {
+            this.setState({ [type]: e.target.value });
+        };
+    };
 
     componentDidMount() {
         window.setTimeout(function () {
@@ -98,6 +105,7 @@ class NavBar extends React.Component {
 
                 <div className='center'>
                     <input type="text"
+                    onChange={this.handleInput('search')}
                     />
                 </div>
 
