@@ -773,6 +773,7 @@ function (_React$Component) {
         onMouseEnter: this.searchBubble,
         onMouseLeave: this.searchBubble
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "search-icon",
         width: "16px",
         height: "16px",
         viewBox: "0 0 16 16",

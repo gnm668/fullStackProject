@@ -190,6 +190,10 @@
     cursor: pointer;
 }
 
+.center button:hover svg g {
+    fill: rgb(170, 170, 170);
+}
+
 .search {
     width: 576px;
     height: 28px;
@@ -217,11 +221,15 @@
     align-items: center;
     font-weight: lighter;
     color: #dedede;
-    display: none;
+    display: flex;
+    opacity: 0%;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none;
 }
 
 .home-bubble.effect {
-    display: flex;
+    opacity: 100%;
+    transition: opacity .2s ease-in-out;
 }
 
 .search-bubble {
@@ -237,11 +245,15 @@
     align-items: center;
     font-weight: lighter;
     color: #dedede;
-    display: none;
+    display: flex;
+    opacity: 0%;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none;
 }
 
 .search-bubble.effect {
-    display: flex;
+    transition: opacity .2s ease-in-out;
+    opacity: 100%;
 }
 
 .video-bubble {
@@ -257,11 +269,15 @@
     align-items: center;
     font-weight: lighter;
     color: #dedede;
-    display: none;
+    display: flex;
+    opacity: 0%;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none;
 }
 
 .video-bubble.effect {
-    display: flex;
+    transition: opacity .2s ease-in-out;
+    opacity: 100%;
 }
 
 /* .signin-button {
