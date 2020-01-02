@@ -804,10 +804,12 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-placehodler"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "github"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "linkedin"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "github",
+        href: "https://linkedin.com/in/alex-nguyen-47a5b413a"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "linkedin",
+        href: "https://github.com/gnm668"
       }));
     }
   }]);
