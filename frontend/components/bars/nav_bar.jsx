@@ -54,6 +54,14 @@ class NavBar extends React.Component {
         this.setState( { homeBubble: !this.state.homeBubble });
     }
 
+    searchBubble() {
+        this.setState( { searchBubble: !this.state.searchBubble });
+    }
+
+    videoBubble() {
+        this.setState( { videoBubble: !this.state.videoBubble });
+    }
+
     toggleHamburger(){
         //toggles hamburger button state for render
         this.setState({ addHamburgerButtonEffect: !this.state.addHamburgerButtonEffect});

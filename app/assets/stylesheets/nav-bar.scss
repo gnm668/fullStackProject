@@ -212,7 +212,7 @@
     left: 10px;
     top: 59px;
     border-radius: 3%;
-    font-size: 14px;
+    font-size: 12px;
     justify-content: center;
     align-items: center;
     font-weight: lighter;
@@ -221,6 +221,22 @@
 }
 
 .home-bubble.effect {
+    display: flex;
+}
+
+.search-bubble {
+    height: 30px;
+    width: 56px;
+    background-color: rgb(104, 104, 104);
+    position: fixed;
+    left: 10px;
+    top: 59px;
+    border-radius: 3%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    color: #dedede;
     display: flex;
 }
 

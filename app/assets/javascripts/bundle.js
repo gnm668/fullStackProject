@@ -598,7 +598,9 @@ function (_React$Component) {
       search: '',
       addSigninButtonEffect: false,
       addHamburgerButtonEffect: true,
-      homeBubble: false
+      homeBubble: false,
+      searchBubble: false,
+      videoBubble: false
     };
     _this.homeBubble = _this.homeBubble.bind(_assertThisInitialized(_this));
     _this.homeRedirect = _this.homeRedirect.bind(_assertThisInitialized(_this));
@@ -647,6 +649,20 @@ function (_React$Component) {
     value: function homeBubble() {
       this.setState({
         homeBubble: !this.state.homeBubble
+      });
+    }
+  }, {
+    key: "searchBubble",
+    value: function searchBubble() {
+      this.setState({
+        searchBubble: !this.state.searchBubble
+      });
+    }
+  }, {
+    key: "videoBubble",
+    value: function videoBubble() {
+      this.setState({
+        videoBubble: !this.state.videoBubble
       });
     }
   }, {
