@@ -688,11 +688,6 @@ function (_React$Component) {
         id: 'ham',
         className: hamburgerClass.join(' ')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg",
-        className: "hamburger",
-        onMouseDownCapture: this.toggleHamburger,
-        onMouseUpCapture: this.toggleHamburger
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         src: "/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg",
         className: "logo",
         onClick: this.homeRedirect

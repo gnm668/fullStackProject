@@ -82,11 +82,11 @@ class NavBar extends React.Component {
                     <div id={'ham'} className={hamburgerClass.join(' ')}>
                     </div>
 
-                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg' 
+                    {/* <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg' 
                     className='hamburger'
                     onMouseDownCapture={this.toggleHamburger}
-                    onMouseUpCapture={this.toggleHamburger}>
-                    </svg>
+                    onMouseUpCapture={this.toggleHamburger}> */}
+                    {/* </svg> */}
 
                     <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg'
                         className='logo'
