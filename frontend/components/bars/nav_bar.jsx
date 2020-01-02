@@ -89,6 +89,11 @@ class NavBar extends React.Component {
                     {/* </svg> */}
 
                     <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg'
+                        className='home'
+                        onClick={this.homeRedirect}
+                    />
+
+                    <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg'
                         className='logo'
                         onClick={this.homeRedirect}
                     />

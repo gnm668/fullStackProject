@@ -689,6 +689,10 @@ function (_React$Component) {
         className: hamburgerClass.join(' ')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         src: "/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg",
+        className: "home",
+        onClick: this.homeRedirect
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        src: "/Users/al/Desktop/FSP/Tube/app/assets/images/you-tube-2017-icon-seeklogo.com-4.svg",
         className: "logo",
         onClick: this.homeRedirect
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
