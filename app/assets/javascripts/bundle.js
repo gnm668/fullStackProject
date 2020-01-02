@@ -696,10 +696,7 @@ function (_React$Component) {
         className: "nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-side"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: 'ham',
-        className: hamburgerClass.join(' ')
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "home",
         onClick: this.homeRedirect,
         xmlns: "http://www.w3.org/2000/svg",

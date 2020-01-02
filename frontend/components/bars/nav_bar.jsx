@@ -86,8 +86,8 @@ class NavBar extends React.Component {
         return (
             <div className='nav-bar'>
                 <div className='left-side'>
-                    <div id={'ham'} className={hamburgerClass.join(' ')}>
-                    </div>
+                    {/* <div id={'ham'} className={hamburgerClass.join(' ')}>
+                    </div> */}
 
                     {/* <svg src='/Users/al/Desktop/FSP/Tube/app/assets/images/icon-hamburger-menu.svg' 
                     className='hamburger'
