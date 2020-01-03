@@ -407,7 +407,7 @@ var clearErrors = function clearErrors() {
 /*!*******************************************!*\
   !*** ./frontend/actions/video_actions.js ***!
   \*******************************************/
-/*! exports provided: RECEIVE_ALL_VIDEOS, RECEIVE_VIDEO, REMOVE_VIDEO, fetchVideos, fetchVideo, createVideo, updateVideo, deleteVideo */
+/*! exports provided: RECEIVE_ALL_VIDEOS, RECEIVE_VIDEO, REMOVE_VIDEO, fetchVideos, searchVideos, fetchVideo, createVideo, updateVideo, deleteVideo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -416,6 +416,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_VIDEO", function() { return RECEIVE_VIDEO; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_VIDEO", function() { return REMOVE_VIDEO; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchVideos", function() { return fetchVideos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchVideos", function() { return searchVideos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchVideo", function() { return fetchVideo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createVideo", function() { return createVideo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateVideo", function() { return updateVideo; });
@@ -450,6 +451,13 @@ var removeVideo = function removeVideo(videoId) {
 var fetchVideos = function fetchVideos() {
   return function (dispatch) {
     return _util_video_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchVideos"]().then(function (videos) {
+      return dispatch(receiveAllVideos(videos));
+    });
+  };
+};
+var searchVideos = function searchVideos(search) {
+  return function (dispatch) {
+    return _util_video_api_util__WEBPACK_IMPORTED_MODULE_0__["searchVideos"](search).then(function (videos) {
       return dispatch(receiveAllVideos(videos));
     });
   };
@@ -634,6 +642,7 @@ function (_React$Component) {
     value: function handleSearch(e) {
       e.preventDefault();
       var searchData = Object.assign({}, this.state);
+      this.props.searchVideos(searchData);
     }
   }, {
     key: "uploadVideo",
@@ -855,6 +864,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
+
 
 
 
@@ -869,6 +880,9 @@ var mSTP = function mSTP(state) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    searchVideos: function searchVideos(search) {
+      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_5__["searchVideos"])(search));
+    },
     logoutUser: function logoutUser() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logoutUser"])());
     },
@@ -3990,12 +4004,13 @@ var focusOn = function focusOn(className) {
 /*!*****************************************!*\
   !*** ./frontend/util/video_api_util.js ***!
   \*****************************************/
-/*! exports provided: fetchVideos, fetchVideo, createVideo, updateVideo, deleteVideo */
+/*! exports provided: fetchVideos, searchVideos, fetchVideo, createVideo, updateVideo, deleteVideo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchVideos", function() { return fetchVideos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchVideos", function() { return searchVideos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchVideo", function() { return fetchVideo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createVideo", function() { return createVideo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateVideo", function() { return updateVideo; });
@@ -4003,6 +4018,12 @@ __webpack_require__.r(__webpack_exports__);
 var fetchVideos = function fetchVideos() {
   return $.ajax({
     url: "api/videos"
+  });
+};
+var searchVideos = function searchVideos(search) {
+  return $.ajax({
+    url: "api/videos",
+    data: search
   });
 };
 var fetchVideo = function fetchVideo(videoId) {
