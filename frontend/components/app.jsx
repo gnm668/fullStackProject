@@ -8,6 +8,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import videoShowContainer from './video/video_show_container';
 import videoFormContainer from './forms/video_form_container';
+import Search from './main/search';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -21,6 +22,7 @@ const App = () => (
             <AuthRoute exact={true} path='/signup' component={SignupFormContainer} />
             <ProtectedRoute exact={true} path='/videos/new' component={videoFormContainer} />
             <Route exact={true} path='/videos/:videoId' component={videoShowContainer} />
+            <Route exact={true} path='/search' component={Search} />
             <Route path='/' component={Lost} />
         </Switch>
     </div>
