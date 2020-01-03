@@ -3238,7 +3238,7 @@ function (_React$Component) {
         className: "user"
       }, video.user, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "views"
-      }, " Views \u2022 Time Posted")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " views \u2022 days ago")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "description"
       }, video.description)))));
     }

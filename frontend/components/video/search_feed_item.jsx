@@ -38,7 +38,7 @@ class SearchFeedItem extends React.Component {
                             <div className='title'>{video.title}</div>
                             <div className='sub-info'>
                                 <div className='user'>{video.user} </div>
-                                <div className='views'> Views • Time Posted</div>
+                                <div className='views'> views • days ago</div>
                             </div>
                             <div className='description'>{video.description}</div>
                         </div>
