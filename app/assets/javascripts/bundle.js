@@ -603,7 +603,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NavBar).call(this, props));
     _this.state = {
-      search: '',
+      search: null,
       addSigninButtonEffect: false,
       addHamburgerButtonEffect: true,
       homeBubble: false,

@@ -6,7 +6,7 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            search: '',
+            search: null,
             addSigninButtonEffect: false,
             addHamburgerButtonEffect: true,
             homeBubble: false,
