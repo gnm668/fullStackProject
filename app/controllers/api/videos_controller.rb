@@ -6,6 +6,7 @@ class Api::VideosController < ApplicationController
 
         if params["search"] 
             search = params["search"]
+            search = ActiveRecord::Base::sanitize_sql(search)
             @videos = Video.where("title LIKE ?", "%#{search}%")
             render :index
         else
