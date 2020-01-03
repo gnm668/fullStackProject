@@ -8,7 +8,7 @@ Tub-Tub is a web application that allows users to share and watch videos from al
 
 ## Demo
 
-(Insert Gif of interaction here)
+[Check out some videos!](https://tub-tub.herokuapp.com/#/)
 
 ---
 
