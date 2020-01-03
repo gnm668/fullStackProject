@@ -7,21 +7,21 @@ class VideoFeedItem extends React.Component {
         
         this.previewPause = this.previewPause.bind(this);
         this.previewPlay = this.previewPlay.bind(this);
-    }
+    };
 
     previewPlay(e) {
         e.currentTarget.play();
         e.currentTarget.addEventListener('timeupdate', function () {
             if (this.currentTime >= 8) {
                 this.pause();
-            }
-        })
-    }
+            };
+        });
+    };
 
     previewPause(e) {
         e.currentTarget.pause();
         e.currentTarget.currentTime = 0;
-    }
+    };
 
     render() {
         const video = this.props.video;
@@ -45,7 +45,7 @@ class VideoFeedItem extends React.Component {
                 </Link>
             </div>
         );
-    }
-}
+    };
+};
 
 export default VideoFeedItem;

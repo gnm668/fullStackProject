@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoFeedItem from '../video/video_feed_item';
+import SearchFeedItem from '../video/search_feed_item';
 
 class SearchFeed extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class SearchFeed extends React.Component {
         const videos = (this.props.videos);
         return(
             <div className='search-feed'>
-                {videos.map(video => <VideoFeedItem key={video.id} video={video} />)}
+                {videos.map(video => <SearchFeedItem key={video.id} video={video} />)}
             </div>
         );
     };
