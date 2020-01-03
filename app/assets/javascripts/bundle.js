@@ -2668,7 +2668,7 @@ function (_React$Component) {
         className: "comment-user"
       }, comment.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "comment-time"
-      }, "Placeholder")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, "Time posted")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "comment-body"
       }, comment.body)));
     }
@@ -3204,7 +3204,7 @@ function (_React$Component) {
         className: "user"
       }, video.user, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "views"
-      }, " views \u2022 time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " Views \u2022 Time Posted")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "description"
       }, video.description)))));
     }

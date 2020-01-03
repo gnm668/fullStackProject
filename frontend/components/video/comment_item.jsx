@@ -15,7 +15,7 @@ class CommentItem extends React.Component {
                 <div className='comment-info'>
                     <div className='comment-header'>
                         <p className='comment-user'>{comment.user}</p>
-                        <p className='comment-time'>Placeholder</p>
+                        <p className='comment-time'>Time posted</p>
                     </div>
                     <p className='comment-body'>{comment.body}</p>
                 </div>
