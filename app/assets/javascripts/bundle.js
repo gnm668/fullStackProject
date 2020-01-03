@@ -957,11 +957,18 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var homeClass = ['home'];
+
+      if (this.props.location.pathname === '/') {
+        homeClass.push('effect');
+      }
+
+      ;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-placehodler"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.homeRedirect,
-        className: "home"
+        className: homeClass.join(' ')
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         xmlns: "http://www.w3.org/2000/svg",
         width: "24",
