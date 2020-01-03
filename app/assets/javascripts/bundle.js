@@ -617,8 +617,8 @@ function (_React$Component) {
       videoBubble: false
     };
     _this.handleSearch = _this.handleSearch.bind(_assertThisInitialized(_this));
-    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
-    _this.homeBubble = _this.homeBubble.bind(_assertThisInitialized(_this));
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this)); // this.homeBubble = this.homeBubble.bind(this);
+
     _this.searchBubble = _this.searchBubble.bind(_assertThisInitialized(_this));
     _this.videoBubble = _this.videoBubble.bind(_assertThisInitialized(_this));
     _this.homeRedirect = _this.homeRedirect.bind(_assertThisInitialized(_this));
@@ -682,14 +682,10 @@ function (_React$Component) {
     key: "logoutUser",
     value: function logoutUser() {
       this.props.logoutUser();
-    }
-  }, {
-    key: "homeBubble",
-    value: function homeBubble() {
-      this.setState({
-        homeBubble: !this.state.homeBubble
-      });
-    }
+    } // homeBubble() {
+    //     this.setState( { homeBubble: !this.state.homeBubble });
+    // }
+
   }, {
     key: "searchBubble",
     value: function searchBubble() {
@@ -736,13 +732,11 @@ function (_React$Component) {
       if (this.state.addHamburgerButtonEffect) {
         hamburgerClass.push('effect');
       } //home bubble
-
-
-      var homeBubbleClass = ['home-bubble'];
-
-      if (this.state.homeBubble) {
-        homeBubbleClass.push('effect');
-      } //search bubble
+      // let homeBubbleClass = ['home-bubble'];
+      // if (this.state.homeBubble) {
+      //     homeBubbleClass.push('effect');
+      // }
+      //search bubble
 
 
       var searchBubbleClass = ['search-bubble'];
@@ -779,19 +773,7 @@ function (_React$Component) {
         className: "nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-side"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "home",
-        onMouseEnter: this.homeBubble,
-        onMouseLeave: this.homeBubble,
-        onClick: this.homeRedirect,
-        xmlns: "http://www.w3.org/2000/svg",
-        width: "24",
-        height: "24",
-        viewBox: "0 0 24 24"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        fill: "#FFFFFF",
-        d: "M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logo-container",
         onClick: this.homeRedirect
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -799,9 +781,7 @@ function (_React$Component) {
         className: "logo"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title"
-      }, "Tub-Tub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: homeBubbleClass.join(' ')
-      }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Tub-Tub"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -970,7 +950,17 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-placehodler"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "home"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "24",
+        height: "24",
+        viewBox: "0 0 24 24"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        fill: "#FFFFFF",
+        d: "M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "linkedin",
         href: "https://linkedin.com/in/alex-nguyen-47a5b413a"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {

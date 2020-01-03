@@ -16,11 +16,24 @@
     width: 80px;
 }
 
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 80px;
+}
+
 .github:hover {
     background-color: #3e3e3e;
 }
 
 .linkedin:hover {
+    background-color: #3e3e3e;
+}
+
+.home:hover {
     background-color: #3e3e3e;
 }
 
@@ -32,4 +45,9 @@
 .linkedin p {
     font-size: 11px;
     margin-top: 8px;
+}
+
+.home p {
+    font-size: 11px;
+    margin-top: 8px;  
 }
