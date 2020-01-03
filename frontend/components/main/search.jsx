@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchFeedContainer from '../feeds/search_feed_container';
-import SideBar from '../bars/side_bar';
+import SideBarContainer from '../bars/side_bar_container';
 import NavBarContainer from '../bars/nav_bar_container';
 
 class Search extends React.Component {
@@ -11,7 +11,7 @@ class Search extends React.Component {
     render() {
         return(
             <div className='search-page'>
-                <SideBar />
+                <SideBarContainer />
                 <NavBarContainer />
 
                 <SearchFeedContainer />
