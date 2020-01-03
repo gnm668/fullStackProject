@@ -639,12 +639,23 @@ function (_React$Component) {
       };
     }
   }, {
-    key: "handleSearch",
+    key: "enterSearch",
     // componentDidMount() {
     //     window.setTimeout(function () {
     //         document.getElementById('ham').style.visibility = 'visible';
     //     }, 1500);
     // }
+    value: function enterSearch() {
+      document.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          document.querySelector('.center button').click();
+        }
+
+        ;
+      });
+    }
+  }, {
+    key: "handleSearch",
     value: function handleSearch(e) {
       e.preventDefault();
       var searchData = {
@@ -796,7 +807,8 @@ function (_React$Component) {
         type: "text",
         placeholder: "Search",
         className: "search",
-        onChange: this.handleInput('search')
+        onChange: this.handleInput('search'),
+        onFocus: this.enterSearch
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSearch,
         onMouseEnter: this.searchBubble,

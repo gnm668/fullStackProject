@@ -44,6 +44,14 @@ class NavBar extends React.Component {
     //     }, 1500);
     // }
 
+    enterSearch() {
+        document.addEventListener('keypress', e => {
+            if (e.key === 'Enter') {
+                document.querySelector('.center button').click();
+            };
+        });
+    };
+
     handleSearch(e) {
         e.preventDefault();
         const searchData = {search: this.state.search};
@@ -170,6 +178,7 @@ class NavBar extends React.Component {
                     placeholder='Search'
                     className='search'
                     onChange={this.handleInput('search')}
+                    onFocus={this.enterSearch}
                     />
                     <button
                     onClick={this.handleSearch}
