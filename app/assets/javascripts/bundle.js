@@ -651,6 +651,7 @@ function (_React$Component) {
         search: this.state.search
       };
       this.props.searchVideos(searchData);
+      this.props.ownProps.history.push('/search');
     }
   }, {
     key: "uploadVideo",
@@ -882,9 +883,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state) {
+var mSTP = function mSTP(state, ownProps) {
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    ownProps: ownProps
   };
 };
 
@@ -3187,10 +3189,10 @@ function (_React$Component) {
       }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "views"
-      }, " views \u2022"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user"
-      }, video.user, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, video.user, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "views"
+      }, " views \u2022 time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "description"
       }, video.description)))));
     }
