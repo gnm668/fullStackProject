@@ -45,11 +45,8 @@ class NavBar extends React.Component {
     // }
 
     handleSearch(e) {
-        debugger;
         e.preventDefault();
-        const searchData = new FormData();
-        FormData.append('video[search]', this.state.search);
-        this.props.fetchVideos(searchData);
+        const searchData = Object.assign({}, this.state);
     };
 
     uploadVideo() {

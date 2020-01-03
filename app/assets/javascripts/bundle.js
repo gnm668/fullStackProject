@@ -632,11 +632,8 @@ function (_React$Component) {
     //     }, 1500);
     // }
     value: function handleSearch(e) {
-      debugger;
       e.preventDefault();
-      var searchData = new FormData();
-      FormData.append('video[search]', this.state.search);
-      this.props.fetchVideos(searchData);
+      var searchData = Object.assign({}, this.state);
     }
   }, {
     key: "uploadVideo",
@@ -858,8 +855,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-/* harmony import */ var _actions_video_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/video_actions */ "./frontend/actions/video_actions.js");
-
 
 
 
@@ -874,9 +869,6 @@ var mSTP = function mSTP(state) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    fetchVideos: function fetchVideos() {
-      return dispatch(Object(_actions_video_actions__WEBPACK_IMPORTED_MODULE_5__["fetchVideos"])());
-    },
     logoutUser: function logoutUser() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logoutUser"])());
     },
