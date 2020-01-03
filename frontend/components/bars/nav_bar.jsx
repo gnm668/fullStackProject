@@ -157,6 +157,11 @@ class NavBar extends React.Component {
                             Tub-Tub
                         </div>
                     </div>
+
+                    <div className={homeBubbleClass.join(' ')}>
+                        Home
+                    </div>
+                    
                 </div>
 
                 <div className='center'>
@@ -190,6 +195,11 @@ class NavBar extends React.Component {
                                             </g>
                     </svg>
                     </button>
+
+                    <div className={searchBubbleClass.join(' ')}>
+                        Search
+                    </div>
+
                 </div>
 
                 <div className='right-side'>
@@ -197,28 +207,26 @@ class NavBar extends React.Component {
                     onClick={this.uploadRedirect} >
                         <p>Up</p>
                     </div> */}
-                    <svg 
+                    <div 
+                    className='upload-button'
                     onMouseEnter={this.videoBubble}
                     onMouseLeave={this.videoBubble}
-                    src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
-                    className='upload-button'
-                    onClick={this.uploadVideo} />
+                    >
+
+                        <svg 
+                        src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
+                        className='upload-button'
+                        onClick={this.uploadVideo} />
+
+                        <div className={videoBubbleClass.join(' ')}>
+                            Create a Video or Post
+                        </div>
+
+                    </div>
+
                     {button}
+
                 </div>
-
-
-                <div className={homeBubbleClass.join(' ')}>
-                    Home
-                </div>
-
-                <div className={searchBubbleClass.join(' ')}> 
-                    Search
-                </div>
-
-                <div className={videoBubbleClass.join(' ')}> 
-                    Create a Video or Post
-                </div>
-
 
             </div>
         );

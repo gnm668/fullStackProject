@@ -781,7 +781,9 @@ function (_React$Component) {
         className: "logo"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title"
-      }, "Tub-Tub"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Tub-Tub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: homeBubbleClass.join(' ')
+      }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -827,21 +829,21 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M11.3375464,10.1466297 L15.7533531,14.5624364 L14.5624364,15.7533531 L10.1466297,11.3375464 C9.08406223,12.1493593 7.75624004,12.6315789 6.31578947,12.6315789 C2.82767528,12.6315789 0,9.80390366 0,6.31578947 C0,2.82767528 2.82767528,0 6.31578947,0 C9.80390366,0 12.6315789,2.82767528 12.6315789,6.31578947 C12.6315789,7.75624004 12.1493593,9.08406223 11.3375464,10.1466297 L11.3375464,10.1466297 Z M6.31578947,10.9473684 C8.87373987,10.9473684 10.9473684,8.87373987 10.9473684,6.31578947 C10.9473684,3.75783907 8.87373987,1.68421053 6.31578947,1.68421053 C3.75783907,1.68421053 1.68421053,3.75783907 1.68421053,6.31578947 C1.68421053,8.87373987 3.75783907,10.9473684 6.31578947,10.9473684 Z",
         id: "Shape"
-      }))))))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: searchBubbleClass.join(' ')
+      }, "Search")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-side"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "upload-button",
         onMouseEnter: this.videoBubble,
-        onMouseLeave: this.videoBubble,
+        onMouseLeave: this.videoBubble
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         src: "/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg",
         className: "upload-button",
         onClick: this.uploadVideo
-      }), button), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: homeBubbleClass.join(' ')
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: searchBubbleClass.join(' ')
-      }, "Search"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: videoBubbleClass.join(' ')
-      }, "Create a Video or Post"));
+      }, "Create a Video or Post")), button));
     }
   }]);
 

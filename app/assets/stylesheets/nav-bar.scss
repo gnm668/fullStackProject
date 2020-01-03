@@ -18,6 +18,7 @@
     display: flex;
     align-items: center;
     margin-left: 30px;
+    position: relative;
 }
 
 .hamburger:hover {
@@ -94,12 +95,14 @@
 
 .right-side {
     display: flex;
+    // position: relative;
 }
+
 
 .signout-button {
     height: 35px;
     width: max-content;
-    margin-right: 58px;
+    margin-right: 24px;
     border-radius: 10%;
     display: flex;
     text-align: center;
@@ -174,6 +177,7 @@
 // }
 .center {
     display: flex;
+    position: relative;
 }
 
 .center button {
@@ -212,9 +216,9 @@
     height: 30px;
     width: 56px;
     background-color: rgb(104, 104, 104);
-    position: fixed;
-    left: 10px;
-    top: 64px;
+    position: absolute;
+    left: -18px;
+    top: 50px;
     border-radius: 3%;
     font-size: 12px;
     justify-content: center;
@@ -222,7 +226,7 @@
     font-weight: lighter;
     color: #dedede;
     display: flex;
-    opacity: 100%;
+    opacity: 0%;
     transition: opacity .2s ease-in-out;
     pointer-events: none;
 }
@@ -236,9 +240,9 @@
     height: 30px;
     width: 56px;
     background-color: #686868;
-    position: fixed;
-    right: 326px;
-    top: 64px;
+    position: absolute;
+    right: 5px;
+    top: 52px;
     border-radius: 3%;
     font-size: 12px;
     justify-content: center;
@@ -246,7 +250,7 @@
     font-weight: lighter;
     color: #dedede;
     display: flex;
-    opacity: 100%;
+    opacity: 0%;
     transition: opacity .2s ease-in-out;
     pointer-events: none;
 }
@@ -260,9 +264,9 @@
     height: 30px;
     width: 140px;
     background-color: #686868;
-    position: fixed;
-    right: 96px;
-    top: 64px;
+    position: absolute;
+    right: -50px;
+    top: 56px;
     border-radius: 3%;
     font-size: 12px;
     justify-content: center;
@@ -270,7 +274,7 @@
     font-weight: lighter;
     color: #dedede;
     display: flex;
-    opacity: 100%;
+    opacity: 0%;
     transition: opacity .2s ease-in-out;
     pointer-events: none;
 }
@@ -278,6 +282,10 @@
 .video-bubble.effect {
     transition: opacity .2s ease-in-out;
     opacity: 100%;
+}
+
+.upload-button {
+    position: relative;
 }
 
 /* .signin-button {
