@@ -641,7 +641,9 @@ function (_React$Component) {
     // }
     value: function handleSearch(e) {
       e.preventDefault();
-      var searchData = Object.assign({}, this.state);
+      var searchData = {
+        search: this.state.search
+      };
       this.props.searchVideos(searchData);
     }
   }, {
@@ -3613,7 +3615,7 @@ var videosReducer = function videosReducer() {
 
   switch (action.type) {
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_VIDEOS"]:
-      return Object.assign({}, oldState, action.videos);
+      return Object.assign({}, action.videos);
 
     case _actions_video_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_VIDEO"]:
       return Object.assign({}, oldState, _defineProperty({}, action.video.id, action.video));

@@ -1,7 +1,13 @@
 class Api::VideosController < ApplicationController
     def index 
-        @videos = Video.all.includes(:user)
-        render :index
+        if params["search"] 
+            search = params["search"]
+            @videos = Video.where(title: search)
+            render :index
+        else
+            @videos = Video.all
+            render :index
+        end
     end
 
     #grab likes with videos
