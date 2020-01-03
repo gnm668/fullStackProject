@@ -3165,6 +3165,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-feed-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "container",
         to: "/videos/".concat(video.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         onMouseOver: this.previewPlay,
@@ -3177,14 +3178,14 @@ function (_React$Component) {
         className: "m-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-feed-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title"
-      }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user"
-      }, video.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, video.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "views"
-      }, "views"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "description"
+      }, "views"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "descridivtion"
       }, video.description)))));
     }
   }]);

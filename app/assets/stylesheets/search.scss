@@ -22,3 +22,15 @@
     margin-top: 50px;
 }
 
+.search-feed-item {
+    margin-bottom: 30px;
+}
+
+.search-feed-item .container {
+    display: flex;
+}
+
+.search-feed-item video {
+    object-fit: fill;
+    border-radius: 1%;
+}
