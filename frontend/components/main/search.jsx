@@ -13,6 +13,7 @@ class Search extends React.Component {
             <div className='search-page'>
                 <SideBar />
                 <NavBarContainer />
+
                 <SearchFeedContainer />
             </div>
         );

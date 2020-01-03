@@ -1153,7 +1153,11 @@ function (_React$Component) {
       var videos = this.props.videos;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-feed"
-      }, videos.map(function (video) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "s-border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-feed-header"
+      }, "Search Results"), videos.map(function (video) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_search_feed_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: video.id,
           video: video
@@ -3181,11 +3185,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title"
       }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sub-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user"
       }, video.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "views"
-      }, "views"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "descridivtion"
+      }, "views")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
       }, video.description)))));
     }
   }]);
