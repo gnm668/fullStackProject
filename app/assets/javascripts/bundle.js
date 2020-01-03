@@ -1150,10 +1150,15 @@ function (_React$Component) {
   _createClass(SearchFeed, [{
     key: "render",
     value: function render() {
-      debugger;
+      var videos = this.props.videos;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-feed"
-      });
+      }, videos.map(function (video) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_video_video_feed_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: video.id,
+          video: video
+        });
+      }));
     }
   }]);
 

@@ -7,9 +7,10 @@ class SearchFeed extends React.Component {
     };
 
     render() {
+        const videos = (this.props.videos);
         return(
             <div className='search-feed'>
-
+                {videos.map(video => <VideoFeedItem key={video.id} video={video} />)}
             </div>
         );
     };
