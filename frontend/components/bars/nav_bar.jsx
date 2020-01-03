@@ -65,15 +65,15 @@ class NavBar extends React.Component {
         } else {
             this.props.signin();
         }
-    }
+    };
 
     homeRedirect() {
         this.props.history.push('/');
-    }
+    };
 
     logoutUser() {
         this.props.logoutUser();
-    }
+    };
 
     // homeBubble() {
     //     this.setState( { homeBubble: !this.state.homeBubble });
@@ -81,21 +81,21 @@ class NavBar extends React.Component {
 
     searchBubble() {
         this.setState( { searchBubble: !this.state.searchBubble });
-    }
+    };
 
     videoBubble() {
         this.setState( { videoBubble: !this.state.videoBubble });
-    }
+    };
 
     toggleHamburger(){
         //toggles hamburger button state for render
         this.setState({ addHamburgerButtonEffect: !this.state.addHamburgerButtonEffect});
-    }
+    };
 
     toggleSignin() {
         // toggles signin button state for render 
         this.setState({addSigninButtonEffect: !this.state.addSigninButtonEffect});
-    }
+    };
 
     render() {
 

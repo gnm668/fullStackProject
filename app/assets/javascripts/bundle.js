@@ -682,12 +682,12 @@ function (_React$Component) {
     key: "logoutUser",
     value: function logoutUser() {
       this.props.logoutUser();
-    } // homeBubble() {
-    //     this.setState( { homeBubble: !this.state.homeBubble });
-    // }
-
+    }
   }, {
     key: "searchBubble",
+    // homeBubble() {
+    //     this.setState( { homeBubble: !this.state.homeBubble });
+    // }
     value: function searchBubble() {
       this.setState({
         searchBubble: !this.state.searchBubble
@@ -924,9 +924,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -940,17 +940,27 @@ function (_React$Component) {
   _inherits(SideBar, _React$Component);
 
   function SideBar(props) {
+    var _this;
+
     _classCallCheck(this, SideBar);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SideBar).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SideBar).call(this, props));
+    _this.homeRedirect = _this.homeRedirect.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(SideBar, [{
+    key: "homeRedirect",
+    value: function homeRedirect() {
+      this.props.history.push('/');
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar-placehodler"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.homeRedirect,
         className: "home"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         xmlns: "http://www.w3.org/2000/svg",

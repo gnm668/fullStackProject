@@ -3,12 +3,18 @@ import React from 'react';
 class SideBar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.homeRedirect = this.homeRedirect.bind(this);
     };  
+
+    homeRedirect() {
+        this.props.history.push('/');
+    };
 
     render() {
         return (
             <div className='sidebar-placehodler'>
-                <div className='home'>
+                <div onClick={this.homeRedirect} className='home'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill='#FFFFFF' d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z" /></svg>
                     <p>Home</p>
                 </div>
