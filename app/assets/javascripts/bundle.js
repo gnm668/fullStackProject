@@ -3187,10 +3187,10 @@ function (_React$Component) {
       }, video.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sub-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user"
-      }, video.user), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "views"
-      }, "views")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " views \u2022"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user"
+      }, video.user, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "description"
       }, video.description)))));
     }
