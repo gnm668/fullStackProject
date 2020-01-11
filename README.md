@@ -27,25 +27,22 @@ Tub-Tub is a web application that allows users to share and watch videos from al
  
  ## Feature Highlights
  
- ### Videos
- 
-(Insert Gif of interaction here)
- 
- ### Likes and Dislikes
++ User authentication using BCrypt
++ User's can post videos to share with everyone
++ User's can either like or dislike videos
++ User's can create comments on their favorite videos
 
-(Insert Gif of interaction here)
-
-### Comments
-
-(Insert Gif of interaction here)
-
-### Search
-
-(Insert Gif of interaction here)
+![Screen Shot 2020-01-07 at 2 16 00 PM](https://user-images.githubusercontent.com/43099538/71934018-57508800-3158-11ea-8e75-2689d8a3a34b.png)
 
 ---
 
 ## Code Snippets
+
+### Video Preview Before Submission
+
+### Micro-Interactions / Dynamic Class Assignment
+
+### Search Logic in Controller
 
 
 
