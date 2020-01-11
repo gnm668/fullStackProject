@@ -2,7 +2,7 @@
 
 Tub-Tub is a web application that allows users to share and watch videos from all over the world. Tub-Tub gives users the opportunity to interact with videos and other users through comments, likes, and dislikes. 
 
-![preview](https://user-images.githubusercontent.com/43099538/72199201-b24edd00-33ed-11ea-8b0f-16f51a9ca3eb.gif)
+![Screen Shot 2020-01-10 at 9 14 22 PM](https://user-images.githubusercontent.com/43099538/72199247-3b661400-33ee-11ea-9a87-76bc357fe452.png)
 
 ---
 
