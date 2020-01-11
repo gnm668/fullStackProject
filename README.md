@@ -49,9 +49,9 @@ Tub-Tub is a web application that allows users to share and watch videos from al
 
 ### Video Preview Before Submission
 
-![previewvideoform](https://user-images.githubusercontent.com/43099538/72199501-c85e9c80-33f1-11ea-8cf7-6bda7147d83f.png)
-
 ![videoform](https://user-images.githubusercontent.com/43099538/72199499-c85e9c80-33f1-11ea-9e21-be049971adb1.png)
+
+![previewvideoform](https://user-images.githubusercontent.com/43099538/72199501-c85e9c80-33f1-11ea-8cf7-6bda7147d83f.png)
 
 ### Micro-Interactions / Dynamic Class Assignment
 
