@@ -73,4 +73,6 @@ This logic is used in other component's as well so that each component handles i
 
 ![controller](https://user-images.githubusercontent.com/43099538/72199502-c85e9c80-33f1-11ea-8f04-5940bcd90368.png)
 
+The nav bar component holds a search bar, which on submission hits this custom index routing in the controller. In the strong params of this controller, I allowed an extra param to be sent up under the key of "search". If the search bar is empty when the user submits the search, the search value will be an empty string, and if the string is empty, I have the search key return nil so that all the videos are sent back up from the database.
 
+If the user decides to input anything into the search bar before submission, I sanitize the string so that a user cannot maliciously attack my database, and then run a SQL query that is not case sensitive. Right now, this is built only to return videos where the title contains the string searched by the user, but this can be expanded upon in the future to include searching the descriptions, tags, or any other identifying information, and then ordered accordingly.
