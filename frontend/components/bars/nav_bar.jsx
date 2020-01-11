@@ -228,7 +228,7 @@ class NavBar extends React.Component {
                         src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
                         className='upload-button'
                         />
-
+gi
                         <div className={videoBubbleClass.join(' ')}>
                             Create a Video or Post
                         </div>
