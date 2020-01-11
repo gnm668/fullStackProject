@@ -221,12 +221,13 @@ class NavBar extends React.Component {
                     className='upload-button'
                     onMouseEnter={this.videoBubble}
                     onMouseLeave={this.videoBubble}
+                    onClick={this.uploadVideo}
                     >
 
                         <svg 
                         src='/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg'
                         className='upload-button'
-                        onClick={this.uploadVideo} />
+                        />
 
                         <div className={videoBubbleClass.join(' ')}>
                             Create a Video or Post

@@ -835,11 +835,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "upload-button",
         onMouseEnter: this.videoBubble,
-        onMouseLeave: this.videoBubble
+        onMouseLeave: this.videoBubble,
+        onClick: this.uploadVideo
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         src: "/Users/al/Desktop/FSP/Tube/app/assets/images/video_call_24px.svg",
-        className: "upload-button",
-        onClick: this.uploadVideo
+        className: "upload-button"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: videoBubbleClass.join(' ')
       }, "Create a Video or Post")), button));
