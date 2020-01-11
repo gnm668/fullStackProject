@@ -1600,6 +1600,8 @@ function (_React$Component) {
       if (videoFile) {
         fileReader.readAsDataURL(videoFile);
       }
+
+      ;
     }
   }, {
     key: "handleInput",
@@ -2229,11 +2231,14 @@ function (_React$Component) {
         emailClass.push('effect');
       }
 
+      ;
       var passwordClass = ['login-password'];
 
       if (this.state.addPasswordEffect || this.state.password.length > 0) {
         passwordClass.push('effect');
       }
+
+      ;
 
       if (!this.state.emailInput) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
