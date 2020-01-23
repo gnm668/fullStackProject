@@ -9,10 +9,8 @@ class Likes extends React.Component {
     }
 
     componentDidMount() {
-        //Commeneted out requests for S3
         this.props.fetchLikes();
         this.props.fetchDislikes();
-
     }
 
 
@@ -160,7 +158,7 @@ class Likes extends React.Component {
         likes = this.totalLikes(likes);
         dislikes = this.totalDislikes(dislikes);
 
-        return(
+        return (
             <div className='likes'>
                 <div className='like-cont'
                 onClick={this.handleClick}>

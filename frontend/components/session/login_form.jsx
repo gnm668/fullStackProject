@@ -117,12 +117,12 @@ class LoginForm extends React.Component {
         let emailClass = ['login-email'];
         if (this.state.addEmailEffect || this.state.email.length > 0) {
             emailClass.push('effect');
-        }
+        };
 
         let passwordClass = ['login-password'];
         if (this.state.addPasswordEffect || this.state.password.length > 0) {
             passwordClass.push('effect');
-        }
+        };
 
         if (!this.state.emailInput) {
             return (

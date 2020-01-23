@@ -13,11 +13,11 @@ const likesReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, { [action.like.id]: action.like });
         case REMOVE_LIKE:
             let nextState = Object.assign({}, oldState);
-            delete nextState[action.likeId]
+            delete nextState[action.likeId];
             return nextState;
         default:
             return oldState;
-    }
+    };
 };
 
 export default likesReducer;

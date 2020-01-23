@@ -30,22 +30,22 @@ class VideoForm extends React.Component {
         fileReader.onloadend = () => {
             this.setState({ videoFile: videoFile, videoUrl: fileReader.result});
             document.querySelector('.modal-child').classList.add('upload');
-        }
+        };
 
         if (videoFile) {
             fileReader.readAsDataURL(videoFile);
-        }
-    }
+        };
+    };
 
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
         };
-    }
+    };
 
     activateInput() {
         document.querySelector('input').click();
-    }
+    };
 
     handleSubmit(e) {
         e.preventDefault();
@@ -56,7 +56,7 @@ class VideoForm extends React.Component {
         formData.append('video[media]', this.state.videoFile);
         this.props.createVideo(formData);
         this.props.closeModal();
-    }
+    };
 
     render() {
         const preview = this.state.videoUrl ? <video id='preview' controls src={this.state.videoUrl} /> : null;

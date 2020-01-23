@@ -1,0 +1,84 @@
+.comment-form #icon {
+    background: url(user.svg);
+    width: 40px;
+    height: 40px;
+    margin-top: 14px;
+}
+
+.comment-form {
+    display: flex;
+}
+
+.comment-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form form {
+    margin-top: 8px;
+    margin-left: 11px;
+}
+
+.comment-field input {
+    border: none;
+    background: none;
+    font-size: 14px;
+    border-bottom: solid 1px grey;
+    width: 110vh;
+    padding: 7px;
+    transition: border-bottom .5s ease-out;
+}
+
+.comment-field input:focus {
+    border-bottom: solid 1px black;
+    transition: border-bottom .5s ease-out;
+}
+
+.comment-field button {
+    background-color: #1a73e8;
+    color: black;
+    border: 1px solid #1a73e8;
+    border-radius: 5%;
+    font-size: 14px;
+    width: 90px;
+    height: 35px;
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+.comment-field button:disabled {
+    background-color: rgb(85, 85, 85);
+    color: black;
+    border: 1px solid rgb(85, 85, 85);
+    border-radius: 5%;
+    font-size: 14px;
+    width: 90px;
+    height: 35px;
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+.comment-field button:hover {
+    cursor: pointer;
+}
+
+.comment-field button:disabled:hover {
+    cursor: initial;
+}
+
+.comment-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-buttons p {
+    margin-top: 19px;
+    margin-right: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ababab;
+}
+
+.comment-buttons p:hover {
+    cursor: pointer;
+}

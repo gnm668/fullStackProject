@@ -1,7 +1,18 @@
 class Api::VideosController < ApplicationController
     def index 
-        @videos = Video.all.includes(:user)
-        render :index
+        if params["search"] == ""
+            params["search"] = nil
+        end
+
+        if params["search"] 
+            search = params["search"]
+            search = ActiveRecord::Base::sanitize_sql(search)
+            @videos = Video.where("LOWER(title) LIKE LOWER(?)", "%#{search}%")
+            render :index
+        else
+            @videos = Video.all
+            render :index
+        end
     end
 
     def create
@@ -38,7 +49,7 @@ class Api::VideosController < ApplicationController
     private
 
     def video_params
-        params.require(:video).permit(:user_id, :title, :description, :media)
+        params.require(:video).permit(:user_id, :title, :description, :media, :search)
     end
 
 end

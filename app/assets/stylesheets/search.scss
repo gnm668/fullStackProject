@@ -1,0 +1,79 @@
+.search-page {
+    display: flex;
+    margin-top: 55px;
+}
+
+.search-page .sidebar-placehodler {
+    // z-index: 1;
+    position: fixed;
+    min-height: 100vh;
+    width: 80px;
+    background-color: #282828;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-feed {
+    display: flex;
+    flex-direction: column;
+    margin-left: 120px;
+    margin-top: 33px;
+    width: 100%;
+}
+
+.search-feed-item {
+    margin-bottom: 30px;
+}
+
+.search-feed-item .container {
+    display: flex;
+}
+
+.search-feed-item video {
+    object-fit: fill;
+    border-radius: 1%;
+}
+
+.search-feed-item .m-container {
+    margin-top: 2px;
+    margin-left: 30px;
+}
+
+.search-feed-item .title {
+    font-size: 20px;
+}
+
+.search-feed-item .sub-info {
+    display: flex;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.search-feed-item .user {
+    color: grey;
+}
+
+.search-feed-item .views {
+    color: grey;
+    margin-left: 6px;
+}
+
+.search-feed-item .description {
+    font-size: 14px;
+    color: grey;
+    margin-top: 16px;
+}
+
+.s-border {
+    width: 90%;
+    border-top: 1px solid #3a3a3a;
+    margin-top: 17px;
+}
+
+.search-feed-header {
+    margin-top: 25px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}

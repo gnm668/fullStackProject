@@ -3,6 +3,7 @@ import NavBarContainer from '../bars/nav_bar_container';
 import { focusOn } from '../../util/ui_util';
 import VerticalFeed from '../feeds/vertical_feed';
 import LikesContainer from './likes_container';
+import CommentsContainer from './comments_container';
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -79,6 +80,8 @@ class VideoShow extends React.Component {
                                     </div>
 
                                     <div className='v-border'></div>
+                                    
+                                    <CommentsContainer ownProps={this.props.ownProps} />
 
                                 </div>
                             </div>  

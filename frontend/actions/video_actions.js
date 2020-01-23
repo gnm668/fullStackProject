@@ -32,6 +32,13 @@ export const fetchVideos = () => dispatch => {
     );
 };
 
+export const searchVideos = search => dispatch => {
+    return (
+        APIUtil.searchVideos(search)
+            .then(videos => dispatch(receiveAllVideos(videos)))
+    );
+};
+
 export const fetchVideo = videoId => dispatch => {
     return (
         APIUtil.fetchVideo(videoId)

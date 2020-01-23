@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'root/root'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: { format: :json } do
@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     resources :videos, except: [:new, :edit]
     resources :likes, only: [:index, :create, :destroy]
     resources :dislikes, only: [:index, :create, :destroy]
+    resources :comments, except: [:new]
 
     resource :session, only: [:create, :destroy]
-
   end
 
   

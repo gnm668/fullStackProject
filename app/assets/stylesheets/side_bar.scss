@@ -1,13 +1,57 @@
 .github {
-    background: url(iconmonstr-github-3.svg);
-    width: 36px;
-    height: 36px;
-    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 80px;
 }
 
 .linkedin {
-    background: url(iconmonstr-linkedin-3.svg);
-    width: 36px;
-    height: 36px;
-    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 80px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 80px;
+}
+
+.home.effect {
+    background-color: #3e3e3e;
+}
+
+.github:hover {
+    background-color: #3e3e3e;
+}
+
+.linkedin:hover {
+    background-color: #3e3e3e;
+}
+
+.home:hover {
+    background-color: #3e3e3e;
+}
+
+.github p {
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.linkedin p {
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.home p {
+    font-size: 11px;
+    margin-top: 8px;  
 }

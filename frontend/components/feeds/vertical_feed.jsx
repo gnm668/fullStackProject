@@ -8,11 +8,9 @@ class VerticalFeed extends React.Component {
         super(props);
     }
 
-
-
     render() {
         //shuffle?
-        const videos = (this.props.videos)
+        const videos = (this.props.videos);
         return (
             <div id='v-feed' >
                 {videos.map(video => <VideoFeedItem key={video.id} video={video} />)}

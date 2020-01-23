@@ -5,6 +5,13 @@ export const fetchVideos = () => {
     });
 };
 
+export const searchVideos = search => {
+    return $.ajax({
+        url: `api/videos`,
+        data: search
+    });
+};
+
 export const fetchVideo = videoId => {
     return $.ajax({
         url: `api/videos/${videoId}`

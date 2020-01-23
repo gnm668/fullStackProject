@@ -11,10 +11,14 @@
 }
 
 .left-side {
-    height: 100%;
-    display: grid;
-    grid-template-rows: repeat(20, 5%);
-    grid-template-columns: repeat(20, 5%);
+    // height: 100%;
+    // display: grid;
+    // grid-template-rows: repeat(20, 5%);
+    // grid-template-columns: repeat(20, 5%);
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    position: relative;
 }
 
 .hamburger:hover {
@@ -33,6 +37,22 @@
     margin-top: 12px;
     margin-left: 3px;
     margin-bottom: 0;
+}
+
+.home {
+    // background-image: url(home-button.svg);
+    // z-index: 3;
+    // grid-column: 9;
+    // grid-row: 2;
+    width: 24px;
+    height: 24px;
+    // margin-top: 12px;
+    // margin-left: 3px;
+    // margin-bottom: 0;
+}
+
+.home:hover {
+    cursor: pointer;
 }
 
 .hamburger-circle {
@@ -75,7 +95,9 @@
 
 .right-side {
     display: flex;
+    // position: relative;
 }
+
 
 .signout-button {
     height: 35px;
@@ -121,13 +143,29 @@
 }
 
 .logo {
-    grid-column-start: 21;
-    grid-row: 4;
+    // grid-column-start: 21;
+    // grid-row: 4;
     background-image: url(you-tube-2017-icon-seeklogo.com-4.svg);
-    z-index: 3;
-    width: 36px;
-    height: 36px;
-    margin-left: 10px;
+    // z-index: 3;
+    width: 30px;
+    height: 30px;
+    // margin-left: 31px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container .title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-left: 2px;
+}
+
+.logo-container .title:hover {
+    cursor: pointer;
 }
 
 // .upload-button p {
@@ -136,6 +174,118 @@
 //     font-family: arial;
 //     color: #ffffff;
 // }
+.center {
+    display: flex;
+    position: relative;
+}
+
+.center button {
+    width: 66px;
+    height: 32px;
+    border: solid 1px #303030;
+    background-color: #393939;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center button:hover {
+    cursor: pointer;
+}
+
+.center button:hover svg g {
+    fill: rgb(170, 170, 170);
+}
+
+.search {
+    width: 576px;
+    height: 28px;
+    border-radius: 1px;
+    border: solid 1px #303030;
+    background-color: #121212;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.search:focus {
+    border: 1px solid #064fad;
+}
+
+.home-bubble {
+    height: 30px;
+    width: 56px;
+    background-color: rgb(104, 104, 104);
+    position: absolute;
+    left: -18px;
+    top: 50px;
+    border-radius: 3%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    color: #dedede;
+    display: flex;
+    opacity: 0%;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none;
+}
+
+.home-bubble.effect {
+    opacity: 100%;
+    transition: opacity .2s ease-in-out;
+}
+
+.search-bubble {
+    height: 30px;
+    width: 56px;
+    background-color: #686868;
+    position: absolute;
+    right: 5px;
+    top: 52px;
+    border-radius: 3%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    color: #dedede;
+    display: flex;
+    opacity: 0%;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none;
+}
+
+.search-bubble.effect {
+    transition: opacity .2s ease-in-out;
+    opacity: 100%;
+}
+
+.video-bubble {
+    height: 30px;
+    width: 140px;
+    background-color: #686868;
+    position: absolute;
+    right: -50px;
+    top: 56px;
+    border-radius: 3%;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    color: #dedede;
+    display: flex;
+    opacity: 0%;
+    transition: opacity .2s ease-in-out;
+    pointer-events: none;
+}
+
+.video-bubble.effect {
+    transition: opacity .2s ease-in-out;
+    opacity: 100%;
+}
+
+.upload-button {
+    position: relative;
+}
 
 /* .signin-button {
     display: flex;
