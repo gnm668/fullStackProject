@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+ import { connect } from 'react-redux';
 import SearchFeed from './search_feed';
 
 const mSTP = state => {
